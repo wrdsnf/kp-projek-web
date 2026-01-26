@@ -79,7 +79,7 @@ function TellerQueueCard({ type, tellerUid }: { type: QueueType; tellerUid: stri
          <div className="space-y-3">
              <button
                 onClick={handleCall}
-                disabled={loading || isClosed || (data?.currentNumber || 0) >= (data?.lastNumber || 0)}
+                disabled={loading || (data?.currentNumber || 0) >= (data?.lastNumber || 0)}
                 className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg disabled:opacity-50 transition-colors"
              >
                 {loading ? "Memproses..." : "PANGGIL NEXT"}

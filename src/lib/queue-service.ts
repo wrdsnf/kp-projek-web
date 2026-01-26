@@ -167,6 +167,7 @@ export const callNextQueue = async (type: QueueType, tellerUid?: string) => {
       if (!queueDoc.exists()) throw new Error("Queue not found");
       
       const data = queueDoc.data();
+      
       const next = data.currentNumber + 1;
 
       if (next > data.lastNumber) {
