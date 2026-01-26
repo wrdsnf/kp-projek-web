@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { auth } from "@/lib/firebase";
 import { cn } from "@/lib/utils";
+import { Building2, Settings, Ticket, LogOut, Loader2 } from "lucide-react";
 
 export default function DashboardLayout({
   children,
@@ -25,7 +26,7 @@ export default function DashboardLayout({
     return (
       <div className="min-h-screen bg-gradient-to-b from-green-900 to-green-800 flex items-center justify-center">
         <div className="text-white text-lg flex items-center gap-3">
-          <span className="animate-spin text-2xl">⏳</span>
+          <Loader2 className="w-6 h-6 animate-spin" />
           Memuat dashboard...
         </div>
       </div>
@@ -42,7 +43,7 @@ export default function DashboardLayout({
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">🏛️</span>
+              <Building2 className="w-6 h-6 text-amber-400" />
               <span className="font-bold text-white hidden sm:inline">
                 Pegadaian <span className="text-amber-400">Sentul</span>
               </span>
@@ -53,17 +54,28 @@ export default function DashboardLayout({
               {profile.role === 'admin' && (
                 <Link 
                   href="/dashboard/admin" 
-                  className="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-colors"
+                  className="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
                 >
-                  🛠️ Admin
+                  <Settings className="w-4 h-4" />
+                  Admin
                 </Link>
               )}
               {(profile.role === 'teller' || profile.role === 'admin') && (
                 <Link 
                   href="/dashboard/teller" 
-                  className="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-colors"
+                  className="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
                 >
-                  🎫 Teller
+                  <Ticket className="w-4 h-4" />
+                  Teller
+                </Link>
+              )}
+              {(profile.role === 'petugas_antrian' || profile.role === 'admin') && (
+                <Link 
+                  href="/dashboard/petugas" 
+                  className="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+                >
+                  <Ticket className="w-4 h-4" />
+                  Petugas
                 </Link>
               )}
             </div>
@@ -83,7 +95,7 @@ export default function DashboardLayout({
                 onClick={() => auth.signOut()}
                 className="px-3 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-200 rounded-lg text-sm font-medium transition-colors flex items-center gap-1"
               >
-                <span>🚪</span>
+                <LogOut className="w-4 h-4" />
                 <span className="hidden sm:inline">Logout</span>
               </button>
             </div>

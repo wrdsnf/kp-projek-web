@@ -6,6 +6,7 @@ import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
+import { Building2, Lock, Loader2, LogIn, AlertTriangle, Ticket } from "lucide-react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -42,7 +43,10 @@ export default function LoginPage() {
   if (authLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-green-900 to-green-800 flex items-center justify-center">
-        <div className="text-white text-lg">Memuat...</div>
+        <div className="text-white text-lg flex items-center gap-3">
+          <Loader2 className="w-6 h-6 animate-spin" />
+          Memuat...
+        </div>
       </div>
     );
   }
@@ -58,10 +62,11 @@ export default function LoginPage() {
       <nav className="bg-green-950/50 backdrop-blur-sm border-b border-green-700/50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl">🏛️</span>
+            <Building2 className="w-6 h-6 text-amber-400" />
             <span className="font-bold text-white">Pegadaian <span className="text-amber-400">Sentul</span></span>
           </Link>
-          <Link href="/queue" className="text-green-200 hover:text-white text-sm transition-colors">
+          <Link href="/queue" className="text-green-200 hover:text-white text-sm transition-colors flex items-center gap-2">
+            <Ticket className="w-4 h-4" />
             Ambil Antrian
           </Link>
         </div>
@@ -71,8 +76,9 @@ export default function LoginPage() {
       <div className="flex items-center justify-center px-4 py-16">
         <div className="max-w-md w-full">
           <div className="text-center mb-8">
-            <div className="inline-block px-4 py-2 bg-amber-500/20 rounded-full border border-amber-500/30 mb-4">
-              <span className="text-amber-400 text-sm font-medium">🔐 Area Pegawai</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 rounded-full border border-amber-500/30 mb-4">
+              <Lock className="w-4 h-4 text-amber-400" />
+              <span className="text-amber-400 text-sm font-medium">Area Pegawai</span>
             </div>
             <h1 className="text-3xl font-bold text-white mb-2">Login Dashboard</h1>
             <p className="text-green-200">Masuk untuk mengakses sistem antrian</p>
@@ -81,7 +87,7 @@ export default function LoginPage() {
           <div className="bg-white rounded-2xl shadow-2xl p-8">
             {error && (
               <div className="bg-red-50 text-red-600 text-sm p-4 rounded-xl mb-6 flex items-center gap-2">
-                <span>⚠️</span>
+                <AlertTriangle className="w-5 h-5" />
                 {error}
               </div>
             )}
@@ -118,12 +124,12 @@ export default function LoginPage() {
               >
                 {loading ? (
                   <>
-                    <span className="animate-spin">⏳</span>
+                    <Loader2 className="w-5 h-5 animate-spin" />
                     Memproses...
                   </>
                 ) : (
                   <>
-                    <span>🔓</span>
+                    <LogIn className="w-5 h-5" />
                     MASUK
                   </>
                 )}

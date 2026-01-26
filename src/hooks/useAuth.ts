@@ -19,7 +19,11 @@ export function useAuth() {
         const docRef = doc(db, "users", authUser.uid);
         const snap = await getDoc(docRef);
         if (snap.exists()) {
-          setProfile(snap.data() as UserProfile);
+          // Inject uid from auth (in case Firestore doc doesn't have it)
+          setProfile({
+            ...snap.data(),
+            uid: authUser.uid,
+          } as UserProfile);
         } else {
           setProfile(null);
         }
@@ -34,3 +38,4 @@ export function useAuth() {
 
   return { user, profile, loading };
 }
+

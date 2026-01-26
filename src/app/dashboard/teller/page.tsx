@@ -17,7 +17,7 @@ export default function TellerDashboard() {
       <h1 className="text-2xl font-bold text-gray-800">Teller Dashboard</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {profile.handleQueue.map((type) => (
-          <TellerQueueCard key={type} type={type} />
+          <TellerQueueCard key={type} type={type} tellerUid={profile.uid} />
         ))}
       </div>
       {profile.handleQueue.length === 0 && (
@@ -27,7 +27,7 @@ export default function TellerDashboard() {
   );
 }
 
-function TellerQueueCard({ type }: { type: QueueType }) {
+function TellerQueueCard({ type, tellerUid }: { type: QueueType; tellerUid: string }) {
   const { data } = useQueue(type);
   const [loading, setLoading] = useState(false);
   const config = QUEUE_TYPES.find(q => q.id === type)!;
@@ -36,7 +36,7 @@ function TellerQueueCard({ type }: { type: QueueType }) {
       if(!confirm("Panggil antrian selanjutnya?")) return;
       setLoading(true);
       try {
-          await callNextQueue(type);
+          await callNextQueue(type, tellerUid);
       } catch (e) {
           alert((e as Error).message);
       } finally {
@@ -84,15 +84,9 @@ function TellerQueueCard({ type }: { type: QueueType }) {
              >
                 {loading ? "Memproses..." : "PANGGIL NEXT"}
              </button>
-             
-             {/* Skip button logic needs implementation in queue-service if requested, currently just incrementing currentNumber handles flow */}
-             {/* 
-            <button className="w-full py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg text-sm">
-                Recall / Ulang Panggil
-            </button> 
-             */}
          </div>
       </div>
     </div>
   )
 }
+

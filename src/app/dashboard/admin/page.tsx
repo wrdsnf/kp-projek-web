@@ -5,13 +5,24 @@ import { updateQueueStatus, resetQueue } from "@/lib/queue-service";
 import { QueueType, QUEUE_TYPES } from "@/lib/types";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { RotateCcw, BarChart3 } from "lucide-react";
+import Link from "next/link";
 
 export default function AdminDashboard() {
   return (
     <div className="space-y-8">
-      <header>
-        <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-        <p className="text-gray-500">Monitoring dan Kontrol Antrian</p>
+      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+          <p className="text-gray-500">Monitoring dan Kontrol Antrian</p>
+        </div>
+        <Link 
+          href="/dashboard/admin/history"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors"
+        >
+          <BarChart3 className="w-4 h-4" />
+          Laporan Harian
+        </Link>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -86,7 +97,7 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
         {/* Manual Reset Button */}
         <div className="flex justify-end">
            <button 
-             className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors disabled:opacity-50"
+             className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
              disabled={resetting}
              onClick={async () => {
                if (!confirm(`RESET antrian ${label}? Semua nomor akan kembali ke 0.`)) return;
@@ -101,7 +112,8 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
                }
              }}
            >
-             {resetting ? "Mereset..." : "🔄 Reset Manual"}
+             <RotateCcw className="w-4 h-4" />
+             {resetting ? "Mereset..." : "Reset Manual"}
            </button>
         </div>
     </div>
