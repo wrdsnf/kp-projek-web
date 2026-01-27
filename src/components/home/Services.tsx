@@ -1,41 +1,42 @@
-import { Gem, FileText, Coins, MoreHorizontal } from "lucide-react";
+import { Gem, FileText, Coins, MoreHorizontal, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
     icon: Gem,
-    title: "Gadai",
-    description: "Gadai emas, perhiasan, elektronik, dan barang berharga lainnya dengan proses cepat dan aman.",
+    title: "Gadai Emas",
+    description: "Gadai emas dan perhiasan dengan proses cepat, aman, dan bunga kompetitif.",
     color: "bg-amber-500",
     iconColor: "text-amber-600",
     bgColor: "bg-amber-50",
-    href: "#alur-layanan",
+    href: "/produk/gadai-emas",
   },
   {
     icon: FileText,
-    title: "Non-Gadai",
-    description: "Layanan pelunasan, perpanjangan, cicilan, dan pembayaran tagihan dengan mudah.",
+    title: "Gadai Non-Emas",
+    description: "Gadai elektronik, kendaraan, dan barang berharga lainnya dengan mudah.",
     color: "bg-green-600",
     iconColor: "text-green-600",
     bgColor: "bg-green-50",
-    href: "#alur-layanan",
+    href: "/produk/gadai-non-emas",
   },
   {
     icon: Coins,
     title: "Tabungan Emas",
-    description: "Nabung emas mulai dari Rp10.000. Investasi aman untuk masa depan Anda.",
+    description: "Investasi emas terjangkau mulai Rp10.000. Aman untuk masa depan.",
     color: "bg-yellow-500",
     iconColor: "text-yellow-600",
     bgColor: "bg-yellow-50",
-    href: "#investasi-emas",
+    href: "/produk/tabungan-emas",
   },
   {
     icon: MoreHorizontal,
-    title: "Layanan Lainnya",
-    description: "Pembiayaan UMKM, transfer uang, pembayaran tagihan, top up, dan layanan keuangan lainnya.",
+    title: "Jasa Lainnya",
+    description: "Transfer uang, pembayaran tagihan, top up, dan layanan keuangan lainnya.",
     color: "bg-blue-500",
     iconColor: "text-blue-600",
     bgColor: "bg-blue-50",
-    href: "#aplikasi-mobile",
+    href: "/produk/jasa-lainnya",
   },
 ];
 
@@ -85,7 +86,7 @@ function ServiceCard({
   href: string;
 }) {
   return (
-    <a 
+    <Link 
       href={href}
       className="group bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
     >
@@ -93,8 +94,12 @@ function ServiceCard({
         <Icon className={`w-7 h-7 ${iconColor}`} />
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
-    </a>
+      <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
+      <span className="inline-flex items-center gap-1 text-green-600 text-sm font-medium group-hover:gap-2 transition-all">
+        Lihat Detail
+        <ArrowRight className="w-4 h-4" />
+      </span>
+    </Link>
   );
 }
 

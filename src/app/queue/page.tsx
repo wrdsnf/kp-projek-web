@@ -7,7 +7,7 @@ import { QUEUE_TYPES, QueueType, getQueueCode } from "@/lib/types";
 import { canTakeQueue, getLocalCooldown, formatCooldown } from "@/lib/cooldown-service";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
-import { Ticket, Gem, FileText, Info, Clock, Loader2, Bell, CheckCircle, Copy, Share2, Link2 } from "lucide-react";
+import { Ticket, Gem, FileText, Info, Clock, Loader2, Bell, CheckCircle, Share2, Link2 } from "lucide-react";
 
 export default function QueuePage() {
   const [myNumbers, setMyNumbers] = useState<Record<QueueType, number | null>>({
@@ -259,14 +259,25 @@ function QueueCard({
 
         {/* My Number or Take Button */}
         {myNumber ? (
-          <div className={cn("rounded-xl p-5 text-center border-2 border-dashed", 
+          <div className={cn("rounded-xl p-6 text-center border-2 border-dashed", 
             isGadai ? "bg-green-50 border-green-200" : "bg-blue-50 border-blue-200"
           )}>
-            <p className="text-gray-500 text-sm mb-1">Nomor Antrian Anda</p>
-            <div className={cn("text-4xl font-black", isGadai ? "text-green-600" : "text-blue-600")}>
+            {/* Queue Number - Large & Clear */}
+            <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Nomor Antrian Anda</p>
+            <div className={cn("text-5xl md:text-6xl font-black tracking-tight", isGadai ? "text-green-600" : "text-blue-600")}>
               {getQueueCode(type, myNumber)}
             </div>
-            <div className="mt-3">
+            
+            {/* Service Type Label */}
+            <div className={cn("mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium",
+              isGadai ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
+            )}>
+              {isGadai ? <Gem className="w-4 h-4" /> : <FileText className="w-4 h-4" />}
+              Layanan {isGadai ? "Gadai" : "Non-Gadai"}
+            </div>
+
+            {/* Status Indicator */}
+            <div className="mt-4">
               {data && data.currentNumber < myNumber ? (
                 <span className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">
                   <Clock className="w-4 h-4" />
@@ -318,23 +329,33 @@ function QueueCard({
               )}
             </div>
 
-            {/* Share Buttons - only show when not passed yet */}
+            {/* Share Section - only show when not passed yet */}
             {data && data.currentNumber <= myNumber && (
-              <div className="flex gap-2 mt-4 justify-center">
-                <button
-                  onClick={copyLink}
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
-                >
-                  <Copy className="w-4 h-4" />
-                  Salin Link
-                </button>
-                <button
-                  onClick={shareQueue}
-                  className="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg text-sm font-medium transition-colors"
-                >
-                  <Share2 className="w-4 h-4" />
-                  Bagikan
-                </button>
+              <div className="mt-5 pt-5 border-t border-gray-200">
+                {/* Explanatory Text */}
+                <p className="text-gray-600 text-sm mb-4">
+                  Silakan simpan atau bagikan nomor antrian berikut untuk memantau status layanan Anda.
+                </p>
+                
+                {/* Share Buttons */}
+                <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                  <button
+                    onClick={copyLink}
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
+                  >
+                    <Link2 className="w-4 h-4" />
+                    Salin Link Antrian
+                  </button>
+                  <button
+                    onClick={shareQueue}
+                    className={cn("flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
+                      isGadai ? "bg-green-600 hover:bg-green-700 text-white" : "bg-blue-600 hover:bg-blue-700 text-white"
+                    )}
+                  >
+                    <Share2 className="w-4 h-4" />
+                    Bagikan Nomor Antrian
+                  </button>
+                </div>
               </div>
             )}
           </div>

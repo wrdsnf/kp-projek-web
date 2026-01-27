@@ -12,9 +12,15 @@ export default function Navbar() {
   return (
     <nav className="bg-green-950/90 backdrop-blur-md border-b border-green-700/50 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <Building2 className="w-6 h-6 text-amber-400" />
-          <span className="font-bold text-white">Pegadaian <span className="text-amber-400">Sentul</span></span>
+        <Link href="/" className="flex items-center gap-2.5">
+          {/* Pegadaian Logo Container */}
+          <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-green-700 rounded-lg flex items-center justify-center shadow-md">
+            <Building2 className="w-5 h-5 text-amber-400" />
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="font-bold text-white text-sm tracking-tight">PEGADAIAN</span>
+            <span className="text-amber-400 text-[10px] font-semibold tracking-wider">CP SENTUL</span>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
