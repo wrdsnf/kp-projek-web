@@ -86,56 +86,88 @@ export default function QueuePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-900 via-green-800 to-green-900">
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Header */}
-      <header className="text-center py-12 px-4">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 rounded-full border border-amber-500/30 mb-4">
-          <Ticket className="w-4 h-4 text-amber-400" />
-          <span className="text-amber-400 text-sm font-medium">Antrian Online</span>
-        </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Ambil Nomor Antrian</h1>
-        <p className="text-green-200">Pilih jenis layanan dan ambil nomor antrian Anda</p>
-      </header>
-
-      {/* Queue Cards */}
-      <div className="max-w-xl mx-auto px-4 pb-16 space-y-6">
-        {QUEUE_TYPES.map((q) => (
-          <QueueCard 
-            key={q.id} 
-            type={q.id} 
-            label={q.label} 
-            color={q.color} 
-            myNumber={myNumbers[q.id]}
-            onTake={() => handleTakeQueue(q.id)}
-            loading={loadingAction}
-            onCheckReset={clearIfReset}
-          />
-        ))}
-        
-        {/* Info Card */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-          <h3 className="text-white font-bold mb-3 flex items-center gap-2">
-            <Info className="w-5 h-5 text-amber-400" />
-            Informasi
-          </h3>
-          <ul className="text-green-200 text-sm space-y-2">
-            <li>• Nomor antrian tersimpan otomatis di browser Anda</li>
-            <li>• Cooldown 10 menit setelah mengambil antrian</li>
-            <li>• Pantau nomor yang sedang dilayani secara realtime</li>
-            <li>• Gunakan tombol <strong>Bagikan</strong> untuk menyimpan link antrian</li>
-          </ul>
-        </div>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Background Layers */}
+      {/* Base gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-green-900 via-green-800 to-green-900" />
+      
+      {/* Real Photo Background - Subtle overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.5]"
+        style={{
+          backgroundImage: `url("/bg.webp")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-green-900/70 via-green-800/60 to-green-900/80" />
+      
+      {/* Pattern overlay */}
+      <div className="absolute inset-0 opacity-[0.06]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
-      {/* Footer */}
-      <footer className="bg-green-950 py-6 border-t border-green-800">
-        <div className="text-center text-green-400 text-sm">
-          &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta
+      {/* Content - relative to appear above backgrounds */}
+      <div className="relative z-10">
+        {/* Navigation */}
+        <Navbar />
+
+        {/* Header */}
+        <header className="text-center py-12 px-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 rounded-full border border-amber-500/30 mb-4">
+            <Ticket className="w-4 h-4 text-amber-400" />
+            <span className="text-amber-400 text-sm font-medium">Antrian Online</span>
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Ambil Nomor Antrian</h1>
+          <p className="text-green-200">Pilih jenis layanan dan ambil nomor antrian Anda</p>
+        </header>
+
+        {/* Queue Cards - Horizontal on desktop, vertical on mobile */}
+        <div className="max-w-5xl mx-auto px-4 pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {QUEUE_TYPES.map((q) => (
+              <QueueCard 
+                key={q.id} 
+                type={q.id} 
+                label={q.label} 
+                color={q.color} 
+                myNumber={myNumbers[q.id]}
+                onTake={() => handleTakeQueue(q.id)}
+                loading={loadingAction}
+                onCheckReset={clearIfReset}
+              />
+            ))}
+          </div>
         </div>
-      </footer>
+        
+        {/* Info Card */}
+        <div className="max-w-5xl mx-auto px-4 pb-16">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <h3 className="text-white font-bold mb-3 flex items-center gap-2">
+              <Info className="w-5 h-5 text-amber-400" />
+              Informasi
+            </h3>
+            <ul className="text-green-200 text-sm space-y-2">
+              <li>• Nomor antrian tersimpan otomatis di browser Anda</li>
+              <li>• Cooldown 10 menit setelah mengambil antrian</li>
+              <li>• Pantau nomor yang sedang dilayani secara realtime</li>
+              <li>• Gunakan tombol <strong>Bagikan</strong> untuk menyimpan link antrian</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="bg-green-950/80 backdrop-blur-sm py-6 border-t border-green-800">
+          <div className="text-center text-green-400 text-sm">
+            &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
