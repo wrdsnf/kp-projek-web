@@ -7,7 +7,8 @@ import { QUEUE_TYPES, QueueType, getQueueCode } from "@/lib/types";
 import { canTakeQueue, getLocalCooldown, formatCooldown } from "@/lib/cooldown-service";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
-import { Ticket, Gem, FileText, Info, Clock, Loader2, Bell, CheckCircle, Share2, Link2 } from "lucide-react";
+import QueueTicket from "@/components/QueueTicket";
+import { Ticket, Gem, FileText, Info, Clock, Loader2, Bell, CheckCircle, Share2, Link2, Image } from "lucide-react";
 
 export default function QueuePage() {
   const [myNumbers, setMyNumbers] = useState<Record<QueueType, number | null>>({
@@ -158,6 +159,7 @@ function QueueCard({
 }) {
   const { data, loading: queueLoading } = useQueue(type);
   const [cooldownRemaining, setCooldownRemaining] = useState<number | null>(null);
+  const [showTicket, setShowTicket] = useState(false);
 
   // Check cooldown and update countdown
   useEffect(() => {
@@ -337,26 +339,26 @@ function QueueCard({
                   Silakan simpan atau bagikan nomor antrian berikut untuk memantau status layanan Anda.
                 </p>
                 
-                {/* Share Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                  <button
-                    onClick={copyLink}
-                    className="flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
-                  >
-                    <Link2 className="w-4 h-4" />
-                    Salin Link Antrian
-                  </button>
-                  <button
-                    onClick={shareQueue}
-                    className={cn("flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors",
-                      isGadai ? "bg-green-600 hover:bg-green-700 text-white" : "bg-blue-600 hover:bg-blue-700 text-white"
-                    )}
-                  >
-                    <Share2 className="w-4 h-4" />
-                    Bagikan Nomor Antrian
-                  </button>
-                </div>
+                {/* Download/Share Ticket Button */}
+                <button
+                  onClick={() => setShowTicket(true)}
+                  className={cn("w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-bold transition-colors",
+                    isGadai ? "bg-green-600 hover:bg-green-700 text-white" : "bg-blue-600 hover:bg-blue-700 text-white"
+                  )}
+                >
+                  <Image className="w-5 h-5" />
+                  Simpan / Bagikan Tiket Antrian
+                </button>
               </div>
+            )}
+
+            {/* Ticket Modal */}
+            {showTicket && myNumber && (
+              <QueueTicket
+                type={type}
+                number={myNumber}
+                onClose={() => setShowTicket(false)}
+              />
             )}
           </div>
         ) : cooldownRemaining ? (
