@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import ProductNav from "@/components/ProductNav";
 import { Landmark, ArrowLeft, Home, Car, Briefcase, GraduationCap, Phone, Ticket, ArrowRight, CheckCircle, Building } from "lucide-react";
 
 export const metadata = {
@@ -160,6 +161,9 @@ export default function PembiayaanPage() {
             </div>
           </div>
         </section>
+
+        {/* Product Navigation */}
+        <ProductNav />
 
         {/* CTA */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">

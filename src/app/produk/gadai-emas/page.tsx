@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import ProductNav from "@/components/ProductNav";
 import { Gem, ArrowLeft, CheckCircle, Clock, Shield, Banknote, Sparkles, Phone, Ticket, ArrowRight, Briefcase, GraduationCap, Heart, Home } from "lucide-react";
 
 export const metadata = {
@@ -182,6 +183,9 @@ export default function GadaiEmasPage() {
             </div>
           </div>
         </section>
+
+        {/* Product Navigation */}
+        <ProductNav />
 
         {/* CTA Section - Standalone */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">

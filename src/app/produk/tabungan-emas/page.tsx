@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import ProductNav from "@/components/ProductNav";
 import { Coins, ArrowLeft, TrendingUp, Shield, PiggyBank, Target, Smartphone, Phone, Ticket, ArrowRight, GraduationCap, Users, Briefcase, Heart } from "lucide-react";
 
 export const metadata = {
@@ -205,6 +206,9 @@ export default function TabunganEmasPage() {
             </div>
           </div>
         </section>
+
+        {/* Product Navigation */}
+        <ProductNav />
 
         {/* CTA */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">

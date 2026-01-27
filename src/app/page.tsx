@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
-import { Hero, Services, QueueShortcut, ServiceFlow, Reviews, GoldCTA } from "@/components/home";
+import { Hero, QueueShortcut, ServiceFlow, Reviews, GoldCTA } from "@/components/home";
+import { ProductsServicesSection } from "@/components/ProductNav";
 import { MapPin, Clock, Phone, Building2, Smartphone } from "lucide-react";
 import Link from "next/link";
 
@@ -12,8 +13,8 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Layanan Utama */}
-      <Services />
+      {/* Produk & Layanan Pegadaian - Unified Section */}
+      <ProductsServicesSection />
 
       {/* Shortcut Antrian Online */}
       <QueueShortcut />
