@@ -1,6 +1,6 @@
-# 🏛️ Pegadaian CP Sentul Yogyakarta - Sistem Antrian Online
+# 🏛️ Pegadaian CP Sentul Yogyakarta - Website & Sistem Antrian Online
 
-Aplikasi web sistem antrian online untuk Pegadaian Cabang Pembantu Sentul Yogyakarta. Dibangun dengan Next.js, Firebase, dan Tailwind CSS.
+Aplikasi web company profile dan sistem antrian online untuk Pegadaian Cabang Pembantu Sentul Yogyakarta. Dibangun dengan Next.js, Firebase, dan Tailwind CSS.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![Firebase](https://img.shields.io/badge/Firebase-Firestore-orange?logo=firebase)
@@ -9,7 +9,24 @@ Aplikasi web sistem antrian online untuk Pegadaian Cabang Pembantu Sentul Yogyak
 
 ## ✨ Fitur
 
-### Untuk Nasabah (Publik)
+### Homepage & Company Profile
+- 🏠 **Landing Page** - Hero section dengan branding Pegadaian
+- 📦 **Produk & Layanan** - Informasi lengkap produk Pegadaian
+- ⏱️ **Alur Layanan** - Panduan step-by-step untuk nasabah
+- ⭐ **Ulasan Nasabah** - Review dari pelanggan
+- 📱 **Info Aplikasi Tring** - Promosi aplikasi mobile Pegadaian
+- 📍 **Informasi Outlet** - Alamat, jam operasional, kontak
+
+### Halaman Produk
+- 💎 **Gadai Emas** (`/produk/gadai-emas`) - Layanan gadai emas & perhiasan
+- 💻 **Gadai Non-Emas** (`/produk/gadai-non-emas`) - Gadai elektronik & kendaraan
+- 🪙 **Tabungan Emas** (`/produk/tabungan-emas`) - Investasi emas mulai Rp10.000
+- 🏦 **Pembiayaan** (`/produk/pembiayaan`) - KREASI, KRASIDA, Amanah, Rahn
+- 💳 **Jasa Lainnya** (`/produk/jasa-lainnya`) - Pembayaran tagihan, transfer, dll
+
+### Sistem Antrian Online
+
+#### Untuk Nasabah (Publik)
 - 🎫 **Ambil Nomor Antrian** - Gadai (GD-XXX) & Non-Gadai (NG-XXX)
 - ⏱️ **Cooldown 10 Menit** - Mencegah spam, dengan countdown timer
 - 📱 **Realtime Update** - Pantau nomor yang sedang dilayani
@@ -17,14 +34,12 @@ Aplikasi web sistem antrian online untuk Pegadaian Cabang Pembantu Sentul Yogyak
 - 💾 **Auto-Save** - Nomor tersimpan di browser (localStorage)
 - 🔄 **Auto-Reset Detection** - Jika antrian di-reset, cooldown hilang & bisa ambil baru
 
-### Halaman Status Publik
+#### Halaman Status Publik
 - 📊 **`/antrian/status?kode=GD-001`** - Pantau status antrian tanpa login
 - Estimasi posisi dalam antrian
 - Update realtime
 
-### Untuk Pegawai (Dashboard)
-- 🔐 **Login Aman** - Firebase Authentication
-- 👨‍💼 **Role-Based Access** - Admin, Teller, Petugas Antrian
+### Dashboard Pegawai
 
 #### Teller (`/dashboard/teller`)
 - 📞 **Panggil Antrian** - Panggil nomor berikutnya
@@ -52,6 +67,12 @@ src/
 │   ├── queue/page.tsx              # Halaman Antrian Nasabah
 │   ├── antrian/status/page.tsx     # Status Antrian Publik
 │   ├── login/page.tsx              # Login Pegawai
+│   ├── produk/
+│   │   ├── gadai-emas/page.tsx     # Produk Gadai Emas
+│   │   ├── gadai-non-emas/page.tsx # Produk Gadai Non-Emas
+│   │   ├── tabungan-emas/page.tsx  # Produk Tabungan Emas
+│   │   ├── pembiayaan/page.tsx     # Produk Pembiayaan
+│   │   └── jasa-lainnya/page.tsx   # Produk Jasa Lainnya
 │   └── dashboard/
 │       ├── layout.tsx              # Dashboard Layout (Auth Guard)
 │       ├── page.tsx                # Redirect berdasarkan role
@@ -62,7 +83,15 @@ src/
 │       └── petugas/page.tsx        # Dashboard Petugas Antrian
 ├── components/
 │   ├── Navbar.tsx                  # Shared Navigation
+│   ├── ProductNav.tsx              # Product Navigation & Section
+│   ├── QueueTicket.tsx             # Queue Ticket Component
 │   └── home/                       # Homepage Components
+│       ├── Hero.tsx                # Hero Section
+│       ├── Services.tsx            # Services Section (deprecated)
+│       ├── QueueShortcut.tsx       # Queue Shortcut CTA
+│       ├── ServiceFlow.tsx         # Service Flow Steps
+│       ├── Reviews.tsx             # Customer Reviews
+│       └── GoldCTA.tsx             # Gold Savings CTA
 ├── hooks/
 │   ├── useAuth.ts                  # Authentication State
 │   └── useQueue.ts                 # Realtime Queue Listener
@@ -129,12 +158,24 @@ users/{uid}
 | **Tailwind CSS** | Styling (Mobile-first) |
 | **Firebase Auth** | Authentication |
 | **Firestore** | Database Realtime |
+| **Lucide React** | Icon Library |
+
+## 🎨 Brand Colors
+
+| Warna | Hex | Penggunaan |
+|-------|-----|------------|
+| **Green 600** | `#16a34a` | Primary accent, buttons, icons |
+| **Green 800** | `#166534` | Headers, dark sections |
+| **Green 950** | `#052e16` | Footer, navbar |
+| **Amber 500** | `#f59e0b` | Secondary accent, highlights |
+| **Gray 50** | `#f9fafb` | Section backgrounds |
 
 ## 🔐 Role & Access
 
 | Fitur | Nasabah | Teller | Petugas | Admin |
 |-------|---------|--------|---------|-------|
 | Lihat Homepage | ✅ | ✅ | ✅ | ✅ |
+| Lihat Produk | ✅ | ✅ | ✅ | ✅ |
 | Ambil Antrian | ✅ (cooldown) | ✅ | ✅ (no limit) | ✅ |
 | Panggil Antrian | ❌ | ✅ | ❌ | ✅ |
 | Buka/Tutup Antrian | ❌ | ❌ | ❌ | ✅ |
