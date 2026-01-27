@@ -27,16 +27,16 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-green-900 hover:text-white text-sm transition-colors">
+          <Link href="/" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
             Beranda
           </Link>
-          <a href="#layanan" className="text-green-900 hover:text-white text-sm transition-colors">
+          <a href="#layanan" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
             Layanan
           </a>
-          <Link href="/queue" className="text-green-900 hover:text-white text-sm transition-colors">
+          <Link href="/queue" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
             Antrian
           </Link>
-          <Link href="/about" className="text-green-900 hover:text-white text-sm transition-colors">
+          <Link href="/about" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
             Tentang
           </Link>
           {loading ? (

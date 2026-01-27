@@ -59,7 +59,7 @@ export { allProducts };
 // Unified Products & Services Section for Homepage
 export function ProductsServicesSection() {
   return (
-    <section id="produk" className="bg-white py-16 md:py-24">
+    <section id="layanan" className="bg-white py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
