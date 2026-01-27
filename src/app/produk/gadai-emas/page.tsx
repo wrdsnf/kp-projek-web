@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import { Gem, ArrowLeft, CheckCircle, FileText, ListOrdered, Phone, Ticket } from "lucide-react";
+import { Gem, ArrowLeft, CheckCircle, Clock, Shield, Banknote, Sparkles, Phone, Ticket, ArrowRight, Briefcase, GraduationCap, Heart, Home } from "lucide-react";
 
 export const metadata = {
   title: "Gadai Emas - Pegadaian CP Sentul",
@@ -12,149 +12,208 @@ export default function GadaiEmasPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        {/* Back Link */}
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-green-700 transition-colors mb-8">
-          <ArrowLeft className="w-4 h-4" />
-          Kembali ke Beranda
-        </Link>
+      <main>
+        {/* Hero / Intro Section - No card, soft background */}
+        <section className="relative overflow-hidden">
+          {/* Soft gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-green-50" />
+          
+          <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
+            {/* Back Link */}
+            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-green-700 transition-colors mb-8 text-sm">
+              <ArrowLeft className="w-4 h-4" />
+              Kembali ke Beranda
+            </Link>
 
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-100 rounded-2xl mb-6">
-            <Gem className="w-10 h-10 text-amber-600" />
-          </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Gadai Emas</h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            Solusi dana cepat dengan jaminan emas dan perhiasan Anda. 
-            Proses mudah, aman, dan transparan dengan bunga kompetitif.
-          </p>
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Penjelasan Produk */}
-          <div className="bg-gray-50 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <FileText className="w-5 h-5 text-green-600" />
+            <div className="flex items-start gap-6">
+              <div className="hidden md:flex w-20 h-20 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl items-center justify-center shadow-lg flex-shrink-0">
+                <Gem className="w-10 h-10 text-white" />
               </div>
-              <h2 className="text-xl font-bold text-gray-800">Tentang Gadai Emas</h2>
+              <div className="flex-1">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                  Gadai Emas
+                </h1>
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                  Butuh dana cepat? Gadai Emas adalah solusi paling praktis. Cukup bawa emas atau perhiasan kamu, 
+                  dalam 15 menit dana langsung cair. Barang kamu aman tersimpan di brankas Pegadaian.
+                </p>
+              </div>
             </div>
-            <p className="text-gray-600 leading-relaxed">
-              Gadai Emas adalah layanan pembiayaan dengan menyerahkan emas atau perhiasan sebagai jaminan. 
-              Anda akan menerima pinjaman sesuai nilai taksiran barang yang dijaminkan.
+          </div>
+        </section>
+
+        {/* Apa Itu Gadai Emas? - Normal section, left-aligned */}
+        <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            Apa Itu Gadai Emas?
+          </h2>
+          
+          <div className="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              Gadai Emas adalah layanan pembiayaan di mana kamu menyerahkan emas atau perhiasan sebagai jaminan. 
+              Kamu akan menerima pinjaman sesuai nilai taksiran barang yang dijaminkan — biasanya sekitar 90-95% dari harga pasar.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              Barang jaminan Anda aman tersimpan di brankas Pegadaian dan dapat ditebus kapan saja 
-              sebelum jatuh tempo dengan membayar pokok pinjaman dan biaya sewa modal.
+            <p>
+              Barang jaminan akan aman tersimpan di brankas Pegadaian selama masa pinjaman. 
+              Kamu bisa menebus kapan saja sebelum jatuh tempo dengan membayar pokok pinjaman ditambah biaya sewa modal (bunga).
             </p>
           </div>
 
-          {/* Manfaat */}
-          <div className="bg-green-50 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-              </div>
-              <h2 className="text-xl font-bold text-gray-800">Manfaat Utama</h2>
+          {/* Inline highlight */}
+          <div className="mt-8 flex items-center gap-4 py-4 border-l-4 border-amber-400 pl-6 bg-amber-50/50">
+            <Clock className="w-8 h-8 text-amber-500 flex-shrink-0" />
+            <div>
+              <p className="font-semibold text-gray-900">Jangka Waktu Fleksibel</p>
+              <p className="text-gray-600 text-sm">Mulai dari 15 hari hingga 120 hari. Bisa diperpanjang atau dicicil.</p>
             </div>
-            <ul className="space-y-3">
+          </div>
+        </section>
+
+        {/* Keuntungan - Split layout with icons */}
+        <section className="bg-gray-50 py-12 md:py-16">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+              Kenapa Pilih Gadai Emas di Pegadaian?
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
               {[
-                "Proses cepat, dana cair dalam 15 menit",
-                "Taksiran tinggi dan transparan",
-                "Bunga kompetitif mulai 0.75%/15 hari",
-                "Jangka waktu fleksibel hingga 120 hari",
-                "Barang aman tersimpan di brankas",
-                "Dapat ditebus kapan saja",
+                {
+                  icon: Sparkles,
+                  title: "Proses Super Cepat",
+                  desc: "Dana cair hanya dalam 15 menit. Tidak perlu survei, tidak perlu BI checking."
+                },
+                {
+                  icon: Banknote,
+                  title: "Taksiran Tinggi",
+                  desc: "Nilai pinjaman hingga 95% dari harga pasar emas. Transparan dan adil."
+                },
+                {
+                  icon: Shield,
+                  title: "Aman & Terjamin",
+                  desc: "Barang disimpan di brankas dengan standar keamanan tinggi. Diasuransikan."
+                },
+                {
+                  icon: Clock,
+                  title: "Bunga Kompetitif",
+                  desc: "Mulai dari 0.75% per 15 hari. Lebih murah dari pinjaman konvensional."
+                },
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-gray-700">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Syarat & Alur */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Syarat Umum */}
-          <div className="bg-amber-50 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
-                <FileText className="w-5 h-5 text-amber-600" />
-              </div>
-              <h2 className="text-xl font-bold text-gray-800">Syarat Umum</h2>
             </div>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold">•</span>
-                KTP asli yang masih berlaku
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold">•</span>
-                Emas atau perhiasan yang akan dijaminkan
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-amber-500 font-bold">•</span>
-                Mengisi formulir permohonan gadai
-              </li>
-            </ul>
+          </div>
+        </section>
+
+        {/* Cocok Untuk Siapa? - Highlight blocks with accent border */}
+        <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+            Cocok Untuk Siapa?
+          </h2>
+          
+          <p className="text-gray-600 mb-8">
+            Gadai Emas bisa jadi solusi keuangan untuk berbagai kebutuhan:
+          </p>
+
+          <div className="space-y-4">
+            {[
+              { icon: Briefcase, text: "Pengusaha yang butuh modal usaha cepat tanpa proses berbelit" },
+              { icon: GraduationCap, text: "Orang tua yang perlu dana untuk biaya pendidikan anak" },
+              { icon: Heart, text: "Siapa saja yang butuh dana darurat untuk keperluan mendesak" },
+              { icon: Home, text: "Pemilik rumah yang perlu renovasi atau perbaikan mendadak" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500 rounded-r-lg">
+                <item.icon className="w-6 h-6 text-green-600 flex-shrink-0" />
+                <p className="text-gray-700">{item.text}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Alur Layanan */}
-          <div className="bg-blue-50 rounded-2xl p-6 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                <ListOrdered className="w-5 h-5 text-blue-600" />
-              </div>
-              <h2 className="text-xl font-bold text-gray-800">Alur Singkat</h2>
-            </div>
-            <ol className="space-y-3 text-gray-700">
+          <p className="mt-8 text-gray-600 italic">
+            "Produk ini cocok buat kamu yang butuh dana cepat, tapi tetap pengen aman dan jelas prosesnya."
+          </p>
+        </section>
+
+        {/* Syarat & Cara - Clean horizontal steps */}
+        <section className="bg-gradient-to-br from-green-800 to-green-900 text-white py-12 md:py-16">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+              Cara Mengajukan Gadai Emas
+            </h2>
+
+            {/* Steps */}
+            <div className="grid md:grid-cols-5 gap-4 mb-12">
               {[
-                "Datang ke outlet dengan membawa KTP dan barang jaminan",
-                "Ambil nomor antrian Gadai",
-                "Barang ditaksir oleh petugas",
-                "Tandatangani Surat Bukti Kredit (SBK)",
-                "Terima uang pinjaman",
-              ].map((step, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="w-6 h-6 bg-blue-200 text-blue-700 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                    {i + 1}
-                  </span>
-                  {step}
-                </li>
+                { step: "1", title: "Siapkan", desc: "KTP asli & barang emas" },
+                { step: "2", title: "Datang", desc: "Ke outlet Pegadaian" },
+                { step: "3", title: "Antri", desc: "Ambil nomor antrian" },
+                { step: "4", title: "Taksir", desc: "Barang ditaksir petugas" },
+                { step: "5", title: "Terima", desc: "Dana langsung cair" },
+              ].map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3 text-green-900 font-bold text-lg">
+                    {item.step}
+                  </div>
+                  <h3 className="font-semibold mb-1">{item.title}</h3>
+                  <p className="text-green-200 text-sm">{item.desc}</p>
+                </div>
               ))}
-            </ol>
-          </div>
-        </div>
+            </div>
 
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-white mb-3">Siap Mengajukan Gadai Emas?</h3>
-          <p className="text-green-100 mb-6">Kunjungi outlet kami atau ambil nomor antrian online terlebih dahulu.</p>
+            {/* Requirements - inline */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <h3 className="font-semibold mb-4 flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-amber-400" />
+                Yang Perlu Dibawa:
+              </h3>
+              <div className="flex flex-wrap gap-4 text-sm">
+                <span className="bg-white/20 px-4 py-2 rounded-full">KTP Asli</span>
+                <span className="bg-white/20 px-4 py-2 rounded-full">Emas / Perhiasan</span>
+                <span className="bg-white/20 px-4 py-2 rounded-full">Usia min. 17 tahun</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section - Standalone */}
+        <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Siap Mengajukan Gadai Emas?
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
+            Kunjungi outlet Pegadaian CP Sentul atau ambil nomor antrian online supaya tidak perlu menunggu lama.
+          </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/queue"
-              className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-green-900 font-bold py-3 px-6 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
             >
               <Ticket className="w-5 h-5" />
-              Ambil Antrian
+              Ambil Antrian Online
+              <ArrowRight className="w-5 h-5" />
             </Link>
             <a 
               href="tel:0274375806"
-              className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl transition-colors border border-white/30"
+              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" />
-              Hubungi Kami
+              (0274) 375-806
             </a>
           </div>
-        </div>
+        </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-green-950 py-8 mt-12">
+      <footer className="bg-green-950 py-8">
         <div className="text-center text-green-400 text-sm">
           &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
         </div>
