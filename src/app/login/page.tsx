@@ -6,7 +6,8 @@ import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
-import { Building2, Lock, Loader2, LogIn, AlertTriangle, Ticket } from "lucide-react";
+import { Lock, Loader2, LogIn, AlertTriangle } from "lucide-react";
+import { GlobalNavbar } from "@/components/layout";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -58,19 +59,8 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-900 via-green-800 to-green-900">
-      {/* Navigation */}
-      <nav className="bg-green-950/50 backdrop-blur-sm border-b border-green-700/50">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <Building2 className="w-6 h-6 text-amber-400" />
-            <span className="font-bold text-white">Pegadaian <span className="text-amber-400">Sentul</span></span>
-          </Link>
-          <Link href="/queue" className="text-green-200 hover:text-white text-sm transition-colors flex items-center gap-2">
-            <Ticket className="w-4 h-4" />
-            Ambil Antrian
-          </Link>
-        </div>
-      </nav>
+      {/* Global Navigation */}
+      <GlobalNavbar variant="dark" />
 
       {/* Login Form */}
       <div className="flex items-center justify-center px-4 py-16">

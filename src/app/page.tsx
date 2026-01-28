@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import { GlobalNavbar } from "@/components/layout";
 import { Hero, QueueShortcut, ServiceFlow, Reviews, GoldCTA, TringAppSection, HomepageImages } from "@/components/home";
 import { ProductsServicesSection } from "@/components/ProductNav";
 import { MapPin, Clock, Phone, Building2 } from "lucide-react";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Navigation */}
-      <Navbar />
+      <GlobalNavbar />
 
       {/* Hero Section */}
       <Hero />

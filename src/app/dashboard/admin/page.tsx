@@ -5,43 +5,17 @@ import { updateQueueStatus, resetQueue } from "@/lib/queue-service";
 import { QueueType, QUEUE_TYPES } from "@/lib/types";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { RotateCcw, BarChart3, ImageIcon, Settings } from "lucide-react";
-import Link from "next/link";
+import { RotateCcw } from "lucide-react";
 
 export default function AdminDashboard() {
   return (
     <div className="space-y-8">
-      <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-          <p className="text-gray-500">Monitoring dan Kontrol Antrian</p>
-        </div>
-        <div className="flex items-center gap-3 flex-wrap">
-          <Link 
-            href="/dashboard/admin/settings"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
-          >
-            <Settings className="w-4 h-4" />
-            Pengaturan
-          </Link>
-          <Link 
-            href="/dashboard/admin/images"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-medium transition-colors"
-          >
-            <ImageIcon className="w-4 h-4" />
-            Update Gambar
-          </Link>
-          <Link 
-            href="/dashboard/admin/history"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors"
-          >
-            <BarChart3 className="w-4 h-4" />
-            Laporan Harian
-          </Link>
-        </div>
+      <header>
+        <h1 className="text-2xl font-bold text-gray-800">Overview Antrian</h1>
+        <p className="text-gray-500">Monitoring dan kontrol status antrian</p>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {QUEUE_TYPES.map((q) => (
           <AdminQueueControl key={q.id} type={q.id} label={q.label} color={q.color} />
         ))}
