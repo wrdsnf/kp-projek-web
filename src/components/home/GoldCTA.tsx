@@ -2,11 +2,27 @@ import { Coins, MessageCircle, Phone, Sparkles, BadgeCheck, Banknote } from "luc
 
 export default function GoldCTA() {
   // Replace with actual WhatsApp number
-  const whatsappNumber = "6281234567890";
+  const whatsappNumber = "62895413310250";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20`;
+  const whatsappNumber2 = "6287717657945";
+  const whatsappLink2 = `https://wa.me/${whatsappNumber2}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20`;
 
   return (
     <section id="investasi-emas" className="relative overflow-hidden bg-gradient-to-br from-amber-500 via-amber-500 to-yellow-500 py-16 md:py-24">
+      {/* Gold Photo Background - Subtle overlay (matches Hero approach) */}
+      <div 
+        className="absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage: `url("/emas.jpeg")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      
+      {/* Warm overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/40 via-amber-400/30 to-yellow-500/40" />
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -54,16 +70,16 @@ export default function GoldCTA() {
                 className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
               >
                 <MessageCircle className="w-5 h-5" />
-                Hubungi CS Nabung Emas
+                Hubungi Yunita
               </a>
               <a
-                href={`${whatsappLink}Beli%20Emas`}
+                href={`${whatsappLink2}Beli%20Emas`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-amber-900 hover:bg-amber-800 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
               >
-                <Phone className="w-5 h-5" />
-                Tanya Beli Emas
+                <MessageCircle className="w-5 h-5" />
+                Hubungi Tohir
               </a>
             </div>
           </div>
@@ -71,18 +87,21 @@ export default function GoldCTA() {
           {/* Right Content - Illustration */}
           <div className="hidden lg:flex justify-center">
             <div className="relative">
-              {/* Gold Bar Illustration */}
+              {/* Gold Image Illustration */}
               <div className="w-80 h-80 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-500 rounded-3xl transform rotate-6 shadow-2xl" />
-                <div className="absolute inset-4 bg-gradient-to-br from-yellow-200 via-amber-300 to-yellow-400 rounded-2xl flex items-center justify-center transform rotate-6">
-                  <div className="text-center transform -rotate-6">
-                    <Coins className="w-16 h-16 mx-auto mb-2 text-amber-800" />
-                    <div className="text-amber-800 font-black text-2xl">EMAS</div>
-                    <div className="text-amber-700 font-bold">24 Karat</div>
-                    <div className="mt-2 px-4 py-1 bg-amber-800/20 rounded-full text-amber-800 text-sm font-medium">
-                      Pegadaian
-                    </div>
-                  </div>
+                {/* Outer gold border frame */}
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-500 rounded-2xl transform rotate-6 shadow-2xl" />
+                {/* Inner gold highlight */}
+                <div className="absolute inset-[3px] bg-gradient-to-br from-yellow-200 via-amber-300 to-yellow-400 rounded-2xl transform rotate-6" />
+                {/* Image container */}
+                <div className="absolute inset-2 rounded-xl transform rotate-6 overflow-hidden shadow-inner">
+                  <img 
+                    src="/emas.jpeg" 
+                    alt="Emas Pegadaian"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Subtle inner glow overlay */}
+                  <div className="absolute inset-0 ring-2 ring-inset ring-amber-400/30 rounded-xl" />
                 </div>
               </div>
 
