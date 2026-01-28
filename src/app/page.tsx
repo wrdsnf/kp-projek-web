@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { Hero, QueueShortcut, ServiceFlow, Reviews, GoldCTA, TringAppSection } from "@/components/home";
+import { Hero, QueueShortcut, ServiceFlow, Reviews, GoldCTA, TringAppSection, HomepageImages } from "@/components/home";
 import { ProductsServicesSection } from "@/components/ProductNav";
 import { MapPin, Clock, Phone, Building2 } from "lucide-react";
 import Link from "next/link";
@@ -30,6 +30,9 @@ export default function Home() {
 
       {/* CTA Nabung Emas */}
       <GoldCTA />
+
+      {/* Info Harga Emas - Dynamic Images */}
+      <HomepageImages />
 
       {/* Aplikasi Tring Section */}
       <TringAppSection />

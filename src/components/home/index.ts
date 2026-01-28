@@ -5,3 +5,5 @@ export { default as ServiceFlow } from './ServiceFlow';
 export { default as Reviews } from './Reviews';
 export { default as GoldCTA } from './GoldCTA';
 export { default as TringAppSection } from './TringAppSection';
+export { default as HomepageImages } from './HomepageImages';
+
