@@ -5,7 +5,7 @@ import { updateQueueStatus, resetQueue } from "@/lib/queue-service";
 import { QueueType, QUEUE_TYPES } from "@/lib/types";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { RotateCcw, BarChart3, ImageIcon } from "lucide-react";
+import { RotateCcw, BarChart3, ImageIcon, Settings } from "lucide-react";
 import Link from "next/link";
 
 export default function AdminDashboard() {
@@ -16,7 +16,14 @@ export default function AdminDashboard() {
           <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
           <p className="text-gray-500">Monitoring dan Kontrol Antrian</p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
+          <Link 
+            href="/dashboard/admin/settings"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
+          >
+            <Settings className="w-4 h-4" />
+            Pengaturan
+          </Link>
           <Link 
             href="/dashboard/admin/images"
             className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg font-medium transition-colors"

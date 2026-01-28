@@ -1,6 +1,11 @@
+"use client";
+
 import { Smartphone } from "lucide-react";
+import { useTringSettings } from "@/hooks/useTringSettings";
 
 export default function TringAppSection() {
+  const { settings } = useTringSettings();
+
   return (
     <section id="aplikasi-mobile" className="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-green-900 py-16 md:py-24">
       {/* Background Image - thumbnail.webp */}
@@ -52,19 +57,21 @@ export default function TringAppSection() {
               </li>
             </ul>
             
-            {/* Referral Code */}
+            {/* Referral Code - Dynamic from Firestore */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <p className="text-green-200 text-sm mb-2">Kode Referral</p>
               <div className="flex items-center justify-center md:justify-start gap-3">
-                <span className="text-3xl font-black text-amber-400 tracking-wider">13554</span>
+                <span className="text-3xl font-black text-amber-400 tracking-wider">
+                  {settings.referralCode}
+                </span>
                 <span className="text-green-300 text-sm">(Gunakan saat daftar)</span>
               </div>
             </div>
             
-            {/* Download Buttons */}
+            {/* Download Buttons - Dynamic URLs */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start pt-2">
               <a 
-                href="https://devpds.onelink.me/v3LG/seo" 
+                href={settings.appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-black text-white font-semibold py-3 px-5 rounded-xl hover:bg-gray-900 transition-colors"
@@ -78,7 +85,7 @@ export default function TringAppSection() {
                 </div>
               </a>
               <a 
-                href="https://play.google.com/store/apps/details?id=com.pegadaiandigital&pcampaignid=web_share" 
+                href={settings.playStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-black text-white font-semibold py-3 px-5 rounded-xl hover:bg-gray-900 transition-colors"

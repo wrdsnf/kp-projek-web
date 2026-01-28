@@ -51,7 +51,7 @@ export default function Navbar() {
           ) : (
             <Link 
               href="/login" 
-              className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm rounded-lg transition-colors border border-white/20"
+              className="px-4 py-2 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded-lg transition-colors"
             >
               Login Pegawai
             </Link>
@@ -96,7 +96,7 @@ export default function Navbar() {
               ) : (
                 <Link 
                   href="/login" 
-                  className="block w-full text-center px-4 py-3 bg-white/10 hover:bg-white/20 text-white text-sm rounded-lg transition-colors border border-white/20"
+                  className="block w-full text-center px-4 py-3 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded-lg transition-colors"
                 >
                   Login Pegawai
                 </Link>
