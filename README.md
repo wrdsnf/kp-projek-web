@@ -16,6 +16,8 @@ Aplikasi web company profile dan sistem antrian online untuk Pegadaian Cabang Pe
 - ⭐ **Ulasan Nasabah** - Review dari pelanggan
 - 📱 **Info Aplikasi Tring** - Promosi aplikasi mobile Pegadaian
 - 📍 **Informasi Outlet** - Alamat, jam operasional, kontak
+- 🖼️ **Manajemen Konten** - Ubah gambar banner/promo langsung dari dashboard
+- ⚙️ **Pengaturan Tring** - Atur kode referral & link download aplikasi Tring
 
 ### Halaman Produk
 - 💎 **Gadai Emas** (`/produk/gadai-emas`) - Layanan gadai emas & perhiasan
@@ -33,6 +35,8 @@ Aplikasi web company profile dan sistem antrian online untuk Pegadaian Cabang Pe
 - 🔗 **Share Link Antrian** - Bagikan/simpan link untuk pantau status
 - 💾 **Auto-Save** - Nomor tersimpan di browser (localStorage)
 - 🔄 **Auto-Reset Detection** - Jika antrian di-reset, cooldown hilang & bisa ambil baru
+- 🖼️ **Download Tiket** - Simpan tiket antrian sebagai gambar (JPG)
+- 📱 **QR Code** - Scan QR untuk memantau antrian di HP lain
 
 #### Halaman Status Publik
 - 📊 **`/antrian/status?kode=GD-001`** - Pantau status antrian tanpa login
@@ -51,6 +55,8 @@ Aplikasi web company profile dan sistem antrian online untuk Pegadaian Cabang Pe
 - 🔄 **Reset Manual** - Reset antrian ke 0 (juga hapus cooldown)
 - 📊 **Laporan Harian** - Statistik per hari dengan filter tanggal
 - 📥 **Export CSV** - Download laporan
+- 🖼️ **Kelola Homepage** - Upload gambar promo/banner baru
+- 📱 **Kelola Link Tring** - Update link download & kode referral
 
 #### Petugas Antrian (`/dashboard/petugas`)
 - 🎫 **Ambil Antrian Manual** - Untuk nasabah lansia/tanpa HP
@@ -67,41 +73,36 @@ src/
 │   ├── queue/page.tsx              # Halaman Antrian Nasabah
 │   ├── antrian/status/page.tsx     # Status Antrian Publik
 │   ├── login/page.tsx              # Login Pegawai
-│   ├── produk/
-│   │   ├── gadai-emas/page.tsx     # Produk Gadai Emas
-│   │   ├── gadai-non-emas/page.tsx # Produk Gadai Non-Emas
-│   │   ├── tabungan-emas/page.tsx  # Produk Tabungan Emas
-│   │   ├── pembiayaan/page.tsx     # Produk Pembiayaan
-│   │   └── jasa-lainnya/page.tsx   # Produk Jasa Lainnya
+│   ├── api/                        # API Routes
+│   │   └── upload-image/           # Cloudinary Upload API
+│   ├── produk/                     # Halaman Produk
+│   │   └── ...
 │   └── dashboard/
 │       ├── layout.tsx              # Dashboard Layout (Auth Guard)
 │       ├── page.tsx                # Redirect berdasarkan role
 │       ├── admin/
 │       │   ├── page.tsx            # Dashboard Admin
-│       │   └── history/page.tsx    # Laporan Harian
+│       │   ├── history/page.tsx    # Laporan Harian
+│       │   ├── content/page.tsx    # Manajemen Konten Homepage
+│       │   └── settings/page.tsx   # Pengaturan Aplikasi Tring
 │       ├── teller/page.tsx         # Dashboard Teller
 │       └── petugas/page.tsx        # Dashboard Petugas Antrian
 ├── components/
 │   ├── Navbar.tsx                  # Shared Navigation
 │   ├── ProductNav.tsx              # Product Navigation & Section
 │   ├── QueueTicket.tsx             # Queue Ticket Component
+│   ├── ImageViewerModal.tsx        # Modal View Gambar
 │   └── home/                       # Homepage Components
-│       ├── Hero.tsx                # Hero Section
-│       ├── Services.tsx            # Services Section (deprecated)
-│       ├── QueueShortcut.tsx       # Queue Shortcut CTA
-│       ├── ServiceFlow.tsx         # Service Flow Steps
-│       ├── Reviews.tsx             # Customer Reviews
-│       └── GoldCTA.tsx             # Gold Savings CTA
 ├── hooks/
 │   ├── useAuth.ts                  # Authentication State
 │   └── useQueue.ts                 # Realtime Queue Listener
 └── lib/
     ├── firebase.ts                 # Firebase Config
-    ├── queue-service.ts            # Queue Logic (Transactions)
-    ├── cooldown-service.ts         # Cooldown Logic
-    ├── stats-service.ts            # Daily Statistics
-    ├── types.ts                    # TypeScript Interfaces
-    └── utils.ts                    # Utility Functions
+    ├── queue-service.ts            # Queue Logic
+    ├── homepage-service.ts         # Homepage Content Logic
+    ├── tring-service.ts            # Tring Settings Logic
+    ├── image-compression.ts        # Image Optimization
+    └── ...                         # Other utils
 ```
 
 ## 🗄️ Database Schema (Firestore)
@@ -147,6 +148,16 @@ users/{uid}
 ├── name: string
 ├── role: "admin" | "teller" | "petugas_antrian"
 └── handleQueue: ["gadai", "non_gadai"]
+
+settings/homepage_images
+├── harga_emas_hari_ini: { url, updatedAt, ... }
+├── harga_emas_tring: { url, updatedAt, ... }
+└── ...
+
+settings/tring_app
+├── referralCode: string
+├── appStoreUrl: string
+└── playStoreUrl: string
 ```
 
 ## 🎨 Tech Stack
@@ -158,7 +169,10 @@ users/{uid}
 | **Tailwind CSS** | Styling (Mobile-first) |
 | **Firebase Auth** | Authentication |
 | **Firestore** | Database Realtime |
+| **Cloudinary** | Media/Image Management |
 | **Lucide React** | Icon Library |
+| **html-to-image** | Export Ticket to Image |
+| **qrcode.react** | Generate QR Code |
 
 ## 🎨 Brand Colors
 
