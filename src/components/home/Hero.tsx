@@ -5,7 +5,7 @@ export default function Hero() {
     const phone = "0274375806";
     const address = "Jl. Surokarsan No.56, Wirogunan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55151";
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-green-800">
+    <section className="relative overflow-hidden bg-gradient-to-br from-emerald-800 via-emerald-700 to-emerald-800">
       {/* Real Photo Background - Subtle overlay */}
       <div 
         className="absolute inset-0 opacity-[0.5]"
@@ -18,7 +18,7 @@ export default function Hero() {
       />
       
       {/* Dark overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/60 via-green-800/50 to-green-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-emerald-800/50 to-emerald-900/60" />
       
       {/* Original Pattern Background */}
       <div className="absolute inset-0 opacity-[0.08]">
@@ -45,7 +45,7 @@ export default function Hero() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-green-100 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
+            <p className="text-emerald-100 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
               Solusi keuangan terpercaya untuk kebutuhan Anda. Layanan <strong className="text-white">gadai emas</strong>, 
               <strong className="text-white"> pelunasan</strong>, <strong className="text-white">cicilan</strong>, 
               <strong className="text-white"> tabungan emas</strong>, dan berbagai layanan finansial lainnya.
@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <a 
                 href="#layanan" 
-                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-green-900 font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-amber-500/30"
+                className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-emerald-900 font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-amber-500/30"
               >
                 Lihat Layanan
               </a>
@@ -77,14 +77,14 @@ export default function Hero() {
                 Informasi Cabang
               </h3>
               
-              <div className="space-y-5 text-green-100">
+              <div className="space-y-5 text-emerald-100">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-amber-400" />
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm uppercase tracking-wide mb-1">Alamat</p>
-                    <p className="text-green-200">{address}</p>
+                    <p className="text-emerald-200">{address}</p>
                   </div>
                 </div>
 
@@ -94,7 +94,7 @@ export default function Hero() {
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm uppercase tracking-wide mb-1">Jam Operasional</p>
-                    <div className="space-y-1 text-green-200 text-sm">
+                    <div className="space-y-1 text-emerald-200 text-sm">
                       <div className="flex justify-between gap-8">
                         <span>Senin - Jumat</span>
                         <span className="text-amber-400 font-medium">08:00 - 15:00</span>

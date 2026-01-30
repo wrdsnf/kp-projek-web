@@ -17,16 +17,16 @@ export default function GadaiNonEmasPage() {
       <main>
         {/* Hero / Intro Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-gray-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-gray-50" />
           
           <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-green-700 transition-colors mb-8 text-sm">
+            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-emerald-700 transition-colors mb-8 text-sm">
               <ArrowLeft className="w-4 h-4" />
               Kembali ke Beranda
             </Link>
 
             <div className="flex items-start gap-6">
-              <div className="hidden md:flex w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-2xl items-center justify-center shadow-lg flex-shrink-0">
+              <div className="hidden md:flex w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl items-center justify-center shadow-lg flex-shrink-0">
                 <Laptop className="w-10 h-10 text-white" />
               </div>
               <div className="flex-1">
@@ -68,7 +68,7 @@ export default function GadaiNonEmasPage() {
               { icon: Watch, label: "Jam Tangan" },
             ].map((item, i) => (
               <div key={i} className="text-center py-6 px-4 bg-gray-50 rounded-xl border border-gray-100">
-                <item.icon className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <item.icon className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
                 <p className="text-gray-700 font-medium text-sm">{item.label}</p>
               </div>
             ))}
@@ -104,8 +104,8 @@ export default function GadaiNonEmasPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-5 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
@@ -129,8 +129,8 @@ export default function GadaiNonEmasPage() {
               { icon: Bike, text: "Butuh modal usaha? BPKB motor bisa jadi jaminan tanpa harus menjual kendaraan." },
               { icon: Camera, text: "Fotografer atau content creator yang butuh dana untuk upgrade alat." },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500 rounded-r-lg">
-                <item.icon className="w-6 h-6 text-green-600 flex-shrink-0" />
+              <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-emerald-50 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
+                <item.icon className="w-6 h-6 text-emerald-600 flex-shrink-0" />
                 <p className="text-gray-700">{item.text}</p>
               </div>
             ))}
@@ -138,7 +138,7 @@ export default function GadaiNonEmasPage() {
         </section>
 
         {/* Alur Singkat */}
-        <section className="bg-gradient-to-br from-green-800 to-green-900 text-white py-12 md:py-16">
+        <section className="bg-gradient-to-br from-emerald-800 to-emerald-900 text-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Cara Mengajukan
@@ -152,17 +152,17 @@ export default function GadaiNonEmasPage() {
                 { num: "4", title: "Dana Cair", desc: "Langsung!" },
               ].map((item, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-12 h-12 bg-amber-500 text-green-900 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">
+                  <div className="w-12 h-12 bg-amber-500 text-emerald-900 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">
                     {item.num}
                   </div>
                   <h3 className="font-semibold mb-1">{item.title}</h3>
-                  <p className="text-green-200 text-sm">{item.desc}</p>
+                  <p className="text-emerald-200 text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center">
-              <p className="text-green-100">
+              <p className="text-emerald-100">
                 <strong className="text-white">Syarat:</strong> KTP asli + barang jaminan dalam kondisi berfungsi baik
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function GadaiNonEmasPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/queue"
-              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
             >
               <Ticket className="w-5 h-5" />
               Ambil Antrian Online

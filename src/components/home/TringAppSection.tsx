@@ -7,7 +7,7 @@ export default function TringAppSection() {
   const { settings } = useTringSettings();
 
   return (
-    <section id="aplikasi-mobile" className="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-green-900 py-16 md:py-24">
+    <section id="aplikasi-mobile" className="relative overflow-hidden bg-gradient-to-br from-emerald-800 via-emerald-700 to-emerald-900 py-16 md:py-24">
       {/* Background Image - thumbnail.webp */}
       <div 
         className="absolute inset-0 opacity-[0.25]"
@@ -20,7 +20,7 @@ export default function TringAppSection() {
       />
       
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/70 via-green-800/60 to-green-900/70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/70 via-emerald-800/60 to-emerald-900/70" />
       
       {/* Pattern overlay for consistency */}
       <div className="absolute inset-0 opacity-[0.06]">
@@ -32,39 +32,39 @@ export default function TringAppSection() {
       <div className="relative max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500 text-green-900 text-sm font-bold rounded-full">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500 text-emerald-900 text-sm font-bold rounded-full">
               <Smartphone className="w-4 h-4" />
               APLIKASI MOBILE
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               Pegadaian Digital - <span className="text-amber-400">Tring!</span>
             </h2>
-            <p className="text-green-100 text-lg">
+            <p className="text-emerald-100 text-lg">
               Gunakan aplikasi Pegadaian Digital (Tring) untuk transaksi lebih mudah, aman, dan cepat.
             </p>
-            <ul className="space-y-3 text-green-100">
+            <ul className="space-y-3 text-emerald-100">
               <li className="flex items-center gap-3 justify-center md:justify-start">
-                <span className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-green-900 text-sm font-bold">✓</span>
+                <span className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-emerald-900 text-sm font-bold">✓</span>
                 Gadai online tanpa antri
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
-                <span className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-green-900 text-sm font-bold">✓</span>
+                <span className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-emerald-900 text-sm font-bold">✓</span>
                 Tabungan emas mulai Rp10.000
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
-                <span className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-green-900 text-sm font-bold">✓</span>
+                <span className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-emerald-900 text-sm font-bold">✓</span>
                 Pembayaran tagihan & top up
               </li>
             </ul>
             
             {/* Referral Code - Dynamic from Firestore */}
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <p className="text-green-200 text-sm mb-2">Kode Referral</p>
+              <p className="text-emerald-200 text-sm mb-2">Kode Referral</p>
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <span className="text-3xl font-black text-amber-400 tracking-wider">
                   {settings.referralCode}
                 </span>
-                <span className="text-green-300 text-sm">(Gunakan saat daftar)</span>
+                <span className="text-emerald-300 text-sm">(Gunakan saat daftar)</span>
               </div>
             </div>
             
@@ -105,7 +105,7 @@ export default function TringAppSection() {
           <div className="hidden md:flex justify-center">
             <div className="relative">
               {/* Phone frame with mockup image */}
-              <div className="w-64 h-[500px] relative rounded-[3rem] overflow-hidden border-4 border-green-500/50 shadow-2xl">
+              <div className="w-64 h-[500px] relative rounded-[3rem] overflow-hidden border-4 border-emerald-500/50 shadow-2xl">
                 <img 
                   src="/mockup.jpeg" 
                   alt="Aplikasi Pegadaian Digital Tring"
@@ -117,7 +117,7 @@ export default function TringAppSection() {
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-amber-400/20 rounded-full blur-xl" />
-              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-green-400/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-emerald-400/20 rounded-full blur-xl" />
             </div>
           </div>
         </div>

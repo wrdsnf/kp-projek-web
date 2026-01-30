@@ -63,7 +63,7 @@ export default function AdminSettingsPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="w-8 h-8 animate-spin text-green-600" />
+        <Loader2 className="w-8 h-8 animate-spin text-emerald-600" />
       </div>
     );
   }
@@ -88,10 +88,10 @@ export default function AdminSettingsPage() {
       <div className="max-w-2xl">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           {/* Header */}
-          <div className="px-6 py-4 border-b border-gray-100 bg-green-50">
+          <div className="px-6 py-4 border-b border-gray-100 bg-emerald-50">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-green-100 rounded-lg">
-                <Smartphone className="w-5 h-5 text-green-600" />
+              <div className="p-2 bg-emerald-100 rounded-lg">
+                <Smartphone className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
                 <h2 className="font-semibold text-gray-900">Kode Referral Tring</h2>
@@ -112,7 +112,7 @@ export default function AdminSettingsPage() {
                 value={referralCode}
                 onChange={(e) => setReferralCode(e.target.value.toUpperCase())}
                 placeholder="Contoh: 13554"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-lg font-mono tracking-wider"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-lg font-mono tracking-wider"
                 maxLength={20}
               />
               <p className="text-xs text-gray-400 mt-1">
@@ -130,7 +130,7 @@ export default function AdminSettingsPage() {
                 value={appStoreUrl}
                 onChange={(e) => setAppStoreUrl(e.target.value)}
                 placeholder="https://apps.apple.com/..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
               />
             </div>
 
@@ -144,7 +144,7 @@ export default function AdminSettingsPage() {
                 value={playStoreUrl}
                 onChange={(e) => setPlayStoreUrl(e.target.value)}
                 placeholder="https://play.google.com/..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm"
               />
             </div>
 
@@ -157,7 +157,7 @@ export default function AdminSettingsPage() {
 
             {/* Success message */}
             {success && (
-              <div className="p-3 bg-green-50 border border-green-200 rounded-lg text-green-600 text-sm flex items-center gap-2">
+              <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-600 text-sm flex items-center gap-2">
                 <Check className="w-4 h-4" />
                 Berhasil diperbarui! Perubahan akan langsung tampil di homepage.
               </div>
@@ -169,7 +169,7 @@ export default function AdminSettingsPage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
+              className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
             >
               {saving ? (
                 <>
@@ -187,15 +187,15 @@ export default function AdminSettingsPage() {
         </div>
 
         {/* Preview */}
-        <div className="mt-6 p-4 bg-green-800 rounded-xl">
-          <p className="text-green-200 text-sm mb-2">Preview di Homepage:</p>
+        <div className="mt-6 p-4 bg-emerald-800 rounded-xl">
+          <p className="text-emerald-200 text-sm mb-2">Preview di Homepage:</p>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-            <p className="text-green-200 text-sm mb-2">Kode Referral</p>
+            <p className="text-emerald-200 text-sm mb-2">Kode Referral</p>
             <div className="flex items-center gap-3">
               <span className="text-3xl font-black text-amber-400 tracking-wider">
                 {referralCode || "---"}
               </span>
-              <span className="text-green-300 text-sm">(Gunakan saat daftar)</span>
+              <span className="text-emerald-300 text-sm">(Gunakan saat daftar)</span>
             </div>
           </div>
         </div>

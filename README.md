@@ -178,9 +178,9 @@ settings/tring_app
 
 | Warna | Hex | Penggunaan |
 |-------|-----|------------|
-| **Green 600** | `#16a34a` | Primary accent, buttons, icons |
-| **Green 800** | `#166534` | Headers, dark sections |
-| **Green 950** | `#052e16` | Footer, navbar |
+| **emerald 600** | `#16a34a` | Primary accent, buttons, icons |
+| **emerald 800** | `#166534` | Headers, dark sections |
+| **emerald 950** | `#052e16` | Footer, navbar |
 | **Amber 500** | `#f59e0b` | Secondary accent, highlights |
 | **Gray 50** | `#f9fafb` | Section backgrounds |
 

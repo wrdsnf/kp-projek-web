@@ -3,7 +3,7 @@ import { Ticket, Gem, FileText, Clock } from "lucide-react";
 
 export default function QueueShortcut() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-green-800 via-green-700 to-green-900 py-16 md:py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-emerald-800 via-emerald-700 to-emerald-900 py-16 md:py-20">
       {/* Real Photo Background - Subtle overlay (matches Hero) */}
       <div 
         className="absolute inset-0 opacity-[0.12]"
@@ -16,7 +16,7 @@ export default function QueueShortcut() {
       />
       
       {/* Dark overlay to ensure text readability (matches Hero) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900/60 via-green-800/50 to-green-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-emerald-800/50 to-emerald-900/60" />
       
       {/* Pattern Background (matches Hero) */}
       <div className="absolute inset-0 opacity-[0.08]">
@@ -36,7 +36,7 @@ export default function QueueShortcut() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ambil Antrian Online
           </h2>
-          <p className="text-green-200 max-w-xl mx-auto">
+          <p className="text-emerald-200 max-w-xl mx-auto">
             Tidak perlu datang pagi-pagi. Ambil nomor antrian secara online dan 
             pantau giliran Anda langsung dari smartphone.
           </p>
@@ -61,14 +61,14 @@ export default function QueueShortcut() {
 
           <Link 
             href="/queue"
-            className="group relative bg-gradient-to-br from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 rounded-2xl p-6 transition-all transform hover:scale-105 shadow-lg shadow-green-500/30 border border-green-500/30"
+            className="group relative bg-gradient-to-br from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 rounded-2xl p-6 transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30 border border-emerald-500/30"
           >
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <FileText className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Antrian Non-Gadai</h3>
-              <p className="text-green-100 text-sm">
+              <p className="text-emerald-100 text-sm">
                 Pelunasan, cicilan, dan pembayaran
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function QueueShortcut() {
         </div>
 
         {/* Info */}
-        <div className="mt-10 flex items-center justify-center gap-2 text-green-300 text-sm">
+        <div className="mt-10 flex items-center justify-center gap-2 text-emerald-300 text-sm">
           <Clock className="w-4 h-4" />
           <span>Nomor antrian tersimpan otomatis di browser Anda</span>
         </div>

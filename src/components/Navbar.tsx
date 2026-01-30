@@ -11,7 +11,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white/50 backdrop-blur-md border-b border-green-700/50 sticky top-0 z-50">
+    <nav className="bg-white/50 backdrop-blur-md border-b border-emerald-700/50 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           {/* Logo Container with light background for visibility */}
@@ -27,31 +27,31 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
+          <Link href="/" className="text-emerald-900 hover:text-amber-400 text-sm transition-colors">
             Beranda
           </Link>
-          <a href="#layanan" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
+          <a href="#layanan" className="text-emerald-900 hover:text-amber-400 text-sm transition-colors">
             Layanan
           </a>
-          <Link href="/queue" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
+          <Link href="/queue" className="text-emerald-900 hover:text-amber-400 text-sm transition-colors">
             Antrian
           </Link>
-          <Link href="/about" className="text-green-900 hover:text-amber-400 text-sm transition-colors">
+          <Link href="/about" className="text-emerald-900 hover:text-amber-400 text-sm transition-colors">
             Tentang
           </Link>
           {loading ? (
-            <span className="text-green-400 text-sm">...</span>
+            <span className="text-emerald-400 text-sm">...</span>
           ) : user ? (
             <Link 
               href="/dashboard" 
-              className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-green-900 font-bold text-sm rounded-lg transition-colors"
+              className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-emerald-900 font-bold text-sm rounded-lg transition-colors"
             >
               Dashboard
             </Link>
           ) : (
             <Link 
               href="/login" 
-              className="px-4 py-2 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded-lg transition-colors"
+              className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-lg transition-colors"
             >
               Login Pegawai
             </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-green-900 p-2"
+          className="md:hidden text-emerald-900 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -71,32 +71,32 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden">
           <div className="px-4 py-4 space-y-3">
-            <Link href="/" className="block text-green-900 hover:text-white text-sm transition-colors py-2">
+            <Link href="/" className="block text-emerald-900 hover:text-white text-sm transition-colors py-2">
               Beranda
             </Link>
-            <a href="#layanan" className="block text-green-900 hover:text-white text-sm transition-colors py-2">
+            <a href="#layanan" className="block text-emerald-900 hover:text-white text-sm transition-colors py-2">
               Layanan
             </a>
-            <Link href="/queue" className="block text-green-900 hover:text-white text-sm transition-colors py-2">
+            <Link href="/queue" className="block text-emerald-900 hover:text-white text-sm transition-colors py-2">
               Antrian Online
             </Link>
-            <Link href="/about" className="block text-green-900 hover:text-white text-sm transition-colors py-2">
+            <Link href="/about" className="block text-emerald-900 hover:text-white text-sm transition-colors py-2">
               Tentang Kami
             </Link>
-            <div className="pt-2 border-t border-green-700/50">
+            <div className="pt-2 border-t border-emerald-700/50">
               {loading ? (
-                <span className="text-green-400 text-sm">...</span>
+                <span className="text-emerald-400 text-sm">...</span>
               ) : user ? (
                 <Link 
                   href="/dashboard" 
-                  className="block w-full text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-green-900 font-bold text-sm rounded-lg transition-colors"
+                  className="block w-full text-center px-4 py-3 bg-amber-500 hover:bg-amber-400 text-emerald-900 font-bold text-sm rounded-lg transition-colors"
                 >
                   Dashboard
                 </Link>
               ) : (
                 <Link 
                   href="/login" 
-                  className="block w-full text-center px-4 py-3 bg-green-500 hover:bg-green-400 text-white font-bold text-sm rounded-lg transition-colors"
+                  className="block w-full text-center px-4 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-sm rounded-lg transition-colors"
                 >
                   Login Pegawai
                 </Link>

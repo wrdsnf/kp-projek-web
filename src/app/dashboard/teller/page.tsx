@@ -49,11 +49,11 @@ function TellerQueueCard({ type, tellerUid }: { type: QueueType; tellerUid: stri
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
       <div className={cn("px-4 py-3 border-b flex justify-between items-center", 
-         config.color === 'green' ? 'bg-green-50' : 'bg-blue-50'
+         config.color === 'emerald' ? 'bg-emerald-50' : 'bg-blue-50'
       )}>
          <h3 className="font-bold text-gray-800">{config.label}</h3>
          <span className={cn("text-xs px-2 py-1 rounded-full font-medium", 
-             !isClosed ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+             !isClosed ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"
          )}>
              {!isClosed ? "Open" : "Closed"}
          </span>
@@ -80,7 +80,7 @@ function TellerQueueCard({ type, tellerUid }: { type: QueueType; tellerUid: stri
              <button
                 onClick={handleCall}
                 disabled={loading || (data?.currentNumber || 0) >= (data?.lastNumber || 0)}
-                className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg disabled:opacity-50 transition-colors"
+                className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg disabled:opacity-50 transition-colors"
              >
                 {loading ? "Memproses..." : "PANGGIL NEXT"}
              </button>

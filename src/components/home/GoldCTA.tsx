@@ -67,7 +67,7 @@ export default function GoldCTA() {
                 href={`${whatsappLink}Tabungan%20Emas`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
               >
                 <MessageCircle className="w-5 h-5" />
                 Hubungi Yunita

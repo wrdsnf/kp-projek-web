@@ -17,16 +17,16 @@ export default function PembiayaanPage() {
       <main>
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-emerald-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-emerald-50" />
           
           <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-green-700 transition-colors mb-8 text-sm">
+            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-emerald-700 transition-colors mb-8 text-sm">
               <ArrowLeft className="w-4 h-4" />
               Kembali ke Beranda
             </Link>
 
             <div className="flex items-start gap-6">
-              <div className="hidden md:flex w-20 h-20 bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl items-center justify-center shadow-lg flex-shrink-0">
+              <div className="hidden md:flex w-20 h-20 bg-gradient-to-br from-emerald-600 to-emerald-600 rounded-2xl items-center justify-center shadow-lg flex-shrink-0">
                 <Landmark className="w-10 h-10 text-white" />
               </div>
               <div className="flex-1">
@@ -56,9 +56,9 @@ export default function PembiayaanPage() {
           {/* Product List */}
           <div className="space-y-8">
             {/* KREASI */}
-            <div className="border-l-4 border-green-500 pl-6 py-2">
+            <div className="border-l-4 border-emerald-500 pl-6 py-2">
               <div className="flex items-center gap-3 mb-3">
-                <Briefcase className="w-6 h-6 text-green-600" />
+                <Briefcase className="w-6 h-6 text-emerald-600" />
                 <h3 className="text-xl font-bold text-gray-900">KREASI</h3>
               </div>
               <p className="text-gray-600 mb-3">
@@ -66,16 +66,16 @@ export default function PembiayaanPage() {
                 Cicilan ringan hingga 36 bulan, kendaraan tetap bisa dipakai.
               </p>
               <ul className="flex flex-wrap gap-2 text-sm">
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Jaminan BPKB</li>
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Tenor s.d 36 bulan</li>
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Kendaraan tetap dipakai</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Jaminan BPKB</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Tenor s.d 36 bulan</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Kendaraan tetap dipakai</li>
               </ul>
             </div>
 
             {/* KRASIDA */}
-            <div className="border-l-4 border-green-500 pl-6 py-2">
+            <div className="border-l-4 border-emerald-500 pl-6 py-2">
               <div className="flex items-center gap-3 mb-3">
-                <Home className="w-6 h-6 text-green-600" />
+                <Home className="w-6 h-6 text-emerald-600" />
                 <h3 className="text-xl font-bold text-gray-900">KRASIDA</h3>
               </div>
               <p className="text-gray-600 mb-3">
@@ -83,16 +83,16 @@ export default function PembiayaanPage() {
                 Cocok untuk kebutuhan dana besar dengan cicilan ringan.
               </p>
               <ul className="flex flex-wrap gap-2 text-sm">
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Jaminan Emas</li>
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Angsuran bulanan</li>
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Plafon hingga 500 juta</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Jaminan Emas</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Angsuran bulanan</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Plafon hingga 500 juta</li>
               </ul>
             </div>
 
             {/* Amanah */}
-            <div className="border-l-4 border-green-500 pl-6 py-2">
+            <div className="border-l-4 border-emerald-500 pl-6 py-2">
               <div className="flex items-center gap-3 mb-3">
-                <Car className="w-6 h-6 text-green-600" />
+                <Car className="w-6 h-6 text-emerald-600" />
                 <h3 className="text-xl font-bold text-gray-900">AMANAH</h3>
               </div>
               <p className="text-gray-600 mb-3">
@@ -100,9 +100,9 @@ export default function PembiayaanPage() {
                 skema cicilan yang sesuai prinsip syariah.
               </p>
               <ul className="flex flex-wrap gap-2 text-sm">
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Prinsip Syariah</li>
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Motor atau Mobil</li>
-                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">DP ringan</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Prinsip Syariah</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">Motor atau Mobil</li>
+                <li className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">DP ringan</li>
               </ul>
             </div>
 
@@ -141,7 +141,7 @@ export default function PembiayaanPage() {
                   "Slip gaji atau bukti penghasilan",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
@@ -154,7 +154,7 @@ export default function PembiayaanPage() {
                   "Syarat tambahan sesuai jenis produk",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
@@ -178,7 +178,7 @@ export default function PembiayaanPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/queue"
-              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
             >
               <Ticket className="w-5 h-5" />
               Ambil Antrian

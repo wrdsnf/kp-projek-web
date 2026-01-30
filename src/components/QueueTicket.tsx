@@ -205,7 +205,7 @@ ${statusUrl}`;
             {/* Loading overlay */}
             {isGenerating && (
               <div className="absolute inset-0 bg-white/80 flex items-center justify-center z-10">
-                <Loader2 className="w-8 h-8 animate-spin text-green-600" />
+                <Loader2 className="w-8 h-8 animate-spin text-emerald-600" />
               </div>
             )}
             
@@ -229,7 +229,7 @@ ${statusUrl}`;
                 style={{ height: 216 }}
               >
                 <div className="flex flex-col items-center text-white"> 
-                  <div className="flex justify-center items-center px-3 py-1.5 bg-white/90 rounded-xl shadow-sm border border-white/50 w-fit">
+                  <div className="flex justify-center items-center px-3 py-1.5 bg-white/50 backdrop-blur-sm rounded-xl shadow-sm border border-white/50 w-fit">
                     <Image
                       src="/logo.svg" 
                       alt="Pegadaian CP Sentul" 

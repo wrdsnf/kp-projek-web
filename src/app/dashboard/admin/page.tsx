@@ -50,7 +50,7 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
             <div>
                 <h2 className="text-xl font-bold text-gray-900">{label}</h2>
                 <div className="flex items-center gap-2 mt-1">
-                    <span className={cn("w-2 h-2 rounded-full", data?.status === 'open' ? "bg-green-500" : "bg-red-500")}/>
+                    <span className={cn("w-2 h-2 rounded-full", data?.status === 'open' ? "bg-emerald-500" : "bg-red-500")}/>
                     <span className="text-sm font-medium text-gray-600 capitalize">{data?.status || "Loading..."}</span>
                 </div>
             </div>
@@ -60,7 +60,7 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
                className={cn("px-4 py-2 rounded-lg text-sm font-bold transition-colors", 
                    data?.status === 'open' 
                    ? "bg-red-100 text-red-700 hover:bg-red-200" 
-                   : "bg-green-100 text-green-700 hover:bg-green-200"
+                   : "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
                )}
             >
                {data?.status === 'open' ? "TUTUP ANTRIAN" : "BUKA ANTRIAN"}

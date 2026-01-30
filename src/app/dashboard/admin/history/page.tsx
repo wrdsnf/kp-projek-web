@@ -75,7 +75,7 @@ export default function HistoryPage() {
         </div>
         <Link 
           href="/dashboard/admin"
-          className="text-green-600 hover:underline text-sm"
+          className="text-emerald-600 hover:underline text-sm"
         >
           ← Kembali ke Admin
         </Link>
@@ -104,7 +104,7 @@ export default function HistoryPage() {
         <button
           onClick={handleGenerateToday}
           disabled={generating}
-          className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium flex items-center gap-2 disabled:opacity-50"
+          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-medium flex items-center gap-2 disabled:opacity-50"
         >
           <RefreshCw className={`w-4 h-4 ${generating ? 'animate-spin' : ''}`} />
           {generating ? "Generating..." : "Generate Hari Ini"}
@@ -132,7 +132,7 @@ export default function HistoryPage() {
             icon={Gem}
             label="Total Gadai"
             value={stats.reduce((sum, s) => sum + s.gadaiCount, 0)}
-            color="green"
+            color="emerald"
           />
           <SummaryCard
             icon={FileText}
@@ -183,7 +183,7 @@ export default function HistoryPage() {
                     <td className="px-4 py-3 font-medium text-gray-900">{formatDate(stat.date)}</td>
                     <td className="px-4 py-3 text-center font-bold text-gray-900">{stat.totalCustomers}</td>
                     <td className="px-4 py-3 text-center">
-                      <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                      <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">
                         {stat.gadaiCount}
                       </span>
                     </td>
@@ -220,11 +220,11 @@ function SummaryCard({
   icon: typeof Users; 
   label: string; 
   value: number;
-  color: 'blue' | 'green' | 'purple' | 'amber';
+  color: 'blue' | 'emerald' | 'purple' | 'amber';
 }) {
   const colorMap = {
     blue: "bg-blue-50 text-blue-600",
-    green: "bg-green-50 text-green-600",
+    emerald: "bg-emerald-50 text-emerald-600",
     purple: "bg-purple-50 text-purple-600",
     amber: "bg-amber-50 text-amber-600"
   };

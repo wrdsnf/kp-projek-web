@@ -18,11 +18,11 @@ export default function GadaiEmasPage() {
         {/* Hero / Intro Section - No card, soft background */}
         <section className="relative overflow-hidden">
           {/* Soft gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-green-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-emerald-50" />
           
           <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
             {/* Back Link */}
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-green-700 transition-colors mb-8 text-sm">
+            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-emerald-700 transition-colors mb-8 text-sm">
               <ArrowLeft className="w-4 h-4" />
               Kembali ke Beranda
             </Link>
@@ -102,8 +102,8 @@ export default function GadaiEmasPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
@@ -132,8 +132,8 @@ export default function GadaiEmasPage() {
               { icon: Heart, text: "Siapa saja yang butuh dana darurat untuk keperluan mendesak" },
               { icon: Home, text: "Pemilik rumah yang perlu renovasi atau perbaikan mendadak" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500 rounded-r-lg">
-                <item.icon className="w-6 h-6 text-green-600 flex-shrink-0" />
+              <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-emerald-50 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
+                <item.icon className="w-6 h-6 text-emerald-600 flex-shrink-0" />
                 <p className="text-gray-700">{item.text}</p>
               </div>
             ))}
@@ -145,7 +145,7 @@ export default function GadaiEmasPage() {
         </section>
 
         {/* Syarat & Cara - Clean horizontal steps */}
-        <section className="bg-gradient-to-br from-green-800 to-green-900 text-white py-12 md:py-16">
+        <section className="bg-gradient-to-br from-emerald-800 to-emerald-900 text-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Cara Mengajukan Gadai Emas
@@ -161,11 +161,11 @@ export default function GadaiEmasPage() {
                 { step: "5", title: "Terima", desc: "Dana langsung cair" },
               ].map((item, i) => (
                 <div key={i} className="text-center">
-                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3 text-green-900 font-bold text-lg">
+                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-3 text-emerald-900 font-bold text-lg">
                     {item.step}
                   </div>
                   <h3 className="font-semibold mb-1">{item.title}</h3>
-                  <p className="text-green-200 text-sm">{item.desc}</p>
+                  <p className="text-emerald-200 text-sm">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -200,7 +200,7 @@ export default function GadaiEmasPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/queue"
-              className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl transition-colors shadow-lg"
             >
               <Ticket className="w-5 h-5" />
               Ambil Antrian Online

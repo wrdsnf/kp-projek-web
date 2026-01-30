@@ -60,7 +60,7 @@ export default function ServiceFlow() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
             Panduan
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -88,7 +88,7 @@ export default function ServiceFlow() {
             onClick={() => setActiveTab("non_gadai")}
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
               activeTab === "non_gadai"
-                ? "bg-green-600 text-white shadow-lg shadow-green-500/30"
+                ? "bg-emerald-600 text-white shadow-lg shadow-emerald-500/30"
                 : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
             }`}
           >
@@ -104,7 +104,7 @@ export default function ServiceFlow() {
             <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-gray-200 rounded-full">
               <div 
                 className={`h-full rounded-full transition-all ${
-                  activeTab === "gadai" ? "bg-amber-500" : "bg-green-600"
+                  activeTab === "gadai" ? "bg-amber-500" : "bg-emerald-600"
                 }`}
                 style={{ width: "100%" }}
               />
@@ -151,8 +151,8 @@ function StepCard({
   isGadai: boolean;
 }) {
   const Icon = step.icon;
-  const accentColor = isGadai ? "bg-amber-500" : "bg-green-600";
-  const iconBg = isGadai ? "bg-amber-50 text-amber-600" : "bg-green-50 text-green-600";
+  const accentColor = isGadai ? "bg-amber-500" : "bg-emerald-600";
+  const iconBg = isGadai ? "bg-amber-50 text-amber-600" : "bg-emerald-50 text-emerald-600";
 
   return (
     <div className="flex flex-col items-center text-center">
@@ -187,8 +187,8 @@ function AccordionItem({
   isGadai: boolean;
 }) {
   const Icon = step.icon;
-  const accentColor = isGadai ? "bg-amber-500" : "bg-green-600";
-  const iconBg = isGadai ? "bg-amber-50 text-amber-600" : "bg-green-50 text-green-600";
+  const accentColor = isGadai ? "bg-amber-500" : "bg-emerald-600";
+  const iconBg = isGadai ? "bg-amber-50 text-amber-600" : "bg-emerald-50 text-emerald-600";
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">

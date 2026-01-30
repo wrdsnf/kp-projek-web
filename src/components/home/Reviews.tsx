@@ -67,11 +67,11 @@ export default function Reviews() {
             <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 relative overflow-hidden">
               {/* Decorative background */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-100 to-amber-50 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-100 to-green-50 rounded-full translate-y-1/2 -translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-emerald-100 to-emerald-50 rounded-full translate-y-1/2 -translate-x-1/2" />
               
               <div className="relative space-y-6">
                 {/* Google Maps Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
 
@@ -95,11 +95,11 @@ export default function Reviews() {
                 {/* Trust indicators */}
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
                     Terverifikasi
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                    <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
                     Aktif
                   </span>
                 </div>

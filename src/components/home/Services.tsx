@@ -15,9 +15,9 @@ const services = [
     icon: FileText,
     title: "Gadai Non-Emas",
     description: "Gadai elektronik, kendaraan, dan barang berharga lainnya dengan mudah.",
-    color: "bg-green-600",
-    iconColor: "text-green-600",
-    bgColor: "bg-green-50",
+    color: "bg-emerald-600",
+    iconColor: "text-emerald-600",
+    bgColor: "bg-emerald-50",
     href: "/produk/gadai-non-emas",
   },
   {
@@ -46,7 +46,7 @@ export default function Services() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-semibold rounded-full mb-4">
+          <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
             Layanan Kami
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -88,14 +88,14 @@ function ServiceCard({
   return (
     <Link 
       href={href}
-      className="group bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-green-200 transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
+      className="group bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-emerald-200 transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
     >
       <div className={`w-14 h-14 ${bgColor} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
         <Icon className={`w-7 h-7 ${iconColor}`} />
       </div>
       <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
-      <span className="inline-flex items-center gap-1 text-green-600 text-sm font-medium group-hover:gap-2 transition-all">
+      <span className="inline-flex items-center gap-1 text-emerald-600 text-sm font-medium group-hover:gap-2 transition-all">
         Lihat Detail
         <ArrowRight className="w-4 h-4" />
       </span>

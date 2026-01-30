@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
 import { Lock, Loader2, LogIn, AlertTriangle } from "lucide-react";
 import { GlobalNavbar } from "@/components/layout";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -43,7 +44,7 @@ export default function LoginPage() {
   // Show loading while checking auth
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-900 to-green-800 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-emerald-900 to-emerald-800 flex items-center justify-center">
         <div className="text-white text-lg flex items-center gap-3">
           <Loader2 className="w-6 h-6 animate-spin" />
           Memuat...
@@ -58,7 +59,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-900 via-green-800 to-green-900">
+    <div className="min-h-screen bg-gradient-to-b from-emerald-300 via-emerald-600 to-emerald-800">
       {/* Global Navigation */}
       <GlobalNavbar variant="dark" />
 
@@ -71,7 +72,7 @@ export default function LoginPage() {
               <span className="text-amber-400 text-sm font-medium">Area Pegawai</span>
             </div>
             <h1 className="text-3xl font-bold text-white mb-2">Login Dashboard</h1>
-            <p className="text-green-200">Masuk untuk mengakses sistem antrian</p>
+            <p className="text-emerald-200">Masuk untuk mengakses sistem antrian</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-2xl p-8">
@@ -90,7 +91,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-gray-50"
                   placeholder="nama@pegadaian.co.id"
                 />
               </div>
@@ -102,7 +103,7 @@ export default function LoginPage() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-gray-50"
                   placeholder="••••••••"
                 />
               </div>
@@ -110,7 +111,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-4 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -134,6 +135,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+      <GlobalFooter />
     </div>
   );
 }

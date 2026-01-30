@@ -13,7 +13,7 @@ export interface UserProfile {
 export type QueueType = 'gadai' | 'non_gadai';
 
 export const QUEUE_TYPES: { id: QueueType; label: string; color: string; prefix: string }[] = [
-  { id: 'gadai', label: 'Gadai', color: 'green', prefix: 'GD' },
+  { id: 'gadai', label: 'Gadai', color: 'emerald', prefix: 'GD' },
   { id: 'non_gadai', label: 'Non-Gadai', color: 'blue', prefix: 'NG' },
 ];
 

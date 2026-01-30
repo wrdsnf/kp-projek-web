@@ -42,7 +42,7 @@ export default function AdminImagesPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="w-8 h-8 animate-spin text-green-600" />
+        <Loader2 className="w-8 h-8 animate-spin text-emerald-600" />
       </div>
     );
   }
@@ -244,7 +244,7 @@ function ImageUploadCard({
 
         {/* Success overlay */}
         {uploadState.status === 'success' && (
-          <div className="absolute inset-0 bg-green-500/80 flex flex-col items-center justify-center text-white">
+          <div className="absolute inset-0 bg-emerald-500/80 flex flex-col items-center justify-center text-white">
             <Check className="w-12 h-12 mb-2" />
             <span className="font-medium">Berhasil diupload!</span>
           </div>
@@ -321,7 +321,7 @@ function ImageUploadCard({
             <button
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploading}
-              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
             >
               <Upload className="w-4 h-4" />
               {isUploading ? 'Proses...' : 'Upload'}

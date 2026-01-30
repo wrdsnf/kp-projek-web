@@ -106,7 +106,7 @@ export default function QueuePage() {
       />
       
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-green-900/70 via-green-800/60 to-green-900/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/70 via-emerald-800/60 to-emerald-900/80" />
       
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-[0.06]">
@@ -213,7 +213,7 @@ function QueueCard({
     }
   }, [data?.lastNumber]);
 
-  const isGadai = color === 'green';
+  const isGadai = color === 'emerald';
   const bgGradient = isGadai 
     ? "from-emerald-600 to-emerald-500" 
     : "from-amber-500 to-amber-600";

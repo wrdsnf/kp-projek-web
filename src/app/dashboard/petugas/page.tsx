@@ -33,11 +33,11 @@ export default function PetugasDashboard() {
 
       {/* Success Alert */}
       {lastTaken && (
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-center gap-4">
-          <CheckCircle className="w-8 h-8 text-green-600" />
+        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center gap-4">
+          <CheckCircle className="w-8 h-8 text-emerald-600" />
           <div>
-            <p className="text-green-700 font-medium">Antrian Berhasil Diambil!</p>
-            <p className="text-green-600 text-2xl font-bold">{getQueueCode(lastTaken.type, lastTaken.number)}</p>
+            <p className="text-emerald-700 font-medium">Antrian Berhasil Diambil!</p>
+            <p className="text-emerald-600 text-2xl font-bold">{getQueueCode(lastTaken.type, lastTaken.number)}</p>
           </div>
         </div>
       )}
@@ -84,7 +84,7 @@ function PetugasQueueCard({
   const { data } = useQueue(type);
   const [loading, setLoading] = useState(false);
 
-  const isGadai = color === 'green';
+  const isGadai = color === 'emerald';
   const Icon = isGadai ? Gem : FileText;
   
   const handleTake = async () => {
@@ -112,9 +112,9 @@ function PetugasQueueCard({
       {/* Header */}
       <div className={cn(
         "px-4 py-3 border-b flex items-center gap-3",
-        isGadai ? "bg-green-50" : "bg-blue-50"
+        isGadai ? "bg-emerald-50" : "bg-blue-50"
       )}>
-        <Icon className={cn("w-6 h-6", isGadai ? "text-green-600" : "text-blue-600")} />
+        <Icon className={cn("w-6 h-6", isGadai ? "text-emerald-600" : "text-blue-600")} />
         <div className="flex-1">
           <h3 className="font-bold text-gray-800">{label}</h3>
           <p className="text-xs text-gray-500">
@@ -123,7 +123,7 @@ function PetugasQueueCard({
         </div>
         <span className={cn(
           "text-xs px-2 py-1 rounded-full font-medium",
-          !isClosed ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+          !isClosed ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"
         )}>
           {!isClosed ? "Open" : "Closed"}
         </span>
@@ -150,7 +150,7 @@ function PetugasQueueCard({
           className={cn(
             "w-full py-4 rounded-xl font-bold text-lg shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2",
             isGadai 
-              ? "bg-green-600 hover:bg-green-700 text-white" 
+              ? "bg-emerald-600 hover:bg-emerald-700 text-white" 
               : "bg-blue-600 hover:bg-blue-700 text-white"
           )}
         >

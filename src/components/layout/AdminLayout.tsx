@@ -25,7 +25,7 @@ export default function AdminLayout({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-900 to-green-800 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-emerald-900 to-emerald-800 flex items-center justify-center">
         <div className="text-white text-lg flex items-center gap-3">
           <Loader2 className="w-6 h-6 animate-spin" />
           Memuat dashboard...

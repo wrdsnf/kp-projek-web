@@ -10,15 +10,15 @@ export default function AboutPage() {
       
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-12">
         {/* Back Link */}
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-green-700 transition-colors">
+        <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-emerald-700 transition-colors">
           <ArrowLeft className="w-4 h-4" />
           Kembali ke Beranda
         </Link>
         
         {/* Hero Section */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-2xl mb-4">
-            <Building2 className="w-8 h-8 text-green-700" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-2xl mb-4">
+            <Building2 className="w-8 h-8 text-emerald-700" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Tentang Pegadaian CP Sentul</h1>
           <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto">
@@ -53,15 +53,15 @@ export default function AboutPage() {
               icon={CreditCard}
               title="Pembayaran & Top Up" 
               desc="Bayar tagihan listrik, air, BPJS, dan pulsa."
-              color="bg-green-50 text-green-600"
+              color="bg-emerald-50 text-emerald-600"
             />
           </div>
         </div>
 
         {/* Jam Operasional */}
-        <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl space-y-6">
+        <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-2xl space-y-6">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-emerald-600 rounded-xl flex items-center justify-center">
               <Clock className="w-6 h-6 text-white" />
             </div>
             <h2 className="text-2xl font-bold text-gray-800">Jam Operasional</h2>
@@ -69,11 +69,11 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white p-4 rounded-xl">
               <p className="font-bold text-gray-700 mb-1">Senin - Jumat</p>
-              <p className="text-green-600 font-medium">08:00 - 15:00 WIB</p>
+              <p className="text-emerald-600 font-medium">08:00 - 15:00 WIB</p>
             </div>
             <div className="bg-white p-4 rounded-xl">
               <p className="font-bold text-gray-700 mb-1">Sabtu</p>
-              <p className="text-green-600 font-medium">08:00 - 12:00 WIB</p>
+              <p className="text-emerald-600 font-medium">08:00 - 12:00 WIB</p>
             </div>
             <div className="bg-white p-4 rounded-xl">
               <p className="font-bold text-red-500 mb-1">Minggu & Libur Nasional</p>
@@ -87,8 +87,8 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-gray-800">Hubungi Kami</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-6 h-6 text-emerald-600" />
               </div>
               <div>
                 <p className="font-semibold text-gray-800 mb-1">Alamat</p>
@@ -98,12 +98,12 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Phone className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-emerald-600" />
               </div>
               <div>
                 <p className="font-semibold text-gray-800 mb-1">Telepon</p>
-                <a href="tel:0274375806" className="text-green-700 font-medium hover:underline">
+                <a href="tel:0274375806" className="text-emerald-700 font-medium hover:underline">
                   (0274) 375-806
                 </a>
               </div>
@@ -115,7 +115,7 @@ export default function AboutPage() {
         <div className="text-center">
           <Link 
             href="/queue"
-            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl transition-colors"
+            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl transition-colors"
           >
             Ambil Antrian Online
           </Link>
