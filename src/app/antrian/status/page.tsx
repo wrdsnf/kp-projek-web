@@ -7,6 +7,8 @@ import { parseQueueCode, QUEUE_TYPES, QueueType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Ticket, Clock, Bell, CheckCircle, XCircle, Gem, FileText, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import GlobalFooter from "@/components/layout/GlobalFooter";
+import { GlobalNavbar } from "@/components/layout";
 
 function QueueStatusContent() {
   const searchParams = useSearchParams();
@@ -105,6 +107,9 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
   
   return (
     <div className="min-h-screen bg-gray-100">
+      {/* Navbar */}
+      <GlobalNavbar />
+      
       {/* Header */}
       <header className={cn("bg-gradient-to-r py-8 px-4", bgGradient)}>
         <div className="max-w-md mx-auto text-center">
@@ -186,11 +191,8 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
           </p>
         </div>
       </div>
-      
       {/* Footer */}
-      <footer className="mt-12 py-6 text-center text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta
-      </footer>
+      <GlobalFooter />
     </div>
   );
 }

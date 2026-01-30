@@ -3,6 +3,7 @@ import { Hero, QueueShortcut, ServiceFlow, Reviews, GoldCTA, TringAppSection, Ho
 import { ProductsServicesSection } from "@/components/ProductNav";
 import { MapPin, Clock, Phone, Building2 } from "lucide-react";
 import Link from "next/link";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
       <TringAppSection />
 
       {/* Footer */}
-      <Footer />
+      <GlobalFooter />
     </main>
   );
 }
@@ -106,70 +107,5 @@ function BranchInfoSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-
-function Footer() {
-  return (
-    <footer className="bg-green-950 py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Building2 className="w-6 h-6 text-amber-400" />
-              <span className="font-bold text-white text-lg">Pegadaian <span className="text-amber-400">Sentul</span></span>
-            </div>
-            <p className="text-green-400 text-sm">
-              Cabang Pembantu Sentul Yogyakarta. Melayani kebutuhan finansial masyarakat dengan pelayanan prima dan profesional.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-white mb-4">Tautan Cepat</h4>
-            <ul className="space-y-2 text-green-400 text-sm">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
-              </li>
-              <li>
-                <a href="#layanan" className="hover:text-white transition-colors">Layanan</a>
-              </li>
-              <li>
-                <Link href="/queue" className="hover:text-white transition-colors">Antrian Online</Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">Tentang Kami</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-white mb-4">Kontak</h4>
-            <ul className="space-y-2 text-green-400 text-sm">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                Jl. Surokarsan No.56, Wirogunan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55151
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                (0274) 375-806
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-green-800 pt-8 text-center">
-          <p className="text-green-400 text-sm">
-            &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
-          </p>
-          <p className="mt-2 text-green-600 text-xs">
-            Bagian dari PT Pegadaian (Persero)
-          </p>
-        </div>
-      </div>
-    </footer>
   );
 }

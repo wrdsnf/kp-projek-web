@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { ArrowLeft, Gem, Briefcase, Coins, CreditCard, Clock, MapPin, Phone, Building2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
+import { GlobalNavbar } from "@/components/layout";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <GlobalNavbar />
       
       <div className="max-w-4xl mx-auto px-4 py-12 space-y-12">
         {/* Back Link */}
@@ -122,11 +123,7 @@ export default function AboutPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-green-950 py-8 mt-12">
-        <div className="text-center text-green-400 text-sm">
-          &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
-        </div>
-      </footer>
+      <GlobalFooter />
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import ProductNav from "@/components/ProductNav";
 import { Landmark, ArrowLeft, Home, Car, Briefcase, GraduationCap, Phone, Ticket, ArrowRight, CheckCircle, Building } from "lucide-react";
+import { GlobalNavbar } from "@/components/layout";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export const metadata = {
   title: "Pembiayaan - Pegadaian CP Sentul",
@@ -11,7 +12,7 @@ export const metadata = {
 export default function PembiayaanPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <GlobalNavbar />
 
       <main>
         {/* Hero Section */}
@@ -72,9 +73,9 @@ export default function PembiayaanPage() {
             </div>
 
             {/* KRASIDA */}
-            <div className="border-l-4 border-amber-500 pl-6 py-2">
+            <div className="border-l-4 border-green-500 pl-6 py-2">
               <div className="flex items-center gap-3 mb-3">
-                <Home className="w-6 h-6 text-amber-600" />
+                <Home className="w-6 h-6 text-green-600" />
                 <h3 className="text-xl font-bold text-gray-900">KRASIDA</h3>
               </div>
               <p className="text-gray-600 mb-3">
@@ -82,16 +83,16 @@ export default function PembiayaanPage() {
                 Cocok untuk kebutuhan dana besar dengan cicilan ringan.
               </p>
               <ul className="flex flex-wrap gap-2 text-sm">
-                <li className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full">Jaminan Emas</li>
-                <li className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full">Angsuran bulanan</li>
-                <li className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full">Plafon hingga 500 juta</li>
+                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Jaminan Emas</li>
+                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Angsuran bulanan</li>
+                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Plafon hingga 500 juta</li>
               </ul>
             </div>
 
             {/* Amanah */}
-            <div className="border-l-4 border-blue-500 pl-6 py-2">
+            <div className="border-l-4 border-green-500 pl-6 py-2">
               <div className="flex items-center gap-3 mb-3">
-                <Car className="w-6 h-6 text-blue-600" />
+                <Car className="w-6 h-6 text-green-600" />
                 <h3 className="text-xl font-bold text-gray-900">AMANAH</h3>
               </div>
               <p className="text-gray-600 mb-3">
@@ -99,9 +100,9 @@ export default function PembiayaanPage() {
                 skema cicilan yang sesuai prinsip syariah.
               </p>
               <ul className="flex flex-wrap gap-2 text-sm">
-                <li className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">Prinsip Syariah</li>
-                <li className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">Motor atau Mobil</li>
-                <li className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">DP ringan</li>
+                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Prinsip Syariah</li>
+                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">Motor atau Mobil</li>
+                <li className="bg-green-50 text-green-700 px-3 py-1 rounded-full">DP ringan</li>
               </ul>
             </div>
 
@@ -194,11 +195,7 @@ export default function PembiayaanPage() {
         </section>
       </main>
 
-      <footer className="bg-green-950 py-8">
-        <div className="text-center text-green-400 text-sm">
-          &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
-        </div>
-      </footer>
+      <GlobalFooter />
     </div>
   );
 }

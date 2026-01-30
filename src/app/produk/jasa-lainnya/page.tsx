@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import ProductNav from "@/components/ProductNav";
 import { Wallet, ArrowLeft, Receipt, Smartphone, Zap, Droplet, Wifi, CreditCard, Phone, Ticket, ArrowRight, CheckCircle, Send, Globe, Sparkles } from "lucide-react";
+import { GlobalNavbar } from "@/components/layout";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export const metadata = {
   title: "Jasa Lainnya - Pegadaian CP Sentul",
@@ -11,7 +12,7 @@ export const metadata = {
 export default function JasaLainnyaPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <GlobalNavbar />
 
       <main>
         {/* Hero Section */}
@@ -197,11 +198,7 @@ export default function JasaLainnyaPage() {
         </section>
       </main>
 
-      <footer className="bg-green-950 py-8">
-        <div className="text-center text-green-400 text-sm">
-          &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
-        </div>
-      </footer>
+      <GlobalFooter />
     </div>
   );
 }

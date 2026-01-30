@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import ProductNav from "@/components/ProductNav";
 import { Coins, ArrowLeft, TrendingUp, Shield, PiggyBank, Target, Smartphone, Phone, Ticket, ArrowRight, GraduationCap, Users, Briefcase, Heart } from "lucide-react";
+import { GlobalNavbar } from "@/components/layout";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export const metadata = {
   title: "Tabungan Emas - Pegadaian CP Sentul",
@@ -11,7 +12,7 @@ export const metadata = {
 export default function TabunganEmasPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <GlobalNavbar />
 
       <main>
         {/* Hero Section */}
@@ -239,11 +240,7 @@ export default function TabunganEmasPage() {
         </section>
       </main>
 
-      <footer className="bg-green-950 py-8">
-        <div className="text-center text-green-400 text-sm">
-          &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
-        </div>
-      </footer>
+      <GlobalFooter />
     </div>
   );
 }

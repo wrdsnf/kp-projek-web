@@ -52,7 +52,7 @@ export default function GlobalNavbar({
 
           {/* Logo with glass container for contrast */}
           <Link href="/" className="flex items-center">
-            <div className="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-xl shadow-sm border border-white/50">
+            <div className="px-3 py-1.5 rounded-xl shadow-sm border border-white/50">
               <Image 
                 src="/logo.svg" 
                 alt="Pegadaian CP Sentul" 

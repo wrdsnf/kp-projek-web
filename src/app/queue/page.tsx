@@ -6,9 +6,10 @@ import { takeQueue } from "@/lib/queue-service";
 import { QUEUE_TYPES, QueueType, getQueueCode } from "@/lib/types";
 import { canTakeQueue, getLocalCooldown, formatCooldown } from "@/lib/cooldown-service";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
 import QueueTicket from "@/components/QueueTicket";
 import { Ticket, Gem, FileText, Info, Clock, Loader2, Bell, CheckCircle, Share2, Link2, Image } from "lucide-react";
+import { GlobalNavbar } from "@/components/layout";
+import GlobalFooter from "@/components/layout/GlobalFooter";
 
 export default function QueuePage() {
   const [myNumbers, setMyNumbers] = useState<Record<QueueType, number | null>>({
@@ -86,10 +87,12 @@ export default function QueuePage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative">
+      {/* Navigation */}
+      <GlobalNavbar />
       {/* Background Layers */}
       {/* Base gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-green-900 via-green-800 to-green-900" />
+      <div className="absolute inset-0 bg-gradient-to-b from-emerald-600 via-emerald-500 to-emerald-600" />
       
       {/* Real Photo Background - Subtle overlay */}
       <div 
@@ -114,8 +117,6 @@ export default function QueuePage() {
 
       {/* Content - relative to appear above backgrounds */}
       <div className="relative z-10">
-        {/* Navigation */}
-        <Navbar />
 
         {/* Header */}
         <header className="text-center py-12 px-4">
@@ -124,7 +125,7 @@ export default function QueuePage() {
             <span className="text-amber-400 text-sm font-medium">Antrian Online</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Ambil Nomor Antrian</h1>
-          <p className="text-green-200">Pilih jenis layanan dan ambil nomor antrian Anda</p>
+          <p className="text-emerald-200">Pilih jenis layanan dan ambil nomor antrian Anda</p>
         </header>
 
         {/* Queue Cards - Horizontal on desktop, vertical on mobile */}
@@ -152,7 +153,7 @@ export default function QueuePage() {
               <Info className="w-5 h-5 text-amber-400" />
               Informasi
             </h3>
-            <ul className="text-green-200 text-sm space-y-2">
+            <ul className="text-emerald-200 text-sm space-y-2">
               <li>• Nomor antrian tersimpan otomatis di browser Anda</li>
               <li>• Cooldown 10 menit setelah mengambil antrian</li>
               <li>• Pantau nomor yang sedang dilayani secara realtime</li>
@@ -160,14 +161,10 @@ export default function QueuePage() {
             </ul>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="bg-green-950/80 backdrop-blur-sm py-6 border-t border-green-800">
-          <div className="text-center text-green-400 text-sm">
-            &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta
-          </div>
-        </footer>
       </div>
+
+      {/* Footer */}
+      <GlobalFooter />
     </div>
   );
 }
@@ -218,11 +215,11 @@ function QueueCard({
 
   const isGadai = color === 'green';
   const bgGradient = isGadai 
-    ? "from-green-600 to-green-700" 
-    : "from-blue-600 to-blue-700";
+    ? "from-emerald-600 to-emerald-500" 
+    : "from-amber-500 to-amber-600";
   const btnColor = isGadai 
-    ? "bg-amber-500 hover:bg-amber-400 text-green-900" 
-    : "bg-amber-500 hover:bg-amber-400 text-blue-900";
+    ? "bg-amber-500 hover:bg-amber-400 text-emerald-800" 
+    : "bg-amber-500 hover:bg-amber-400 text-amber-600";
 
   const copyLink = () => {
     if (!myNumber) return;
@@ -294,17 +291,17 @@ function QueueCard({
         {/* My Number or Take Button */}
         {myNumber ? (
           <div className={cn("rounded-xl p-6 text-center border-2 border-dashed", 
-            isGadai ? "bg-green-50 border-green-200" : "bg-blue-50 border-blue-200"
+            isGadai ? "bg-emerald-50 border-emerald-200" : "bg-amber-50 border-amber-200"
           )}>
             {/* Queue Number - Large & Clear */}
             <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Nomor Antrian Anda</p>
-            <div className={cn("text-5xl md:text-6xl font-black tracking-tight", isGadai ? "text-green-600" : "text-blue-600")}>
+            <div className={cn("text-5xl md:text-6xl font-black tracking-tight", isGadai ? "text-emerald-600" : "text-amber-600")}>
               {getQueueCode(type, myNumber)}
             </div>
             
             {/* Service Type Label */}
             <div className={cn("mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium",
-              isGadai ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
+              isGadai ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"
             )}>
               {isGadai ? <Gem className="w-4 h-4" /> : <FileText className="w-4 h-4" />}
               Layanan {isGadai ? "Gadai" : "Non-Gadai"}
@@ -313,12 +310,12 @@ function QueueCard({
             {/* Status Indicator */}
             <div className="mt-4">
               {data && data.currentNumber < myNumber ? (
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gray-600/80 text-amber-400 rounded-full border border-amber-500/30 text-sm font-medium">
                   <Clock className="w-4 h-4" />
                   Menunggu {myNumber - data.currentNumber} antrian lagi
                 </span>
               ) : data && data.currentNumber === myNumber ? (
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium animate-pulse">
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium animate-pulse">
                   <Bell className="w-4 h-4" />
                   GILIRAN ANDA!
                 </span>
@@ -375,7 +372,7 @@ function QueueCard({
                 <button
                   onClick={() => setShowTicket(true)}
                   className={cn("w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-bold transition-colors",
-                    isGadai ? "bg-green-600 hover:bg-green-700 text-white" : "bg-blue-600 hover:bg-blue-700 text-white"
+                    isGadai ? "bg-emerald-600 hover:bg-emerald-700 text-white" : "bg-amber-600 hover:bg-amber-700 text-white"
                   )}
                 >
                   <Image className="w-5 h-5" />

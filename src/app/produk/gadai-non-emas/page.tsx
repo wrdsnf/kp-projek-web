@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import ProductNav from "@/components/ProductNav";
 import { Laptop, ArrowLeft, CheckCircle, Clock, Shield, Smartphone, Watch, Camera, Phone, Ticket, ArrowRight, Bike } from "lucide-react";
+import GlobalFooter from "@/components/layout/GlobalFooter";
+import { GlobalNavbar } from "@/components/layout";
 
 export const metadata = {
   title: "Gadai Non-Emas - Pegadaian CP Sentul",
@@ -11,7 +12,7 @@ export const metadata = {
 export default function GadaiNonEmasPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <GlobalNavbar />
 
       <main>
         {/* Hero / Intro Section */}
@@ -200,11 +201,7 @@ export default function GadaiNonEmasPage() {
         </section>
       </main>
 
-      <footer className="bg-green-950 py-8">
-        <div className="text-center text-green-400 text-sm">
-          &copy; {new Date().getFullYear()} Pegadaian CP Sentul Yogyakarta. All rights reserved.
-        </div>
-      </footer>
+      <GlobalFooter />
     </div>
   );
 }

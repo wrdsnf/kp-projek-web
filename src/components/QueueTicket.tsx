@@ -4,8 +4,9 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { toPng } from "html-to-image";
 import { QRCodeSVG } from "qrcode.react";
 import { QueueType, getQueueCode } from "@/lib/types";
-import { Download, Share2, X, Gem, FileText, Building2, Copy, Loader2 } from "lucide-react";
+import { Download, Share2, X, Gem, FileText, Copy, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface QueueTicketProps {
   type: QueueType;
@@ -172,13 +173,13 @@ ${statusUrl}`;
   };
 
   const headerBg = isGadai 
-    ? "bg-gradient-to-r from-green-700 to-green-800" 
-    : "bg-gradient-to-r from-blue-700 to-blue-800";
+    ? "bg-gradient-to-r from-emerald-600 to-emerald-500" 
+    : "bg-gradient-to-r from-amber-500 to-amber-600";
   
-  const footerBg = isGadai ? "bg-green-900" : "bg-blue-900";
-  const numberColor = isGadai ? "text-green-600" : "text-blue-600";
-  const badgeBg = isGadai ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700";
-  const btnBg = isGadai ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700";
+  const footerBg = isGadai ? "bg-emerald-900" : "bg-amber-900";
+  const numberColor = isGadai ? "text-emerald-600" : "text-amber-600";
+  const badgeBg = isGadai ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700";
+  const btnBg = isGadai ? "bg-emerald-600 hover:bg-emerald-700" : "bg-amber-600 hover:bg-amber-700";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
@@ -227,12 +228,18 @@ ${statusUrl}`;
                 className={cn("w-full flex items-center justify-center gap-6", headerBg)}
                 style={{ height: 216 }}
               >
-                <div className="w-24 h-24 bg-white/20 rounded-2xl flex items-center justify-center">
-                  <Building2 className="w-14 h-14 text-white" />
-                </div>
-                <div className="text-white text-center">
-                  <div className="text-4xl font-black tracking-tight">PEGADAIAN</div>
-                  <div className="text-2xl font-semibold text-amber-400">CP SENTUL</div>
+                <div className="flex flex-col items-center text-white"> 
+                  <div className="flex justify-center items-center px-3 py-1.5 bg-white/90 rounded-xl shadow-sm border border-white/50 w-fit">
+                    <Image
+                      src="/logo.svg" 
+                      alt="Pegadaian CP Sentul" 
+                      width={120} 
+                      height={32}
+                      className="h-15 w-auto"
+                      priority
+                    />
+                  </div>
+                  <div className="text-2xl font-black text-white mt-2">CP SENTUL</div>
                 </div>
               </div>
 
