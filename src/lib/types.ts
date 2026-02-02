@@ -22,7 +22,10 @@ export interface QueueData {
   lastNumber: number;
   status: 'open' | 'closed';
   date: string; // YYYY-MM-DD
-  updatedAt: Timestamp; 
+  updatedAt: Timestamp;
+  // Auto-reset metadata
+  lastResetAt?: Timestamp;
+  nextResetAt?: Timestamp;
 }
 
 export type LogStatus = 'waiting' | 'called' | 'skipped' | 'completed';

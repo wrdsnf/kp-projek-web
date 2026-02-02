@@ -6,8 +6,13 @@ import { QueueType, QUEUE_TYPES } from "@/lib/types";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { RotateCcw } from "lucide-react";
+import ResetCountdown from "@/components/ResetCountdown";
+import { useQueueAutoResetCheck } from "@/hooks/useQueueAutoReset";
 
 export default function AdminDashboard() {
+  // Trigger auto-reset check on mount
+  useQueueAutoResetCheck();
+
   return (
     <div className="space-y-8">
       <header>
@@ -83,30 +88,32 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
                 <div className="text-xs text-emerald-600 uppercase">Waiting</div>
             </div>
         </div>
-        
-        {/* Manual Reset Button */}
-        <div className="flex justify-end">
-           <button 
-             className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
-             disabled={resetting}
-             onClick={async () => {
-               if (!confirm(`RESET antrian ${label}? Semua nomor akan kembali ke 0.`)) return;
-               setResetting(true);
-               try {
-                 await resetQueue(type);
-                 alert(`Antrian ${label} berhasil di-reset!`);
-               } catch (e) {
-                 alert((e as Error).message);
-               } finally {
-                 setResetting(false);
-               }
-             }}
-           >
-             <RotateCcw className="w-4 h-4" />
-             {resetting ? "Mereset..." : "Reset Manual"}
-           </button>
+
+        {/* Auto Reset Countdown */}
+        <div className="flex items-center justify-between">
+            <ResetCountdown nextResetAt={data?.nextResetAt} variant="full" />
+            
+            {/* Manual Reset Button */}
+            <button 
+              className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
+              disabled={resetting}
+              onClick={async () => {
+                if (!confirm(`RESET antrian ${label}? Semua nomor akan kembali ke 0.`)) return;
+                setResetting(true);
+                try {
+                  await resetQueue(type);
+                  alert(`Antrian ${label} berhasil di-reset!`);
+                } catch (e) {
+                  alert((e as Error).message);
+                } finally {
+                  setResetting(false);
+                }
+              }}
+            >
+              <RotateCcw className="w-4 h-4" />
+              {resetting ? "Mereset..." : "Reset Manual"}
+            </button>
         </div>
     </div>
   );
 }
-
