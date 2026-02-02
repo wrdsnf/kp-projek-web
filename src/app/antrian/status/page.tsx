@@ -69,7 +69,7 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
   const isGadai = type === 'gadai';
   const Icon = isGadai ? Gem : FileText;
   const bgGradient = isGadai 
-    ? "from-emerald-600 to-emerald-700" 
+    ? "from-emerald-500 to-emerald-600" 
     : "from-blue-600 to-blue-700";
   
   // Calculate status
@@ -182,13 +182,18 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
         </div>
         
         {/* Info */}
-        <div className="mt-6 text-center text-gray-500 text-sm">
-          <p>Halaman ini akan update otomatis</p>
-          <p className="mt-2">
-            <Link href="/queue" className="text-emerald-600 hover:underline">
-              Ambil antrian baru →
-            </Link>
+        <div className="mt-6 flex flex-col items-center gap-4 pb-6">
+          <p className="text-gray-500 text-sm italic">
+            Halaman ini akan update otomatis
           </p>
+
+          <Link 
+            href="/queue" 
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-full shadow-md transition-all active:scale-95 group"
+          >
+            <span>Ambil antrian baru</span>
+            <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+          </Link>
         </div>
       </div>
       {/* Footer */}
