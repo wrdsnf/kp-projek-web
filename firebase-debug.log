@@ -1,0 +1,69 @@
+[debug] [2026-02-02T03:44:43.950Z] ----------------------------------------------------------------------
+[debug] [2026-02-02T03:44:43.952Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ACER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --debug
+[debug] [2026-02-02T03:44:43.953Z] CLI Version:   15.5.1
+[debug] [2026-02-02T03:44:43.953Z] Platform:      win32
+[debug] [2026-02-02T03:44:43.953Z] Node Version:  v22.12.0
+[debug] [2026-02-02T03:44:43.954Z] Time:          Mon Feb 02 2026 10:44:43 GMT+0700 (Western Indonesia Time)
+[debug] [2026-02-02T03:44:43.954Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-02T03:44:45.380Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-02T03:44:45.380Z] > authorizing via signed-in user (wardasaniiafawahaana@mail.ugm.ac.id)
+[debug] [2026-02-02T03:44:45.381Z] [iam] checking project kerja-praktik-23147 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-02-02T03:44:45.381Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:45.382Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:45.382Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147:testIamPermissions [none]
+[debug] [2026-02-02T03:44:45.383Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147:testIamPermissions  x-goog-user-project=kerja-praktik-23147
+[debug] [2026-02-02T03:44:45.383Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-02-02T03:44:46.188Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147:testIamPermissions 200
+[debug] [2026-02-02T03:44:46.189Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-02-02T03:44:46.189Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:46.189Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:46.189Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/kerja-praktik-23147/serviceAccounts/kerja-praktik-23147@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-02-02T03:44:46.189Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/kerja-praktik-23147/serviceAccounts/kerja-praktik-23147@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-02-02T03:44:47.457Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/kerja-praktik-23147/serviceAccounts/kerja-praktik-23147@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-02-02T03:44:47.457Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/kerja-praktik-23147/serviceAccounts/kerja-praktik-23147@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'kerja-praktik-23147'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script. 
+[debug] [2026-02-02T03:44:49.602Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:49.602Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:49.602Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147 [none]
+[debug] [2026-02-02T03:44:49.946Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147 200
+[debug] [2026-02-02T03:44:49.946Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/kerja-praktik-23147 {"projectNumber":"214354915242","projectId":"kerja-praktik-23147","lifecycleState":"ACTIVE","name":"kerja-praktik","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-01-25T05:37:17.532176Z","parent":{"type":"organization","id":"664835948314"}}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2026-02-02T03:44:49.948Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:49.949Z] Checked if tokens are valid: true, expires at: 1770007443841
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-02-02T03:44:49.949Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:49.950Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:49.950Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com [none]
+[debug] [2026-02-02T03:44:49.950Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com  x-goog-user-project=kerja-praktik-23147
+[debug] [2026-02-02T03:44:49.952Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com [none]
+[debug] [2026-02-02T03:44:49.952Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com  x-goog-user-project=kerja-praktik-23147
+[debug] [2026-02-02T03:44:51.415Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com 200
+[debug] [2026-02-02T03:44:51.415Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2026-02-02T03:44:51.416Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:51.416Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:51.416Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2026-02-02T03:44:51.416Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com:enable  x-goog-user-project=kerja-praktik-23147
+[debug] [2026-02-02T03:44:51.419Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com 200
+[debug] [2026-02-02T03:44:51.419Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2026-02-02T03:44:51.420Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:51.420Z] Checked if tokens are valid: true, expires at: 1770007443841
+[debug] [2026-02-02T03:44:51.420Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2026-02-02T03:44:51.420Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com:enable  x-goog-user-project=kerja-praktik-23147
+[debug] [2026-02-02T03:44:52.748Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com:enable 400
+[debug] [2026-02-02T03:44:52.748Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2026-02-02T03:44:52.757Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com:enable 400
+[debug] [2026-02-02T03:44:52.757Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/kerja-praktik-23147/services/artifactregistry.googleapis.com:enable [omitted]
+[error] 
+[error] Error: Your project kerja-praktik-23147 must be on the Blaze (pay-as-you-go) plan to complete this command. Required API cloudbuild.googleapis.com can't be enabled until the upgrade is complete. To upgrade, visit the following URL:
+
+https://console.firebase.google.com/project/kerja-praktik-23147/usage/details

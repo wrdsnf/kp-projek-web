@@ -7,6 +7,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { RotateCcw } from "lucide-react";
 import ResetCountdown from "@/components/ResetCountdown";
+import OperatingHoursInfo from "@/components/OperatingHoursInfo";
 import { useQueueAutoResetCheck } from "@/hooks/useQueueAutoReset";
 
 export default function AdminDashboard() {
@@ -89,9 +90,12 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
             </div>
         </div>
 
-        {/* Auto Reset Countdown */}
+        {/* Operating Hours Info */}
+        <OperatingHoursInfo manualClosed={data?.manualClosed} variant="full" />
+
+        {/* Auto Reset Countdown & Manual Reset */}
         <div className="flex items-center justify-between">
-            <ResetCountdown nextResetAt={data?.nextResetAt} variant="full" />
+            <ResetCountdown variant="full" />
             
             {/* Manual Reset Button */}
             <button 

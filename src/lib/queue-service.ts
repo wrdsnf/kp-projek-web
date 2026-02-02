@@ -211,11 +211,17 @@ export const callNextQueue = async (type: QueueType, tellerUid?: string) => {
 
 /**
  * Update queue status (open/closed)
+ * When admin closes, sets manualClosed=true to block auto-open
+ * When admin opens, clears manualClosed flag
  */
 export const updateQueueStatus = async (type: QueueType, status: 'open' | 'closed') => {
   const queueRef = doc(db, "queues", type);
   await runTransaction(db, async (transaction) => {
-     transaction.update(queueRef, { status, updatedAt: serverTimestamp() });
+     transaction.update(queueRef, { 
+       status, 
+       manualClosed: status === 'closed' ? true : false,
+       updatedAt: serverTimestamp() 
+     });
   });
 };
 

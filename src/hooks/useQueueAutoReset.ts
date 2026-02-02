@@ -2,37 +2,34 @@
 
 import { useEffect, useRef } from "react";
 import { QueueType, QUEUE_TYPES } from "@/lib/types";
-import { checkAndAutoReset } from "@/lib/queue-service";
+import { checkAllQueuesSchedule, checkQueueSchedule } from "@/lib/wib-schedule-service";
 
 /**
- * Hook to check and trigger auto-reset for all queue types on mount
- * Call this in pages that display queue data (queue page, admin dashboard)
+ * FALLBACK ONLY - Primary scheduling is done by Firebase Cloud Functions
+ * 
+ * This hook provides client-side fallback for queue schedule checks.
+ * The actual scheduling (reset at 06:00 WIB, auto open/close) is handled
+ * server-side by Cloud Functions in /functions folder.
+ * 
+ * This hook only runs when user visits the page, which is NOT reliable
+ * for time-critical operations like 06:00 reset.
  */
 export function useQueueAutoResetCheck() {
   const hasChecked = useRef(false);
 
   useEffect(() => {
-    // Only run once on mount
     if (hasChecked.current) return;
     hasChecked.current = true;
 
-    // Check all queue types for auto-reset
-    const checkAll = async () => {
-      for (const q of QUEUE_TYPES) {
-        try {
-          await checkAndAutoReset(q.id);
-        } catch (err) {
-          console.error(`Auto-reset check failed for ${q.id}:`, err);
-        }
-      }
-    };
-
-    checkAll();
+    // Fallback check - Cloud Functions are the primary scheduler
+    checkAllQueuesSchedule().catch(err => {
+      console.error("[Fallback] Schedule check failed:", err);
+    });
   }, []);
 }
 
 /**
- * Hook to check auto-reset for a specific queue type
+ * FALLBACK ONLY - Hook to check schedule for a specific queue type
  */
 export function useQueueAutoResetCheckSingle(type: QueueType) {
   const hasChecked = useRef(false);
@@ -41,8 +38,8 @@ export function useQueueAutoResetCheckSingle(type: QueueType) {
     if (hasChecked.current) return;
     hasChecked.current = true;
 
-    checkAndAutoReset(type).catch(err => {
-      console.error(`Auto-reset check failed for ${type}:`, err);
+    checkQueueSchedule(type).catch(err => {
+      console.error(`[Fallback] Schedule check failed for ${type}:`, err);
     });
   }, [type]);
 }

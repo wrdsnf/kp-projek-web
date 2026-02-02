@@ -8,6 +8,7 @@ import { canTakeQueue, getLocalCooldown, formatCooldown } from "@/lib/cooldown-s
 import { cn } from "@/lib/utils";
 import QueueTicket from "@/components/QueueTicket";
 import ResetCountdown from "@/components/ResetCountdown";
+import OperatingHoursInfo from "@/components/OperatingHoursInfo";
 import { useQueueAutoResetCheck } from "@/hooks/useQueueAutoReset";
 import { Ticket, Gem, FileText, Info, Clock, Loader2, Bell, CheckCircle, Share2, Link2, Image } from "lucide-react";
 import { GlobalNavbar } from "@/components/layout";
@@ -293,8 +294,9 @@ function QueueCard({
             Total antrian hari ini: <span className="font-bold text-emerald-700">{data?.lastNumber || 0}</span>
           </p>
           {/* Countdown to next auto-reset */}
-          <div className="mt-2 flex justify-center">
-            <ResetCountdown nextResetAt={data?.nextResetAt} variant="compact" />
+          <div className="mt-2 flex flex-col items-center gap-2">
+            <ResetCountdown variant="compact" />
+            <OperatingHoursInfo manualClosed={data?.manualClosed} variant="compact" />
           </div>
         </div>
 

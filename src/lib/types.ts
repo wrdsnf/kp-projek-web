@@ -21,11 +21,12 @@ export interface QueueData {
   currentNumber: number;
   lastNumber: number;
   status: 'open' | 'closed';
-  date: string; // YYYY-MM-DD
+  date: string; // YYYY-MM-DD (WIB) - tanggal antrian hari ini
   updatedAt: Timestamp;
-  // Auto-reset metadata
-  lastResetAt?: Timestamp;
-  nextResetAt?: Timestamp;
+  // Date-based reset: YYYY-MM-DD WIB saat terakhir reset
+  resetDate?: string;
+  // Manual override flag - if true, auto-open is blocked
+  manualClosed?: boolean;
 }
 
 export type LogStatus = 'waiting' | 'called' | 'skipped' | 'completed';
