@@ -51,42 +51,49 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-emerald-200 p-6 space-y-6">
-        <div className="flex justify-between items-start">
+    <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-emerald-100 p-6 space-y-6">
+        {/* Header */}
+        <div className="flex justify-between items-center">
             <div>
-                <h2 className="text-xl font-bold text-emerald-900">{label}</h2>
+                <h2 className="text-xl font-bold text-emerald-700">{label}</h2>
                 <div className="flex items-center gap-2 mt-1">
-                    <span className={cn("w-2 h-2 rounded-full", data?.status === 'open' ? "bg-emerald-500" : "bg-red-500")}/>
-                    <span className="text-sm font-medium text-emerald-700 capitalize">{data?.status || "Loading..."}</span>
+                    <span className={cn("w-2.5 h-2.5 rounded-full", data?.status === 'open' ? "bg-emerald-500" : "bg-amber-500")}/>
+                    <span className={cn(
+                      "text-xs px-3 py-1 rounded-full font-bold uppercase",
+                      data?.status === 'open' ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"
+                    )}>
+                      {data?.status || "Loading..."}
+                    </span>
                 </div>
             </div>
             <button
                onClick={toggleStatus}
                disabled={loading || !data}
-               className={cn("px-4 py-2 rounded-lg text-sm font-bold transition-colors", 
+               className={cn("px-4 py-2 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95", 
                    data?.status === 'open' 
-                   ? "bg-red-100 text-red-700 hover:bg-red-200" 
-                   : "bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+                   ? "bg-amber-500 text-white hover:bg-amber-600" 
+                   : "bg-emerald-600 text-white hover:bg-emerald-700"
                )}
             >
                {data?.status === 'open' ? "TUTUP ANTRIAN" : "BUKA ANTRIAN"}
             </button>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 border-t border-b border-emerald-100 py-6">
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-4 bg-emerald-50/50 rounded-xl p-4">
             <div className="text-center">
                 <div className="text-3xl font-bold text-emerald-900">{data?.currentNumber || 0}</div>
-                <div className="text-xs text-emerald-600 uppercase">Current</div>
+                <div className="text-xs text-emerald-600 uppercase font-medium">Current</div>
             </div>
-            <div className="text-center border-l border-r border-emerald-100">
+            <div className="text-center border-l border-r border-emerald-200">
                 <div className="text-3xl font-bold text-emerald-900">{data?.lastNumber || 0}</div>
-                <div className="text-xs text-emerald-600 uppercase">Total</div>
+                <div className="text-xs text-emerald-600 uppercase font-medium">Total</div>
             </div>
             <div className="text-center">
                 <div className="text-3xl font-bold text-amber-600">
                    {(data?.lastNumber || 0) - (data?.currentNumber || 0)}
                 </div>
-                <div className="text-xs text-emerald-600 uppercase">Waiting</div>
+                <div className="text-xs text-emerald-600 uppercase font-medium">Waiting</div>
             </div>
         </div>
 
@@ -94,12 +101,12 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
         <OperatingHoursInfo manualClosed={data?.manualClosed} variant="full" />
 
         {/* Auto Reset Countdown & Manual Reset */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pt-4 border-t border-emerald-100">
             <ResetCountdown variant="full" />
             
             {/* Manual Reset Button */}
             <button 
-              className="px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 flex items-center gap-2"
+              className="px-4 py-2 bg-amber-50 text-amber-600 hover:bg-amber-100 rounded-xl text-sm font-bold transition-all hover:scale-105 active:scale-95 disabled:opacity-50 flex items-center gap-2"
               disabled={resetting}
               onClick={async () => {
                 if (!confirm(`RESET antrian ${label}? Semua nomor akan kembali ke 0.`)) return;

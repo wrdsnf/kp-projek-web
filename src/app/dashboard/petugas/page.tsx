@@ -108,22 +108,22 @@ function PetugasQueueCard({
   const isClosed = data?.status === 'closed';
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-emerald-200 overflow-hidden">
+    <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-emerald-100 overflow-hidden">
       {/* Header */}
       <div className={cn(
-        "px-4 py-3 border-b flex items-center gap-3",
-        isGadai ? "bg-emerald-50" : "bg-amber-50"
+        "px-5 py-4 border-b border-emerald-100 flex items-center gap-3",
+        isGadai ? "bg-emerald-50/80" : "bg-amber-50/80"
       )}>
         <Icon className={cn("w-6 h-6", isGadai ? "text-emerald-600" : "text-amber-600")} />
         <div className="flex-1">
-          <h3 className="font-bold text-emerald-900">{label}</h3>
+          <h3 className="font-bold text-emerald-700">{label}</h3>
           <p className="text-xs text-emerald-600">
             {isGadai ? "Gadai baru, perpanjangan" : "Pelunasan, cicilan, pembayaran"}
           </p>
         </div>
         <span className={cn(
-          "text-xs px-2 py-1 rounded-full font-medium",
-          !isClosed ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"
+          "text-xs px-3 py-1 rounded-full font-bold uppercase",
+          !isClosed ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"
         )}>
           {!isClosed ? "Open" : "Closed"}
         </span>
@@ -132,14 +132,14 @@ function PetugasQueueCard({
       {/* Body */}
       <div className="p-6 space-y-6">
         {/* Stats */}
-        <div className="grid grid-cols-2 gap-4 text-center">
-          <div className="bg-emerald-50 rounded-lg p-3">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-emerald-50/50 rounded-xl p-4 text-center">
             <div className="text-3xl font-bold text-emerald-900">{data?.currentNumber || 0}</div>
-            <div className="text-xs text-emerald-600 uppercase">Sedang Dilayani</div>
+            <div className="text-xs text-emerald-600 uppercase font-medium">Sedang Dilayani</div>
           </div>
-          <div className="bg-emerald-50 rounded-lg p-3">
+          <div className="bg-emerald-50/50 rounded-xl p-4 text-center">
             <div className="text-3xl font-bold text-emerald-900">{data?.lastNumber || 0}</div>
-            <div className="text-xs text-emerald-600 uppercase">Total Hari Ini</div>
+            <div className="text-xs text-emerald-600 uppercase font-medium">Total Hari Ini</div>
           </div>
         </div>
         
@@ -148,10 +148,10 @@ function PetugasQueueCard({
           onClick={handleTake}
           disabled={loading || isClosed}
           className={cn(
-            "w-full py-4 rounded-xl font-bold text-lg shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2",
+            "w-full py-4 rounded-xl font-bold text-lg shadow-lg transition-all hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2",
             isGadai 
               ? "bg-emerald-600 hover:bg-emerald-700 text-white" 
-              : "bg-amber-500 hover:bg-amber-400 text-white"
+              : "bg-amber-500 hover:bg-amber-600 text-white"
           )}
         >
           {loading ? (
