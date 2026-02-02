@@ -1,225 +1,158 @@
-# 🏛️ Pegadaian CP Sentul Yogyakarta - Website & Sistem Antrian Online
+# Pegadaian Sentul – Sistem Antrian Digital
 
-Aplikasi web company profile dan sistem antrian online untuk Pegadaian Cabang Pembantu Sentul Yogyakarta. Dibangun dengan Next.js, Firebase, dan Tailwind CSS.
+Sistem antrian digital berbasis web untuk **Pegadaian Cabang Sentul**. Aplikasi ini memungkinkan nasabah mengambil nomor antrian secara online, dengan dashboard khusus untuk Admin, Petugas, dan Teller.
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
-![Firebase](https://img.shields.io/badge/Firebase-Firestore-orange?logo=firebase)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwind-css)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+## 🔗 Live Demo
 
-## ✨ Fitur
+**[https://pegadaiansentul.netlify.app](https://pegadaiansentul.netlify.app)**
 
-### Homepage & Company Profile
-- 🏠 **Landing Page** - Hero section dengan branding Pegadaian
-- 📦 **Produk & Layanan** - Informasi lengkap produk Pegadaian
-- ⏱️ **Alur Layanan** - Panduan step-by-step untuk nasabah
-- ⭐ **Ulasan Nasabah** - Review dari pelanggan
-- 📱 **Info Aplikasi Tring** - Promosi aplikasi mobile Pegadaian
-- 📍 **Informasi Outlet** - Alamat, jam operasional, kontak
-- 🖼️ **Manajemen Konten** - Ubah gambar banner/promo langsung dari dashboard
-- ⚙️ **Pengaturan Tring** - Atur kode referral & link download aplikasi Tring
+---
 
-### Halaman Produk
-- 💎 **Gadai Emas** (`/produk/gadai-emas`) - Layanan gadai emas & perhiasan
-- 💻 **Gadai Non-Emas** (`/produk/gadai-non-emas`) - Gadai elektronik & kendaraan
-- 🪙 **Tabungan Emas** (`/produk/tabungan-emas`) - Investasi emas mulai Rp10.000
-- 🏦 **Pembiayaan** (`/produk/pembiayaan`) - KREASI, KRASIDA, Amanah, Rahn
-- 💳 **Jasa Lainnya** (`/produk/jasa-lainnya`) - Pembayaran tagihan, transfer, dll
+## ✨ Fitur Utama
 
-### Sistem Antrian Online
+- **Pengambilan Antrian Online** – Nasabah dapat mengambil nomor antrian dari browser tanpa perlu ke kantor
+- **Auto Reset Harian** – Antrian reset otomatis setiap hari pukul **06:00 WIB**
+- **Jadwal Operasional Otomatis** – Buka/tutup antrian otomatis berdasarkan hari dan jam operasional
+- **Manual Override** – Admin dapat membuka/menutup antrian secara manual
+- **Role-Based Dashboard**:
+  - **Admin** – Monitoring, kontrol status, reset manual
+  - **Petugas Antrian** – Ambil antrian manual untuk nasabah
+  - **Teller** – Panggil antrian berikutnya
+- **Realtime Status** – Countdown reset & status antrian update secara realtime
+- **Upload Gambar** – Manajemen gambar produk via Cloudinary
+- **UI Modern** – Glassmorphism + gradient (Emerald & Amber)
 
-#### Untuk Nasabah (Publik)
-- 🎫 **Ambil Nomor Antrian** - Gadai (GD-XXX) & Non-Gadai (NG-XXX)
-- ⏱️ **Cooldown 10 Menit** - Mencegah spam, dengan countdown timer
-- 📱 **Realtime Update** - Pantau nomor yang sedang dilayani
-- 🔗 **Share Link Antrian** - Bagikan/simpan link untuk pantau status
-- 💾 **Auto-Save** - Nomor tersimpan di browser (localStorage)
-- 🔄 **Auto-Reset Detection** - Jika antrian di-reset, cooldown hilang & bisa ambil baru
-- 🖼️ **Download Tiket** - Simpan tiket antrian sebagai gambar (JPG)
-- 📱 **QR Code** - Scan QR untuk memantau antrian di HP lain
+---
 
-#### Halaman Status Publik
-- 📊 **`/antrian/status?kode=GD-001`** - Pantau status antrian tanpa login
-- Estimasi posisi dalam antrian
-- Update realtime
+## 🛠 Tech Stack
 
-### Dashboard Pegawai
+| Kategori | Teknologi |
+|----------|-----------|
+| Framework | Next.js 16 (App Router) |
+| UI | React, TypeScript, Tailwind CSS |
+| Backend | Firebase (Auth + Firestore) |
+| Image Upload | Cloudinary |
+| Deployment | Netlify |
 
-#### Teller (`/dashboard/teller`)
-- 📞 **Panggil Antrian** - Panggil nomor berikutnya
-- Hanya bisa panggil sesuai jenis antrian yang ditugaskan
-- Tercatat di log siapa yang melayani
-
-#### Admin (`/dashboard/admin`)
-- ⚙️ **Kontrol Antrian** - Buka/tutup antrian
-- 🔄 **Reset Manual** - Reset antrian ke 0 (juga hapus cooldown)
-- 📊 **Laporan Harian** - Statistik per hari dengan filter tanggal
-- 📥 **Export CSV** - Download laporan
-- 🖼️ **Kelola Homepage** - Upload gambar promo/banner baru
-- 📱 **Kelola Link Tring** - Update link download & kode referral
-
-#### Petugas Antrian (`/dashboard/petugas`)
-- 🎫 **Ambil Antrian Manual** - Untuk nasabah lansia/tanpa HP
-- ⏱️ **Tanpa Cooldown** - Bisa ambil berkali-kali
-- 📝 **Tercatat di Log** - Ditandai sebagai "manual input"
+---
 
 ## 📁 Struktur Folder
 
 ```
-src/
-├── app/
-│   ├── page.tsx                    # Homepage (Landing Page)
-│   ├── about/page.tsx              # Halaman Tentang Kami
-│   ├── queue/page.tsx              # Halaman Antrian Nasabah
-│   ├── antrian/status/page.tsx     # Status Antrian Publik
-│   ├── login/page.tsx              # Login Pegawai
-│   ├── api/                        # API Routes
-│   │   └── upload-image/           # Cloudinary Upload API
-│   ├── produk/                     # Halaman Produk
-│   │   └── ...
-│   └── dashboard/
-│       ├── layout.tsx              # Dashboard Layout (Auth Guard)
-│       ├── page.tsx                # Redirect berdasarkan role
-│       ├── admin/
-│       │   ├── page.tsx            # Dashboard Admin
-│       │   ├── history/page.tsx    # Laporan Harian
-│       │   ├── content/page.tsx    # Manajemen Konten Homepage
-│       │   └── settings/page.tsx   # Pengaturan Aplikasi Tring
-│       ├── teller/page.tsx         # Dashboard Teller
-│       └── petugas/page.tsx        # Dashboard Petugas Antrian
-├── components/
-│   ├── Navbar.tsx                  # Shared Navigation
-│   ├── ProductNav.tsx              # Product Navigation & Section
-│   ├── QueueTicket.tsx             # Queue Ticket Component
-│   ├── ImageViewerModal.tsx        # Modal View Gambar
-│   └── home/                       # Homepage Components
-├── hooks/
-│   ├── useAuth.ts                  # Authentication State
-│   └── useQueue.ts                 # Realtime Queue Listener
-└── lib/
-    ├── firebase.ts                 # Firebase Config
-    ├── queue-service.ts            # Queue Logic
-    ├── homepage-service.ts         # Homepage Content Logic
-    ├── tring-service.ts            # Tring Settings Logic
-    ├── image-compression.ts        # Image Optimization
-    └── ...                         # Other utils
+queue-system/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── (public)/           # Public pages (landing, products, about)
+│   │   ├── dashboard/          # Role-based dashboard
+│   │   │   ├── admin/          # Admin dashboard
+│   │   │   ├── petugas/        # Petugas antrian dashboard
+│   │   │   └── teller/         # Teller dashboard
+│   │   ├── queue/              # Queue pages (gadai, pembiayaan)
+│   │   └── login/              # Authentication
+│   ├── components/             # Reusable UI components
+│   ├── hooks/                  # Custom React hooks
+│   └── lib/                    # Services & utilities
+│       ├── firebase.ts         # Firebase configuration
+│       ├── queue-service.ts    # Queue business logic
+│       ├── wib-schedule-service.ts # WIB timezone scheduling
+│       └── types.ts            # TypeScript types
+├── public/                     # Static assets
+├── .env.local                  # Environment variables (local)
+├── netlify.toml                # Netlify deployment config
+└── firebase.json               # Firebase config
 ```
 
-## 🗄️ Database Schema (Firestore)
+---
 
-```
-queues/{gadai|non_gadai}
-├── currentNumber: number
-├── lastNumber: number
-├── status: "open" | "closed"
-├── date: "YYYY-MM-DD"
-└── updatedAt: timestamp
+## 🚀 Setup & Development
 
-queue_logs/{autoId}
-├── type: "gadai" | "non_gadai"
-├── number: number
-├── date: "YYYY-MM-DD"
-├── time: timestamp
-├── status: "waiting" | "called" | "completed" | "skipped"
-├── deviceId?: string
-├── isManualInput?: boolean
-├── createdBy?: string (uid petugas)
-├── servedBy?: string (uid teller)
-└── servedAt?: timestamp
+### Prerequisites
 
-cooldowns/{deviceId_type}
-├── deviceId: string
-├── type: "gadai" | "non_gadai"
-├── lastTakeTime: timestamp
-└── date: "YYYY-MM-DD"
+- Node.js 18+
+- npm atau yarn
+- Firebase project (dengan Firestore & Authentication)
+- Cloudinary account
 
-daily_stats/{YYYY-MM-DD}
-├── date: string
-├── totalCustomers: number
-├── gadaiCount: number
-├── nonGadaiCount: number
-├── manualInputCount: number
-├── peakHour?: string
-└── closedAt?: timestamp
-
-users/{uid}
-├── uid: string
-├── email: string
-├── name: string
-├── role: "admin" | "teller" | "petugas_antrian"
-└── handleQueue: ["gadai", "non_gadai"]
-
-settings/homepage_images
-├── harga_emas_hari_ini: { url, updatedAt, ... }
-├── harga_emas_tring: { url, updatedAt, ... }
-└── ...
-
-settings/tring_app
-├── referralCode: string
-├── appStoreUrl: string
-└── playStoreUrl: string
-```
-
-## 🎨 Tech Stack
-
-| Teknologi | Kegunaan |
-|-----------|----------|
-| **Next.js 16** | Framework React dengan App Router |
-| **TypeScript** | Type Safety |
-| **Tailwind CSS** | Styling (Mobile-first) |
-| **Firebase Auth** | Authentication |
-| **Firestore** | Database Realtime |
-| **Cloudinary** | Media/Image Management |
-| **Lucide React** | Icon Library |
-| **html-to-image** | Export Ticket to Image |
-| **qrcode.react** | Generate QR Code |
-
-## 🎨 Brand Colors
-
-| Warna | Hex | Penggunaan |
-|-------|-----|------------|
-| **emerald 600** | `#16a34a` | Primary accent, buttons, icons |
-| **emerald 800** | `#166534` | Headers, dark sections |
-| **emerald 950** | `#052e16` | Footer, navbar |
-| **Amber 500** | `#f59e0b` | Secondary accent, highlights |
-| **Gray 50** | `#f9fafb` | Section backgrounds |
-
-## 🔐 Role & Access
-
-| Fitur | Nasabah | Teller | Petugas | Admin |
-|-------|---------|--------|---------|-------|
-| Lihat Homepage | ✅ | ✅ | ✅ | ✅ |
-| Lihat Produk | ✅ | ✅ | ✅ | ✅ |
-| Ambil Antrian | ✅ (cooldown) | ✅ | ✅ (no limit) | ✅ |
-| Panggil Antrian | ❌ | ✅ | ❌ | ✅ |
-| Buka/Tutup Antrian | ❌ | ❌ | ❌ | ✅ |
-| Reset Manual | ❌ | ❌ | ❌ | ✅ |
-| Lihat Laporan | ❌ | ❌ | ❌ | ✅ |
-
-## 📱 Responsive Design
-
-Aplikasi dioptimalkan untuk:
-- 📱 Mobile (375px+)
-- 📱 Tablet (768px+)
-- 💻 Desktop (1024px+)
-
-## 🚀 Getting Started
+### Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/username/pegadaian-sentul.git
+cd pegadaian-sentul/queue-system
+
 # Install dependencies
 npm install
 
 # Setup environment variables
 cp .env.example .env.local
-# Edit .env.local dengan Firebase config
+# Edit .env.local dengan value yang sesuai
 
 # Run development server
 npm run dev
-
-# Build for production
-npm run build
 ```
+
+Buka [http://localhost:3000](http://localhost:3000) di browser.
+
+---
+
+## 🔐 Environment Variables
+
+Buat file `.env.local` di root project:
+
+```env
+# Firebase Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+---
+
+## 🌐 Deployment (Netlify)
+
+### Automatic Deployment
+
+1. Connect repository ke Netlify
+2. Set environment variables di Netlify Dashboard:
+   - Site Settings → Environment Variables
+   - Tambahkan semua variabel dari `.env.local`
+3. Deploy otomatis setiap push ke branch `main`
+
+### Manual Deployment
+
+```bash
+# Build production
+npm run build
+
+# Deploy ke Netlify
+netlify deploy --prod
+```
+
+### Netlify Configuration
+
+File `netlify.toml` sudah dikonfigurasi:
+
+```toml
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+```
+
+---
 
 ## 📄 License
 
-MIT License - Free to use for personal and commercial projects.
+MIT License © 2026 Pegadaian Sentul
+
+---
