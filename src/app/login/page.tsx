@@ -85,25 +85,25 @@ export default function LoginPage() {
 
             <form onSubmit={handleLogin} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-medium text-emerald-800 mb-2">Email</label>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-gray-50"
+                  className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:ring-2 focus:ring-amber-400 focus:border-transparent outline-none transition-all bg-emerald-50/30"
                   placeholder="nama@pegadaian.co.id"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <label className="block text-sm font-medium text-emerald-800 mb-2">Password</label>
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all bg-gray-50"
+                  className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:ring-2 focus:ring-amber-400 focus:border-transparent outline-none transition-all bg-emerald-50/30"
                   placeholder="••••••••"
                 />
               </div>
@@ -111,7 +111,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-4 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-emerald-900 font-bold py-4 rounded-xl transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -127,8 +127,8 @@ export default function LoginPage() {
               </button>
             </form>
 
-            <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-              <p className="text-gray-500 text-sm">
+            <div className="mt-6 pt-6 border-t border-emerald-100 text-center">
+              <p className="text-emerald-600 text-sm">
                 Hanya untuk pegawai Pegadaian CP Sentul
               </p>
             </div>
@@ -139,3 +139,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

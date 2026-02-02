@@ -34,14 +34,14 @@ function QueueStatusContent() {
   
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-emerald-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-lg p-8 text-center max-w-md w-full">
           <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-          <h1 className="text-xl font-bold text-gray-900 mb-2">Error</h1>
-          <p className="text-gray-600 mb-6">{error}</p>
+          <h1 className="text-xl font-bold text-emerald-900 mb-2">Error</h1>
+          <p className="text-emerald-700 mb-6">{error}</p>
           <Link 
             href="/queue"
-            className="inline-flex items-center gap-2 text-emerald-600 hover:underline"
+            className="inline-flex items-center gap-2 text-amber-600 hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             Ambil Antrian Baru
@@ -53,8 +53,8 @@ function QueueStatusContent() {
   
   if (!parsed) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-gray-500">Memuat...</div>
+      <div className="min-h-screen bg-emerald-50 flex items-center justify-center">
+        <div className="text-emerald-600">Memuat...</div>
       </div>
     );
   }
@@ -70,11 +70,11 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
   const Icon = isGadai ? Gem : FileText;
   const bgGradient = isGadai 
     ? "from-emerald-500 to-emerald-600" 
-    : "from-blue-600 to-blue-700";
+    : "from-amber-500 to-amber-600";
   
   // Calculate status
   const getStatus = () => {
-    if (!data) return { label: "Memuat...", color: "gray", icon: Clock };
+    if (!data) return { label: "Memuat...", color: "emerald", icon: Clock };
     
     const current = data.currentNumber;
     const waiting = number - current;
@@ -96,7 +96,7 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
     } else {
       return { 
         label: "Sudah dipanggil", 
-        color: "gray",
+        color: "neutral",
         icon: CheckCircle,
         waiting: -1
       };
@@ -106,7 +106,7 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
   const status = getStatus();
   
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-emerald-50">
       {/* Navbar */}
       <GlobalNavbar />
       
@@ -126,9 +126,9 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
       <div className="max-w-md mx-auto px-4 -mt-6">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Queue Number */}
-          <div className="p-8 text-center border-b border-gray-100">
-            <p className="text-gray-500 text-sm uppercase tracking-wide mb-2">Nomor Antrian Anda</p>
-            <div className={cn("text-5xl font-black", isGadai ? "text-emerald-600" : "text-blue-600")}>
+          <div className="p-8 text-center border-b border-emerald-100">
+            <p className="text-emerald-600 text-sm uppercase tracking-wide mb-2">Nomor Antrian Anda</p>
+            <div className={cn("text-5xl font-black", isGadai ? "text-emerald-600" : "text-amber-600")}>
               {kode.toUpperCase()}
             </div>
           </div>
@@ -138,13 +138,13 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
             "p-6 text-center",
             status.color === 'amber' && "bg-amber-50",
             status.color === 'emerald' && "bg-emerald-50",
-            status.color === 'gray' && "bg-gray-50"
+            status.color === 'neutral' && "bg-emerald-50/50"
           )}>
             <div className={cn(
               "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium",
               status.color === 'amber' && "bg-amber-100 text-amber-700",
               status.color === 'emerald' && "bg-emerald-100 text-emerald-700 animate-pulse",
-              status.color === 'gray' && "bg-gray-100 text-gray-600"
+              status.color === 'neutral' && "bg-emerald-100 text-emerald-600"
             )}>
               <status.icon className="w-5 h-5" />
               {status.label}
@@ -152,18 +152,18 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
           </div>
           
           {/* Current Number */}
-          <div className="p-6 bg-gray-50">
+          <div className="p-6 bg-emerald-50/50">
             <div className="flex justify-between items-center">
               <div className="text-center flex-1">
-                <p className="text-gray-400 text-xs uppercase mb-1">Sedang Dilayani</p>
-                <div className="text-3xl font-bold text-gray-900">
+                <p className="text-emerald-500 text-xs uppercase mb-1">Sedang Dilayani</p>
+                <div className="text-3xl font-bold text-emerald-900">
                   {String(data?.currentNumber || 0).padStart(3, '0')}
                 </div>
               </div>
-              <div className="w-px h-12 bg-gray-200" />
+              <div className="w-px h-12 bg-emerald-200" />
               <div className="text-center flex-1">
-                <p className="text-gray-400 text-xs uppercase mb-1">Total Antrian</p>
-                <div className="text-3xl font-bold text-gray-900">
+                <p className="text-emerald-500 text-xs uppercase mb-1">Total Antrian</p>
+                <div className="text-3xl font-bold text-emerald-900">
                   {data?.lastNumber || 0}
                 </div>
               </div>
@@ -171,7 +171,7 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
           </div>
           
           {/* Queue Status */}
-          <div className="p-4 border-t border-gray-100 flex justify-center">
+          <div className="p-4 border-t border-emerald-100 flex justify-center">
             <span className={cn(
               "px-3 py-1 rounded-full text-xs font-bold",
               data?.status === 'open' ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"
@@ -183,13 +183,13 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
         
         {/* Info */}
         <div className="mt-6 flex flex-col items-center gap-4 pb-6">
-          <p className="text-gray-500 text-sm italic">
+          <p className="text-emerald-600 text-sm italic">
             Halaman ini akan update otomatis
           </p>
 
           <Link 
             href="/queue" 
-            className="inline-flex items-center justify-center px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-full shadow-md transition-all active:scale-95 group"
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-amber-500 hover:bg-amber-400 text-emerald-900 font-semibold rounded-full shadow-md transition-all active:scale-95 group"
           >
             <span>Ambil antrian baru</span>
             <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
@@ -205,8 +205,8 @@ function StatusDisplay({ type, number, kode }: { type: QueueType; number: number
 export default function QueueStatusPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-gray-500">Memuat...</div>
+      <div className="min-h-screen bg-emerald-50 flex items-center justify-center">
+        <div className="text-emerald-600">Memuat...</div>
       </div>
     }>
       <QueueStatusContent />

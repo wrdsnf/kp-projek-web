@@ -11,8 +11,8 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-2xl font-bold text-gray-800">Overview Antrian</h1>
-        <p className="text-gray-500">Monitoring dan kontrol status antrian</p>
+        <h1 className="text-2xl font-bold text-emerald-900">Overview Antrian</h1>
+        <p className="text-emerald-600">Monitoring dan kontrol status antrian</p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -45,13 +45,13 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-6">
+    <div className="bg-white rounded-xl shadow-sm border border-emerald-200 p-6 space-y-6">
         <div className="flex justify-between items-start">
             <div>
-                <h2 className="text-xl font-bold text-gray-900">{label}</h2>
+                <h2 className="text-xl font-bold text-emerald-900">{label}</h2>
                 <div className="flex items-center gap-2 mt-1">
                     <span className={cn("w-2 h-2 rounded-full", data?.status === 'open' ? "bg-emerald-500" : "bg-red-500")}/>
-                    <span className="text-sm font-medium text-gray-600 capitalize">{data?.status || "Loading..."}</span>
+                    <span className="text-sm font-medium text-emerald-700 capitalize">{data?.status || "Loading..."}</span>
                 </div>
             </div>
             <button
@@ -67,20 +67,20 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
             </button>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 border-t border-b border-gray-100 py-6">
+        <div className="grid grid-cols-3 gap-4 border-t border-b border-emerald-100 py-6">
             <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">{data?.currentNumber || 0}</div>
-                <div className="text-xs text-gray-500 uppercase">Current</div>
+                <div className="text-3xl font-bold text-emerald-900">{data?.currentNumber || 0}</div>
+                <div className="text-xs text-emerald-600 uppercase">Current</div>
             </div>
-            <div className="text-center border-l border-r border-gray-100">
-                <div className="text-3xl font-bold text-gray-900">{data?.lastNumber || 0}</div>
-                <div className="text-xs text-gray-500 uppercase">Total</div>
+            <div className="text-center border-l border-r border-emerald-100">
+                <div className="text-3xl font-bold text-emerald-900">{data?.lastNumber || 0}</div>
+                <div className="text-xs text-emerald-600 uppercase">Total</div>
             </div>
             <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900 text-blue-600">
+                <div className="text-3xl font-bold text-amber-600">
                    {(data?.lastNumber || 0) - (data?.currentNumber || 0)}
                 </div>
-                <div className="text-xs text-gray-500 uppercase">Waiting</div>
+                <div className="text-xs text-emerald-600 uppercase">Waiting</div>
             </div>
         </div>
         
@@ -109,3 +109,4 @@ function AdminQueueControl({ type, label, color }: { type: QueueType; label: str
     </div>
   );
 }
+

@@ -185,13 +185,13 @@ ${statusUrl}`;
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full max-h-[90vh] overflow-auto">
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <h3 className="font-bold text-gray-800">Tiket Antrian</h3>
+        <div className="flex items-center justify-between p-4 border-b border-emerald-100">
+          <h3 className="font-bold text-emerald-900">Tiket Antrian</h3>
           <button 
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-emerald-100 rounded-full transition-colors"
           >
-            <X className="w-5 h-5 text-gray-500" />
+            <X className="w-5 h-5 text-emerald-600" />
           </button>
         </div>
 
@@ -245,10 +245,10 @@ ${statusUrl}`;
 
               {/* MAIN CONTENT - 50% = 540px */}
               <div 
-                className="w-full flex flex-col items-center justify-center bg-gray-50"
+                className="w-full flex flex-col items-center justify-center bg-emerald-50"
                 style={{ height: 540 }}
               >
-                <p className="text-3xl text-gray-500 uppercase tracking-widest mb-2">
+                <p className="text-3xl text-emerald-600 uppercase tracking-widest mb-2">
                   Nomor Antrian Anda
                 </p>
                 
@@ -269,9 +269,9 @@ ${statusUrl}`;
                 className="w-full flex flex-col items-center justify-center bg-white"
                 style={{ height: 162 }}
               >
-                <p className="text-2xl text-gray-600">{dateStr}</p>
-                <p className="text-3xl font-bold text-gray-800 mt-1">Pukul {timeStr} WIB</p>
-                <p className="mt-3 text-xl text-gray-500">
+                <p className="text-2xl text-emerald-700">{dateStr}</p>
+                <p className="text-3xl font-bold text-emerald-900 mt-1">Pukul {timeStr} WIB</p>
+                <p className="mt-3 text-xl text-emerald-600">
                   Simpan gambar ini untuk memantau antrian Anda
                 </p>
               </div>
@@ -304,7 +304,7 @@ ${statusUrl}`;
         </div>
 
         {/* Action Buttons */}
-        <div className="p-4 border-t border-gray-100 space-y-2">
+        <div className="p-4 border-t border-emerald-100 space-y-2">
           <button
             onClick={handleDownload}
             disabled={isGenerating}
@@ -329,7 +329,7 @@ ${statusUrl}`;
           <div className="flex gap-2">
             <button
               onClick={handleCopy}
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-medium transition-colors text-sm"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 rounded-xl font-medium transition-colors text-sm"
             >
               <Copy className="w-4 h-4" />
               Salin Teks
@@ -337,7 +337,7 @@ ${statusUrl}`;
             <button
               onClick={handleShare}
               disabled={isGenerating}
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-medium transition-colors disabled:opacity-50 text-sm"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 rounded-xl font-medium transition-colors disabled:opacity-50 text-sm"
             >
               <Share2 className="w-4 h-4" />
               Bagikan

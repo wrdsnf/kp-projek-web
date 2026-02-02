@@ -49,10 +49,10 @@ export default function HomepageImages() {
               <Coins className="w-4 h-4 text-amber-600" />
               <span className="text-amber-700 text-sm font-medium">Info Harga Emas</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
               Informasi Harga Emas Terkini
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-emerald-700 max-w-2xl mx-auto">
               Update harga emas harian dari Pegadaian untuk membantu Anda merencanakan investasi emas
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function HomepageImages() {
           {/* Mobile Horizontal Slider (hidden on desktop) */}
           <div className="md:hidden relative">
             {/* Swipe hint */}
-            <div className="flex items-center justify-center gap-2 text-gray-400 text-xs mb-3">
+            <div className="flex items-center justify-center gap-2 text-emerald-500 text-xs mb-3">
               <ChevronLeft className="w-4 h-4" />
               <span>Geser untuk melihat semua</span>
               <ChevronRight className="w-4 h-4" />
@@ -132,7 +132,7 @@ export default function HomepageImages() {
           </div>
 
           {/* Click hint */}
-          <p className="text-center text-gray-400 text-sm mt-6">
+          <p className="text-center text-emerald-500 text-sm mt-6">
             Klik gambar untuk memperbesar
           </p>
         </div>
@@ -173,7 +173,7 @@ function ImageCard({
     <div 
       className={`
         group relative bg-white rounded-2xl shadow-md hover:shadow-xl 
-        transition-all overflow-hidden border border-gray-100 cursor-pointer
+        transition-all overflow-hidden border border-emerald-100 cursor-pointer
         ${isMobile ? 'active:scale-[0.98]' : ''}
       `}
       onClick={onViewFullscreen}

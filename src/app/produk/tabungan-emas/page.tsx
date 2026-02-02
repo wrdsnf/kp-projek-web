@@ -20,7 +20,7 @@ export default function TabunganEmasPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-yellow-50 to-white" />
           
           <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-amber-700 transition-colors mb-8 text-sm">
+            <Link href="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-amber-700 transition-colors mb-8 text-sm">
               <ArrowLeft className="w-4 h-4" />
               Kembali ke Beranda
             </Link>
@@ -30,10 +30,10 @@ export default function TabunganEmasPage() {
                 <Coins className="w-10 h-10 text-white" />
               </div>
               <div className="flex-1">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4 leading-tight">
                   Tabungan Emas
                 </h1>
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-emerald-700 leading-relaxed max-w-2xl">
                   Mulai investasi emas dengan modal kecil — cuma Rp10.000! Nggak perlu khawatir penyimpanan,
                   emas kamu aman di Pegadaian. Bisa ditarik fisik atau dijual kapan saja.
                 </p>
@@ -44,11 +44,11 @@ export default function TabunganEmasPage() {
 
         {/* Apa Itu Tabungan Emas? */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-6">
             Apa Itu Tabungan Emas?
           </h2>
           
-          <div className="space-y-4 text-gray-600 leading-relaxed">
+          <div className="space-y-4 text-emerald-700 leading-relaxed">
             <p>
               Tabungan Emas adalah cara menabung dalam bentuk emas yang praktis dan terjangkau. 
               Kamu tidak perlu membeli emas batangan secara utuh — cukup menabung sesuai kemampuan.
@@ -63,15 +63,15 @@ export default function TabunganEmasPage() {
           <div className="mt-10 grid grid-cols-3 gap-4 text-center">
             <div className="py-6">
               <p className="text-3xl md:text-4xl font-bold text-amber-600">Rp10rb</p>
-              <p className="text-gray-500 text-sm mt-1">Minimal nabung</p>
+              <p className="text-emerald-600 text-sm mt-1">Minimal nabung</p>
             </div>
-            <div className="py-6 border-x border-gray-200">
+            <div className="py-6 border-x border-emerald-200">
               <p className="text-3xl md:text-4xl font-bold text-amber-600">0.01gr</p>
-              <p className="text-gray-500 text-sm mt-1">Satuan terkecil</p>
+              <p className="text-emerald-600 text-sm mt-1">Satuan terkecil</p>
             </div>
             <div className="py-6">
               <p className="text-3xl md:text-4xl font-bold text-amber-600">24K</p>
-              <p className="text-gray-500 text-sm mt-1">Emas murni</p>
+              <p className="text-emerald-600 text-sm mt-1">Emas murni</p>
             </div>
           </div>
         </section>
@@ -79,7 +79,7 @@ export default function TabunganEmasPage() {
         {/* Kenapa Harus Nabung Emas? */}
         <section className="bg-gradient-to-b from-amber-50 to-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-8">
               Kenapa Harus Nabung Emas?
             </h2>
             
@@ -106,8 +106,8 @@ export default function TabunganEmasPage() {
                     <item.icon className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                    <h3 className="font-semibold text-emerald-900 mb-1">{item.title}</h3>
+                    <p className="text-emerald-700 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -117,7 +117,7 @@ export default function TabunganEmasPage() {
 
         {/* Cocok Untuk Siapa */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-6">
             Cocok Untuk Siapa?
           </h2>
 
@@ -130,7 +130,7 @@ export default function TabunganEmasPage() {
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-amber-50 to-transparent border-l-4 border-amber-500 rounded-r-lg">
                 <item.icon className="w-6 h-6 text-amber-600 flex-shrink-0" />
-                <p className="text-gray-700">{item.text}</p>
+                <p className="text-emerald-800">{item.text}</p>
               </div>
             ))}
           </div>
@@ -213,10 +213,10 @@ export default function TabunganEmasPage() {
 
         {/* CTA */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-4">
             Mulai Nabung Emas Sekarang!
           </h2>
-          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
+          <p className="text-emerald-700 mb-8 max-w-lg mx-auto">
             Investasi emas tidak harus mahal. Mulai dari Rp10.000, kamu sudah bisa punya tabungan emas sendiri.
           </p>
           
@@ -231,7 +231,7 @@ export default function TabunganEmasPage() {
             </Link>
             <a 
               href="tel:0274375806"
-              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-semibold py-4 px-8 rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" />
               (0274) 375-806

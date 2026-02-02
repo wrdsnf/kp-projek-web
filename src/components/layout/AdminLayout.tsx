@@ -37,7 +37,7 @@ export default function AdminLayout({
   if (!user || !profile) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-emerald-50">
       {/* Top Navbar with hamburger for mobile */}
       <GlobalNavbar 
         variant="light" 
@@ -61,8 +61,8 @@ export default function AdminLayout({
           </div>
 
           {/* Footer */}
-          <footer className="bg-white border-t border-gray-200 py-4 mt-8">
-            <div className="text-center text-gray-400 text-sm px-4">
+          <footer className="bg-white border-t border-emerald-200 py-4 mt-8">
+            <div className="text-center text-emerald-500 text-sm px-4">
               Pegadaian CP Sentul Yogyakarta - Dashboard Internal
             </div>
           </footer>

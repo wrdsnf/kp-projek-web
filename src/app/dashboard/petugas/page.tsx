@@ -27,8 +27,8 @@ export default function PetugasDashboard() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-gray-800">Petugas Antrian</h1>
-        <p className="text-gray-500">Ambil antrian manual untuk nasabah</p>
+        <h1 className="text-2xl font-bold text-emerald-900">Petugas Antrian</h1>
+        <p className="text-emerald-600">Ambil antrian manual untuk nasabah</p>
       </header>
 
       {/* Success Alert */}
@@ -108,16 +108,16 @@ function PetugasQueueCard({
   const isClosed = data?.status === 'closed';
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-sm border border-emerald-200 overflow-hidden">
       {/* Header */}
       <div className={cn(
         "px-4 py-3 border-b flex items-center gap-3",
-        isGadai ? "bg-emerald-50" : "bg-blue-50"
+        isGadai ? "bg-emerald-50" : "bg-amber-50"
       )}>
-        <Icon className={cn("w-6 h-6", isGadai ? "text-emerald-600" : "text-blue-600")} />
+        <Icon className={cn("w-6 h-6", isGadai ? "text-emerald-600" : "text-amber-600")} />
         <div className="flex-1">
-          <h3 className="font-bold text-gray-800">{label}</h3>
-          <p className="text-xs text-gray-500">
+          <h3 className="font-bold text-emerald-900">{label}</h3>
+          <p className="text-xs text-emerald-600">
             {isGadai ? "Gadai baru, perpanjangan" : "Pelunasan, cicilan, pembayaran"}
           </p>
         </div>
@@ -133,13 +133,13 @@ function PetugasQueueCard({
       <div className="p-6 space-y-6">
         {/* Stats */}
         <div className="grid grid-cols-2 gap-4 text-center">
-          <div className="bg-gray-50 rounded-lg p-3">
-            <div className="text-3xl font-bold text-gray-900">{data?.currentNumber || 0}</div>
-            <div className="text-xs text-gray-500 uppercase">Sedang Dilayani</div>
+          <div className="bg-emerald-50 rounded-lg p-3">
+            <div className="text-3xl font-bold text-emerald-900">{data?.currentNumber || 0}</div>
+            <div className="text-xs text-emerald-600 uppercase">Sedang Dilayani</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
-            <div className="text-3xl font-bold text-gray-900">{data?.lastNumber || 0}</div>
-            <div className="text-xs text-gray-500 uppercase">Total Hari Ini</div>
+          <div className="bg-emerald-50 rounded-lg p-3">
+            <div className="text-3xl font-bold text-emerald-900">{data?.lastNumber || 0}</div>
+            <div className="text-xs text-emerald-600 uppercase">Total Hari Ini</div>
           </div>
         </div>
         
@@ -151,7 +151,7 @@ function PetugasQueueCard({
             "w-full py-4 rounded-xl font-bold text-lg shadow-lg transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2",
             isGadai 
               ? "bg-emerald-600 hover:bg-emerald-700 text-white" 
-              : "bg-blue-600 hover:bg-blue-700 text-white"
+              : "bg-amber-500 hover:bg-amber-400 text-white"
           )}
         >
           {loading ? (

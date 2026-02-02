@@ -130,7 +130,7 @@ export default function QueuePage() {
 
         {/* Queue Cards - Horizontal on desktop, vertical on mobile */}
         <div className="max-w-5xl mx-auto px-4 pb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
             {QUEUE_TYPES.map((q) => (
               <QueueCard 
                 key={q.id} 
@@ -218,8 +218,8 @@ function QueueCard({
     ? "from-emerald-600 to-emerald-500" 
     : "from-amber-500 to-amber-600";
   const btnColor = isGadai 
-    ? "bg-amber-500 hover:bg-amber-400 text-emerald-800" 
-    : "bg-amber-500 hover:bg-amber-400 text-amber-600";
+    ? "bg-emerald-500 hover:bg-emerald-400 text-white" 
+    : "bg-amber-500 hover:bg-amber-400 text-white";
 
   const copyLink = () => {
     if (!myNumber) return;
@@ -251,7 +251,8 @@ function QueueCard({
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+    <>
+    <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-fit self-start">
       {/* Header */}
       <div className={cn("bg-gradient-to-r p-4 flex justify-between items-center", bgGradient)}>
         <div className="flex items-center gap-3">
@@ -279,12 +280,12 @@ function QueueCard({
       <div className="p-6 space-y-6">
         {/* Current Number Display */}
         <div className="text-center">
-          <p className="text-gray-500 text-sm uppercase tracking-wide mb-1">Sedang Dilayani</p>
-          <div className="text-6xl font-black text-gray-800 tabular-nums">
+          <p className="text-emerald-600 text-sm uppercase tracking-wide mb-1">Sedang Dilayani</p>
+          <div className="text-6xl font-black text-emerald-900 tabular-nums">
             {String(data?.currentNumber || 0).padStart(3, '0')}
           </div>
-          <p className="text-gray-400 text-sm mt-2">
-            Total antrian hari ini: <span className="font-bold text-gray-600">{data?.lastNumber || 0}</span>
+          <p className="text-emerald-500 text-sm mt-2">
+            Total antrian hari ini: <span className="font-bold text-emerald-700">{data?.lastNumber || 0}</span>
           </p>
         </div>
 
@@ -294,7 +295,7 @@ function QueueCard({
             isGadai ? "bg-emerald-50 border-emerald-200" : "bg-amber-50 border-amber-200"
           )}>
             {/* Queue Number - Large & Clear */}
-            <p className="text-gray-500 text-xs uppercase tracking-wider mb-2">Nomor Antrian Anda</p>
+            <p className="text-emerald-600 text-xs uppercase tracking-wider mb-2">Nomor Antrian Anda</p>
             <div className={cn("text-5xl md:text-6xl font-black tracking-tight", isGadai ? "text-emerald-600" : "text-amber-600")}>
               {getQueueCode(type, myNumber)}
             </div>
@@ -322,7 +323,7 @@ function QueueCard({
               ) : (
                 // Giliran sudah lewat - show cooldown or retake button
                 <div className="space-y-3">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-500 rounded-full text-sm font-medium">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-600 rounded-full text-sm font-medium">
                     <CheckCircle className="w-4 h-4" />
                     Sudah dipanggil
                   </span>
@@ -362,9 +363,9 @@ function QueueCard({
 
             {/* Share Section - only show when not passed yet */}
             {data && data.currentNumber <= myNumber && (
-              <div className="mt-5 pt-5 border-t border-gray-200">
+              <div className="mt-5 pt-5 border-t border-emerald-200">
                 {/* Explanatory Text */}
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-emerald-700 text-sm mb-4">
                   Silakan simpan atau bagikan nomor antrian berikut untuk memantau status layanan Anda.
                 </p>
                 
@@ -381,14 +382,7 @@ function QueueCard({
               </div>
             )}
 
-            {/* Ticket Modal */}
-            {showTicket && myNumber && (
-              <QueueTicket
-                type={type}
-                number={myNumber}
-                onClose={() => setShowTicket(false)}
-              />
-            )}
+            {/* Ticket Modal - Rendered outside card flow */}
           </div>
         ) : cooldownRemaining ? (
           <div className="rounded-xl p-5 text-center bg-amber-50 border-2 border-dashed border-amber-200">
@@ -416,15 +410,29 @@ function QueueCard({
               </>
             ) : data?.status === 'open' ? (
               <>
-                <Ticket className="w-6 h-6" />
-                AMBIL ANTRIAN
+                <Ticket className="text-white w-6 h-6" />
+                <span className="text-white">AMBIL ANTRIAN</span>
               </>
             ) : (
-              "ANTRIAN DITUTUP"
+              <span className="text-white">ANTRIAN DITUTUP</span>
             )}
           </button>
         )}
       </div>
     </div>
+
+    {/* Ticket Modal - Fixed overlay outside card layout */}
+    {showTicket && myNumber && (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        <div className="relative max-w-md w-full">
+          <QueueTicket
+            type={type}
+            number={myNumber}
+            onClose={() => setShowTicket(false)}
+          />
+        </div>
+      </div>
+    )}
+    </>
   );
 }

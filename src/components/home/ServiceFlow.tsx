@@ -56,17 +56,17 @@ export default function ServiceFlow() {
   const steps = activeTab === "gadai" ? gadaiSteps : nonGadaiSteps;
 
   return (
-    <section id="alur-layanan" className="bg-gray-50 py-16 md:py-24">
+    <section id="alur-layanan" className="bg-emerald-50/50 py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
           <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
             Panduan
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
             Alur Layanan
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
+          <p className="text-emerald-700 max-w-xl mx-auto">
             Ketahui langkah-langkah mudah untuk menggunakan layanan Pegadaian
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function ServiceFlow() {
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
               activeTab === "gadai"
                 ? "bg-amber-500 text-white shadow-lg shadow-amber-500/30"
-                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                : "bg-white text-emerald-700 hover:bg-emerald-50 border border-emerald-200"
             }`}
           >
             <Banknote className="w-5 h-5" />
@@ -89,7 +89,7 @@ export default function ServiceFlow() {
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
               activeTab === "non_gadai"
                 ? "bg-emerald-600 text-white shadow-lg shadow-emerald-500/30"
-                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                : "bg-white text-emerald-700 hover:bg-emerald-50 border border-emerald-200"
             }`}
           >
             <FileCheck className="w-5 h-5" />
@@ -101,7 +101,7 @@ export default function ServiceFlow() {
         <div className="hidden md:block">
           <div className="relative">
             {/* Connection Line */}
-            <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-gray-200 rounded-full">
+            <div className="absolute top-10 left-[10%] right-[10%] h-1 bg-emerald-200 rounded-full">
               <div 
                 className={`h-full rounded-full transition-all ${
                   activeTab === "gadai" ? "bg-amber-500" : "bg-emerald-600"
@@ -162,12 +162,12 @@ function StepCard({
       </div>
 
       {/* Card */}
-      <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 w-full">
+      <div className="bg-white rounded-2xl p-6 shadow-md border border-emerald-100 w-full">
         <div className={`w-12 h-12 ${iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
           <Icon className="w-6 h-6" />
         </div>
-        <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
-        <p className="text-gray-600 text-sm">{step.description}</p>
+        <h3 className="font-bold text-emerald-900 mb-2">{step.title}</h3>
+        <p className="text-emerald-700 text-sm">{step.description}</p>
       </div>
     </div>
   );
@@ -191,7 +191,7 @@ function AccordionItem({
   const iconBg = isGadai ? "bg-amber-50 text-amber-600" : "bg-emerald-50 text-emerald-600";
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-xl border border-emerald-200 overflow-hidden">
       <button
         onClick={onToggle}
         className="w-full flex items-center gap-4 p-4 text-left"
@@ -202,12 +202,12 @@ function AccordionItem({
         <div className={`w-10 h-10 ${iconBg} rounded-lg flex items-center justify-center flex-shrink-0`}>
           <Icon className="w-5 h-5" />
         </div>
-        <span className="font-semibold text-gray-900 flex-1">{step.title}</span>
-        <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <span className="font-semibold text-emerald-900 flex-1">{step.title}</span>
+        <ChevronDown className={`w-5 h-5 text-emerald-500 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
       {isOpen && (
         <div className="px-4 pb-4 pl-[4.5rem]">
-          <p className="text-gray-600 text-sm">{step.description}</p>
+          <p className="text-emerald-700 text-sm">{step.description}</p>
         </div>
       )}
     </div>

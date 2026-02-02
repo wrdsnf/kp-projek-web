@@ -66,10 +66,10 @@ export function ProductsServicesSection() {
           <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
             Produk Kami
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
             Produk & Layanan Pegadaian
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-emerald-700 max-w-2xl mx-auto">
             Berbagai solusi keuangan untuk memenuhi kebutuhan Anda. Proses cepat, aman, dan terpercaya.
           </p>
         </div>
@@ -78,7 +78,7 @@ export function ProductsServicesSection() {
         <div className="space-y-10">
           {/* Gadai */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-emerald-800 mb-4 flex items-center gap-2">
               <span className="w-8 h-0.5 bg-emerald-500"></span>
               Gadai
             </h3>
@@ -91,7 +91,7 @@ export function ProductsServicesSection() {
 
           {/* Pembiayaan & Investasi */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-emerald-800 mb-4 flex items-center gap-2">
               <span className="w-8 h-0.5 bg-emerald-500"></span>
               Pembiayaan & Investasi
             </h3>
@@ -104,7 +104,7 @@ export function ProductsServicesSection() {
 
           {/* Jasa Keuangan */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-emerald-800 mb-4 flex items-center gap-2">
               <span className="w-8 h-0.5 bg-emerald-500"></span>
               Jasa Keuangan
             </h3>
@@ -124,15 +124,15 @@ function ProductCard({ product }: { product: typeof allProducts[0] }) {
   return (
     <Link
       href={product.href}
-      className="group flex items-start gap-4 p-5 bg-gray-50 hover:bg-white border border-gray-100 hover:border-emerald-200 rounded-xl hover:shadow-lg transition-all"
+      className="group flex items-start gap-4 p-5 bg-emerald-50/50 hover:bg-white border border-emerald-100 hover:border-emerald-200 rounded-xl hover:shadow-lg transition-all"
     >
       <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600 transition-colors">
         <product.icon className="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" />
       </div>
       <div className="flex-1 min-w-0">
-        <h4 className="font-bold text-gray-900 mb-1">{product.name}</h4>
-        <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
-        <span className="inline-flex items-center gap-1 text-emerald-600 text-sm font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+        <h4 className="font-bold text-emerald-900 mb-1">{product.name}</h4>
+        <p className="text-emerald-700 text-sm leading-relaxed">{product.description}</p>
+        <span className="inline-flex items-center gap-1 text-amber-600 text-sm font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
           Lihat Detail <ArrowRight className="w-3 h-3" />
         </span>
       </div>
@@ -146,9 +146,9 @@ export default function ProductNav() {
   const currentProduct = allProducts.find(p => pathname.includes(p.id));
 
   return (
-    <section className="bg-gray-100 py-8 md:py-10">
+    <section className="bg-emerald-50 py-8 md:py-10">
       <div className="max-w-4xl mx-auto px-4">
-        <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4 text-center">
+        <h3 className="text-sm font-semibold text-emerald-600 uppercase tracking-wide mb-4 text-center">
           Produk Lainnya
         </h3>
         
@@ -164,10 +164,10 @@ export default function ProductNav() {
                   "flex flex-col items-center py-4 px-3 rounded-xl transition-all text-center",
                   isActive 
                     ? "bg-emerald-600 text-white shadow-md" 
-                    : "bg-white hover:bg-gray-50 text-gray-700 hover:shadow-sm border border-gray-200"
+                    : "bg-white hover:bg-emerald-100 text-emerald-700 hover:shadow-sm border border-emerald-200"
                 )}
               >
-                <product.icon className={cn("w-6 h-6 mb-2", isActive ? "text-white" : "text-gray-500")} />
+                <product.icon className={cn("w-6 h-6 mb-2", isActive ? "text-white" : "text-emerald-500")} />
                 <span className="text-sm font-medium">{product.shortName}</span>
               </Link>
             );
@@ -187,10 +187,10 @@ export default function ProductNav() {
                     "flex items-center gap-2 py-3 px-4 rounded-full transition-all whitespace-nowrap",
                     isActive 
                       ? "bg-emerald-600 text-white shadow-md" 
-                      : "bg-white text-gray-700 border border-gray-200"
+                      : "bg-white text-emerald-700 border border-emerald-200"
                   )}
                 >
-                  <product.icon className={cn("w-4 h-4", isActive ? "text-white" : "text-gray-500")} />
+                  <product.icon className={cn("w-4 h-4", isActive ? "text-white" : "text-emerald-500")} />
                   <span className="text-sm font-medium">{product.shortName}</span>
                 </Link>
               );

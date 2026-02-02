@@ -54,13 +54,13 @@ export default function AdminImagesPage() {
           <div className="flex items-center gap-3 mb-2">
             <Link 
               href="/dashboard/admin" 
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="p-2 hover:bg-emerald-100 rounded-lg transition-colors"
             >
-              <ArrowLeft className="w-5 h-5 text-gray-600" />
+              <ArrowLeft className="w-5 h-5 text-emerald-700" />
             </Link>
-            <h1 className="text-2xl font-bold text-gray-800">Update Gambar Homepage</h1>
+            <h1 className="text-2xl font-bold text-emerald-900">Update Gambar Homepage</h1>
           </div>
-          <p className="text-gray-500 ml-11">
+          <p className="text-emerald-600 ml-11">
             Upload dan kelola gambar yang tampil di halaman utama website
           </p>
         </div>
@@ -211,9 +211,9 @@ function ImageUploadCard({
   const isUploading = uploadState.status === 'uploading';
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-sm border border-emerald-200 overflow-hidden">
       {/* Image Preview */}
-      <div className="relative aspect-video bg-gray-100 flex items-center justify-center">
+      <div className="relative aspect-video bg-emerald-100 flex items-center justify-center">
         {displayUrl ? (
           <img
             src={displayUrl}
@@ -221,7 +221,7 @@ function ImageUploadCard({
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="text-center text-gray-400">
+          <div className="text-center text-emerald-500">
             <ImageIcon className="w-12 h-12 mx-auto mb-2 opacity-50" />
             <p className="text-sm">Belum ada gambar</p>
           </div>
@@ -273,8 +273,8 @@ function ImageUploadCard({
 
       {/* Card Content */}
       <div className="p-4">
-        <h3 className="font-semibold text-gray-900">{label}</h3>
-        <p className="text-sm text-gray-500 mt-1">{description}</p>
+        <h3 className="font-semibold text-emerald-900">{label}</h3>
+        <p className="text-sm text-emerald-600 mt-1">{description}</p>
         
         {/* Status & Info */}
         <div className="mt-4 flex items-center justify-between gap-2">
@@ -289,14 +289,14 @@ function ImageUploadCard({
             
             {/* File size info during upload */}
             {uploadState.fileSize && isUploading && (
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-emerald-600">
                 Ukuran: {formatBytes(uploadState.fileSize)}
               </div>
             )}
             
             {/* Last updated info */}
             {uploadState.status === 'idle' && updatedAt && (
-              <div className="text-xs text-gray-400">
+              <div className="text-xs text-emerald-500">
                 Diupdate: {updatedAt.toLocaleDateString('id-ID', { 
                   day: 'numeric', 
                   month: 'short', 

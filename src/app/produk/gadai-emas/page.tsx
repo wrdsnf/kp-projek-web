@@ -22,7 +22,7 @@ export default function GadaiEmasPage() {
           
           <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
             {/* Back Link */}
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-emerald-700 transition-colors mb-8 text-sm">
+            <Link href="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-amber-600 transition-colors mb-8 text-sm">
               <ArrowLeft className="w-4 h-4" />
               Kembali ke Beranda
             </Link>
@@ -32,10 +32,10 @@ export default function GadaiEmasPage() {
                 <Gem className="w-10 h-10 text-white" />
               </div>
               <div className="flex-1">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4 leading-tight">
                   Gadai Emas
                 </h1>
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-emerald-700 leading-relaxed max-w-2xl">
                   Butuh dana cepat? Gadai Emas adalah solusi paling praktis. Cukup bawa emas atau perhiasan kamu, 
                   dalam 15 menit dana langsung cair. Barang kamu aman tersimpan di brankas Pegadaian.
                 </p>
@@ -46,11 +46,11 @@ export default function GadaiEmasPage() {
 
         {/* Apa Itu Gadai Emas? - Normal section, left-aligned */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-6">
             Apa Itu Gadai Emas?
           </h2>
           
-          <div className="space-y-4 text-gray-600 leading-relaxed">
+          <div className="space-y-4 text-emerald-700 leading-relaxed">
             <p>
               Gadai Emas adalah layanan pembiayaan di mana kamu menyerahkan emas atau perhiasan sebagai jaminan. 
               Kamu akan menerima pinjaman sesuai nilai taksiran barang yang dijaminkan — biasanya sekitar 90-95% dari harga pasar.
@@ -65,16 +65,16 @@ export default function GadaiEmasPage() {
           <div className="mt-8 flex items-center gap-4 py-4 border-l-4 border-amber-400 pl-6 bg-amber-50/50">
             <Clock className="w-8 h-8 text-amber-500 flex-shrink-0" />
             <div>
-              <p className="font-semibold text-gray-900">Jangka Waktu Fleksibel</p>
-              <p className="text-gray-600 text-sm">Mulai dari 15 hari hingga 120 hari. Bisa diperpanjang atau dicicil.</p>
+              <p className="font-semibold text-emerald-900">Jangka Waktu Fleksibel</p>
+              <p className="text-emerald-700 text-sm">Mulai dari 15 hari hingga 120 hari. Bisa diperpanjang atau dicicil.</p>
             </div>
           </div>
         </section>
 
         {/* Keuntungan - Split layout with icons */}
-        <section className="bg-gray-50 py-12 md:py-16">
+        <section className="bg-emerald-50 py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-8 text-center">
               Kenapa Pilih Gadai Emas di Pegadaian?
             </h2>
             
@@ -106,8 +106,8 @@ export default function GadaiEmasPage() {
                     <item.icon className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                    <h3 className="font-semibold text-emerald-900 mb-1">{item.title}</h3>
+                    <p className="text-emerald-700 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -117,11 +117,11 @@ export default function GadaiEmasPage() {
 
         {/* Cocok Untuk Siapa? - Highlight blocks with accent border */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-6">
             Cocok Untuk Siapa?
           </h2>
           
-          <p className="text-gray-600 mb-8">
+          <p className="text-emerald-700 mb-8">
             Gadai Emas bisa jadi solusi keuangan untuk berbagai kebutuhan:
           </p>
 
@@ -134,12 +134,12 @@ export default function GadaiEmasPage() {
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-emerald-50 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
                 <item.icon className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-                <p className="text-gray-700">{item.text}</p>
+                <p className="text-emerald-800">{item.text}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 text-gray-600 italic">
+          <p className="mt-8 text-emerald-700 italic">
             "Produk ini cocok buat kamu yang butuh dana cepat, tapi tetap pengen aman dan jelas prosesnya."
           </p>
         </section>
@@ -190,10 +190,10 @@ export default function GadaiEmasPage() {
 
         {/* CTA Section - Standalone */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-4">
             Siap Mengajukan Gadai Emas?
           </h2>
-          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
+          <p className="text-emerald-700 mb-8 max-w-lg mx-auto">
             Kunjungi outlet Pegadaian CP Sentul atau ambil nomor antrian online supaya tidak perlu menunggu lama.
           </p>
           
@@ -208,7 +208,7 @@ export default function GadaiEmasPage() {
             </Link>
             <a 
               href="tel:0274375806"
-              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-semibold py-4 px-8 rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" />
               (0274) 375-806

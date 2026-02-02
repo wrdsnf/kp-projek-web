@@ -7,6 +7,13 @@ export interface TringAppSettings {
   referralCode: string;
   appStoreUrl: string;
   playStoreUrl: string;
+  // WhatsApp settings
+  whatsappNumberPrimary: string;
+  whatsappNumberSecondary: string;
+  whatsappLinkPrimary: string;
+  whatsappLinkSecondary: string;
+  whatsappNamePrimary: string;
+  whatsappNameSecondary: string;
   updatedAt?: Timestamp;
   updatedBy?: string;
 }
@@ -15,6 +22,13 @@ const DEFAULT_SETTINGS: TringAppSettings = {
   referralCode: "13554",
   appStoreUrl: "https://devpds.onelink.me/v3LG/seo",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.pegadaiandigital&pcampaignid=web_share",
+  // WhatsApp defaults (fallback values)
+  whatsappNumberPrimary: "62895413310250",
+  whatsappNumberSecondary: "6287717657945",
+  whatsappLinkPrimary: "https://wa.me/62895413310250?text=Halo,%20saya%20ingin%20bertanya%20tentang%20",
+  whatsappLinkSecondary: "https://wa.me/6287717657945?text=Halo,%20saya%20ingin%20bertanya%20tentang%20",
+  whatsappNamePrimary: "Yunita",
+  whatsappNameSecondary: "Tohir",
 };
 
 const COLLECTION = "settings";

@@ -24,18 +24,18 @@ const services = [
     icon: Coins,
     title: "Tabungan Emas",
     description: "Investasi emas terjangkau mulai Rp10.000. Aman untuk masa depan.",
-    color: "bg-yellow-500",
-    iconColor: "text-yellow-600",
-    bgColor: "bg-yellow-50",
+    color: "bg-amber-500",
+    iconColor: "text-amber-600",
+    bgColor: "bg-amber-50",
     href: "/produk/tabungan-emas",
   },
   {
     icon: MoreHorizontal,
     title: "Jasa Lainnya",
     description: "Transfer uang, pembayaran tagihan, top up, dan layanan keuangan lainnya.",
-    color: "bg-blue-500",
-    iconColor: "text-blue-600",
-    bgColor: "bg-blue-50",
+    color: "bg-emerald-600",
+    iconColor: "text-emerald-600",
+    bgColor: "bg-emerald-50",
     href: "/produk/jasa-lainnya",
   },
 ];
@@ -49,10 +49,10 @@ export default function Services() {
           <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-700 text-sm font-semibold rounded-full mb-4">
             Layanan Kami
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-4">
             Layanan Utama Pegadaian
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-emerald-700 max-w-2xl mx-auto">
             Pegadaian hadir dengan berbagai layanan keuangan untuk memenuhi kebutuhan Anda. 
             Proses cepat, aman, dan terpercaya.
           </p>
@@ -88,18 +88,19 @@ function ServiceCard({
   return (
     <Link 
       href={href}
-      className="group bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-emerald-200 transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
+      className="group bg-white border border-emerald-100 rounded-2xl p-6 hover:shadow-xl hover:border-emerald-200 transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
     >
       <div className={`w-14 h-14 ${bgColor} rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
         <Icon className={`w-7 h-7 ${iconColor}`} />
       </div>
-      <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
-      <span className="inline-flex items-center gap-1 text-emerald-600 text-sm font-medium group-hover:gap-2 transition-all">
+      <h3 className="text-xl font-bold text-emerald-900 mb-2">{title}</h3>
+      <p className="text-emerald-700 text-sm leading-relaxed mb-4">{description}</p>
+      <span className="inline-flex items-center gap-1 text-amber-600 text-sm font-medium group-hover:gap-2 transition-all">
         Lihat Detail
         <ArrowRight className="w-4 h-4" />
       </span>
     </Link>
   );
 }
+
 

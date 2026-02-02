@@ -17,10 +17,10 @@ export default function GadaiNonEmasPage() {
       <main>
         {/* Hero / Intro Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-gray-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-emerald-50/30" />
           
           <div className="relative max-w-4xl mx-auto px-4 py-16 md:py-24">
-            <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-emerald-700 transition-colors mb-8 text-sm">
+            <Link href="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-amber-600 transition-colors mb-8 text-sm">
               <ArrowLeft className="w-4 h-4" />
               Kembali ke Beranda
             </Link>
@@ -30,10 +30,10 @@ export default function GadaiNonEmasPage() {
                 <Laptop className="w-10 h-10 text-white" />
               </div>
               <div className="flex-1">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-900 mb-4 leading-tight">
                   Gadai Non-Emas
                 </h1>
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+                <p className="text-lg md:text-xl text-emerald-700 leading-relaxed max-w-2xl">
                   Punya laptop, HP, atau kendaraan yang bisa dijadikan jaminan? Gadai Non-Emas memungkinkan kamu 
                   mendapat pinjaman dengan barang elektronik atau kendaraan sebagai jaminan.
                 </p>
@@ -44,11 +44,11 @@ export default function GadaiNonEmasPage() {
 
         {/* Apa Itu Gadai Non-Emas? */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-6">
             Apa Itu Gadai Non-Emas?
           </h2>
           
-          <div className="space-y-4 text-gray-600 leading-relaxed">
+          <div className="space-y-4 text-emerald-700 leading-relaxed">
             <p>
               Gadai Non-Emas adalah layanan pinjaman dengan jaminan barang selain emas — bisa berupa elektronik seperti laptop, 
               smartphone, kamera, atau bahkan kendaraan bermotor (BPKB).
@@ -67,21 +67,21 @@ export default function GadaiNonEmasPage() {
               { icon: Camera, label: "Kamera" },
               { icon: Watch, label: "Jam Tangan" },
             ].map((item, i) => (
-              <div key={i} className="text-center py-6 px-4 bg-gray-50 rounded-xl border border-gray-100">
+              <div key={i} className="text-center py-6 px-4 bg-emerald-50 rounded-xl border border-emerald-100">
                 <item.icon className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
-                <p className="text-gray-700 font-medium text-sm">{item.label}</p>
+                <p className="text-emerald-800 font-medium text-sm">{item.label}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-500 text-sm mt-4">
+          <p className="text-center text-emerald-600 text-sm mt-4">
             Dan masih banyak lagi — termasuk BPKB kendaraan
           </p>
         </section>
 
         {/* Keuntungan */}
-        <section className="bg-gray-50 py-12 md:py-16">
+        <section className="bg-emerald-50 py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-8 text-center">
               Keuntungan Gadai Non-Emas
             </h2>
             
@@ -103,13 +103,13 @@ export default function GadaiNonEmasPage() {
                   desc: "Jangka waktu pinjaman bisa disesuaikan. Semua biaya dijelaskan di awal, tidak ada biaya tersembunyi."
                 },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-5 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div key={i} className="flex items-start gap-5 bg-white p-6 rounded-xl shadow-sm border border-emerald-100">
                   <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                    <h3 className="font-semibold text-emerald-900 mb-1">{item.title}</h3>
+                    <p className="text-emerald-700 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -119,7 +119,7 @@ export default function GadaiNonEmasPage() {
 
         {/* Cocok Untuk Siapa? */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-6">
             Cocok Untuk Siapa?
           </h2>
 
@@ -131,7 +131,7 @@ export default function GadaiNonEmasPage() {
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 py-3 px-5 bg-gradient-to-r from-emerald-50 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
                 <item.icon className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-                <p className="text-gray-700">{item.text}</p>
+                <p className="text-emerald-800">{item.text}</p>
               </div>
             ))}
           </div>
@@ -174,10 +174,10 @@ export default function GadaiNonEmasPage() {
 
         {/* CTA */}
         <section className="max-w-4xl mx-auto px-4 py-12 md:py-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-emerald-900 mb-4">
             Butuh Dana Cepat?
           </h2>
-          <p className="text-gray-600 mb-8 max-w-lg mx-auto">
+          <p className="text-emerald-700 mb-8 max-w-lg mx-auto">
             Gadaikan barang elektronik atau kendaraanmu di Pegadaian CP Sentul. Prosesnya cepat dan aman.
           </p>
           
@@ -192,7 +192,7 @@ export default function GadaiNonEmasPage() {
             </Link>
             <a 
               href="tel:0274375806"
-              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 font-semibold py-4 px-8 rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" />
               (0274) 375-806

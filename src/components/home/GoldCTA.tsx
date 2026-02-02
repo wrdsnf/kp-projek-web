@@ -1,11 +1,30 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Coins, MessageCircle, Phone, Sparkles, BadgeCheck, Banknote } from "lucide-react";
+import { subscribeToTringSettings, TringAppSettings } from "@/lib/tring-service";
+
+// Fallback values (same as hardcoded before)
+const FALLBACK_WA_PRIMARY_LINK = "https://wa.me/62895413310250?text=Halo,%20saya%20ingin%20bertanya%20tentang%20";
+const FALLBACK_WA_SECONDARY_LINK = "https://wa.me/6287717657945?text=Halo,%20saya%20ingin%20bertanya%20tentang%20";
+const FALLBACK_WA_PRIMARY_NAME = "Yunita";
+const FALLBACK_WA_SECONDARY_NAME = "Tohir";
 
 export default function GoldCTA() {
-  // Replace with actual WhatsApp number
-  const whatsappNumber = "62895413310250";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20`;
-  const whatsappNumber2 = "6287717657945";
-  const whatsappLink2 = `https://wa.me/${whatsappNumber2}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20`;
+  const [settings, setSettings] = useState<TringAppSettings | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = subscribeToTringSettings((data) => {
+      setSettings(data);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // Use settings or fallback
+  const whatsappLink = settings?.whatsappLinkPrimary || FALLBACK_WA_PRIMARY_LINK;
+  const whatsappLink2 = settings?.whatsappLinkSecondary || FALLBACK_WA_SECONDARY_LINK;
+  const primaryName = settings?.whatsappNamePrimary || FALLBACK_WA_PRIMARY_NAME;
+  const secondaryName = settings?.whatsappNameSecondary || FALLBACK_WA_SECONDARY_NAME;
 
   return (
     <section id="investasi-emas" className="relative overflow-hidden bg-gradient-to-br from-amber-500 via-amber-500 to-yellow-500 py-16 md:py-24">
@@ -70,7 +89,7 @@ export default function GoldCTA() {
                 className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
               >
                 <MessageCircle className="w-5 h-5" />
-                Hubungi Yunita
+                Hubungi {primaryName}
               </a>
               <a
                 href={`${whatsappLink2}Beli%20Emas`}
@@ -79,7 +98,7 @@ export default function GoldCTA() {
                 className="inline-flex items-center justify-center gap-2 bg-amber-900 hover:bg-amber-800 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
               >
                 <MessageCircle className="w-5 h-5" />
-                Hubungi Tohir
+                Hubungi {secondaryName}
               </a>
             </div>
           </div>
@@ -119,3 +138,4 @@ export default function GoldCTA() {
     </section>
   );
 }
+
